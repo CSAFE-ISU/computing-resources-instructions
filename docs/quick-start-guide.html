@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Connecting from off campus | CSAFE Computing Resources</title>
+  <title>Chapter 2 Quick Start Guide | CSAFE Computing Resources</title>
   <meta name="description" content="This book gives the reader step-by-step instuctions for accessing and using CSAFE computing resources." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Connecting from off campus | CSAFE Computing Resources" />
+  <meta property="og:title" content="Chapter 2 Quick Start Guide | CSAFE Computing Resources" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="CSAFE-ISU/computing-resources-instructions" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Connecting from off campus | CSAFE Computing Resources" />
+  <meta name="twitter:title" content="Chapter 2 Quick Start Guide | CSAFE Computing Resources" />
   
   <meta name="twitter:description" content="This book gives the reader step-by-step instuctions for accessing and using CSAFE computing resources." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="quick-start-guide.html"/>
-<link rel="next" href="lss.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="connecting-from-off-campus.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -220,50 +220,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="connecting-from-off-campus" class="section level1" number="3">
-<h1><span class="header-section-number">Chapter 3</span> Connecting from off campus</h1>
-<p>If you are on campus, you may skip this chapter. If you are off campus, you will need to</p>
+<div id="quick-start-guide" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Quick Start Guide</h1>
+<div id="connect-to-large-scale-storage" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Connect to Large Scale Storage</h2>
 <ol style="list-style-type: decimal">
-<li>Download and sign in to a virtual private network (see <a href="connecting-from-off-campus.html#install-vpn">3.1</a>)</li>
-<li>Generate SSH keys (see <a href="connecting-from-off-campus.html#ssh-keys">3.2</a>)</li>
-</ol>
-<div id="install-vpn" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Install the ISU Virtual Private Network (VPN)</h2>
-<p>Iowa State University uses Cisco AnyConnect as their virtual private network (VPN) software. You will need to install it on your computer.</p>
-<ol style="list-style-type: decimal">
-<li><p>Go to <a href="https://vpn.iastate.edu" class="uri">https://vpn.iastate.edu</a></p></li>
-<li><p>Select Primary as the GROUP and click Login
-<br></p>
-<div style="margin-bottom:10px; margin-top:10px">
-<p><img src="images/group_primary.png" id="id" class="class" style="width:50.0%;height:50.0%" /></p>
-</div></li>
-<li><p>Sign in with your ISU net-id and password
-<br></p>
-<div style="margin-bottom:10px; margin-top:10px">
-<p><img src="images/isu_login.png" id="id" class="class" style="width:30.0%;height:30.0%" /></p>
-</div></li>
-<li><p>The site should detect your computer’s operating system and give you the option to download the VPN for your operating system. <br></p>
-<div style="margin-bottom:10px; margin-top:10px">
-<img src="images/cisco_detect_os.png" id="id" class="class" style="width:50.0%;height:50.0%" />
-</div></li>
-<li><p>Click Download
-## Sign In to the ISU VPN {#signin-vpn}</p></li>
-<li><p>Open Cisco AnyConnect</p></li>
-<li><p>Type <code>vpn.iastate.edu</code> and click Connect
-<br></p>
-<div style="margin-bottom:10px; margin-top:10px">
-<p><img src="images/cisco.png" id="id" class="class" style="width:50.0%;height:50.0%" /></p>
-</div></li>
-<li><p>Sign in with your ISU net-id and password
-<br></p>
-<div style="margin-bottom:10px; margin-top:10px">
-<p><img src="images/isu_login.png" id="id" class="class" style="width:30.0%;height:30.0%" /></p>
-</div></li>
+<li>If you are an undergraduate student, use your CSAFE email net-id and password in the following steps.</li>
+<li>If you are off campus, download the ISU virtual private from <a href="https://vpn.iastate.edu" class="uri">https://vpn.iastate.edu</a> and log-in using your ISU net-id and password.</li>
+<li>On <strong>Windows</strong> open File Explorer and in the top textbox type
+<ul>
+<li><code>\\las.iastate.edu\research</code> if you are <strong>on campus</strong> or</li>
+<li><code>\\las-dfs-01.las.iastate.edu\lss</code> if you are <strong>off campus</strong>.</li>
+</ul></li>
+<li>On <strong>Mac</strong> click Go &gt; Connect to Server and type
+<ul>
+<li><code>smb://iastate/lss/research</code> if you are <strong>on campus</strong> or</li>
+<li><code>smb://las-dfs-01.las.iastate.edu</code> if you are <strong>off campus</strong>.</li>
+</ul></li>
+<li>Enter your net-id and password.</li>
+<li>Open the research folder and go to your CSAFE project folder.</li>
 </ol>
 </div>
-<div id="ssh-keys" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Generate SSH keys</h2>
-<p>ResearchIT gives instructions for setting up SSH keys at <a href="https://researchit.las.iastate.edu/how-generate-ssh-keys" class="uri">https://researchit.las.iastate.edu/how-generate-ssh-keys</a>. Setting up my SSH keys took lots of trial and error. If you run into problems or get stuck, email <a href="mailto:researchit@iastate.edu" class="email">researchit@iastate.edu</a>.</p>
+<div id="connect-to-csafe-rstudio-server" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Connect to CSAFE Rstudio Server</h2>
+<ol style="list-style-type: decimal">
+<li>If you are an undergraduate student, use your CSAFE email net-id and password in the following steps.</li>
+<li>If you are off campus, download the ISU virtual private from <a href="https://vpn.iastate.edu" class="uri">https://vpn.iastate.edu</a> and log-in using your ISU net-id and password.</li>
+<li>Go to the website <a href="https://reiss.csafe.iastate.edu/" class="uri">https://reiss.csafe.iastate.edu/</a> or <a href="https://locard.csafe.iastate.edu/" class="uri">https://locard.csafe.iastate.edu/</a>.</li>
+<li>Enter your net-id and password.</li>
+</ol>
+</div>
+<div id="connect-to-the-pronto-job-scheduler" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Connect to the Pronto Job Scheduler</h2>
+<ol style="list-style-type: decimal">
+<li>If you are an undergraduate student, use your CSAFE email net-id and password in the following steps.</li>
+<li>If you are off campus, download the ISU virtual private from <a href="https://vpn.iastate.edu" class="uri">https://vpn.iastate.edu</a> and log-in using your ISU net-id and password.</li>
+<li>On <strong>Windows</strong> open the PowerShell. On <strong>Mac</strong> open the Terminal.</li>
+<li>Type <code>ssh your-netid@pronto.las.iastate.edu</code></li>
+<li>Enter your net-id and password.</li>
+</ol>
 
 </div>
 </div>
@@ -272,8 +267,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="quick-start-guide.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lss.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="connecting-from-off-campus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -304,7 +299,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-off-campus.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-quick-start.Rmd",
 "text": "Edit"
 },
 "history": {

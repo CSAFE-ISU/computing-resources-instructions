@@ -1,6 +1,6 @@
-# Pronto
+# Pronto {#pronto}
 
-## Connecting to the Pronto job scheduler {#pronto}
+## Connecting to the Pronto job scheduler {#connecting-to-pronto}
 
 You connect to the pronto job scheduler through the PowerShell on Windows or the Terminal on Mac.
 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.2.1)  7 JUN 2022 13:54
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.2.1)  8 JUN 2022 08:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -749,10 +749,15 @@ File: images/isu_login.png Graphic file (type bmp)
 
 ]
 Chapter 3.
+
+Underfull \hbox (badness 1769) in paragraph at lines 209--211
+[]\TU/lmr/m/n/10 If you are \TU/lmr/bx/n/10 off campus \TU/lmr/m/n/10 type \TU/lmtt/m/n/10 \\las-dfs-01.las.iastate.edu\lss
+ []
+
 File: images/connect_to_server.png Graphic file (type bmp)
 <images/connect_to_server.png>
 
-Underfull \vbox (badness 6204) has occurred while \output is active []
+Underfull \vbox (badness 4699) has occurred while \output is active []
 
 [11] [12]
 Chapter 4.
@@ -784,49 +789,49 @@ File: images/add_server.png Graphic file (type bmp)
 <images/add_server.png>
 [17]
 
-LaTeX Warning: Reference `signin-vpn' on page 18 undefined on input line 441.
+LaTeX Warning: Reference `signin-vpn' on page 18 undefined on input line 432.
 
 [18]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 492.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 483.
 
-LaTeX Warning: Reference `signin-vpn' on page 19 undefined on input line 506.
+LaTeX Warning: Reference `signin-vpn' on page 19 undefined on input line 497.
 
 [19]
 
-LaTeX Warning: Reference `signin-vpn' on page 20 undefined on input line 582.
+LaTeX Warning: Reference `signin-vpn' on page 20 undefined on input line 573.
 
 [20] [21]
 
-LaTeX Warning: Reference `signin-vpn' on page 22 undefined on input line 653.
+LaTeX Warning: Reference `signin-vpn' on page 22 undefined on input line 644.
 
 [22]
 
-LaTeX Warning: Reference `signin-vpn' on page 23 undefined on input line 720.
+LaTeX Warning: Reference `signin-vpn' on page 23 undefined on input line 711.
 
 [23] [24]
 
-LaTeX Warning: Reference `signin-vpn' on page 25 undefined on input line 794.
+LaTeX Warning: Reference `signin-vpn' on page 25 undefined on input line 785.
 
 [25]
 
-LaTeX Warning: Reference `signin-vpn' on page 26 undefined on input line 867.
+LaTeX Warning: Reference `signin-vpn' on page 26 undefined on input line 858.
 
 [26] [27]
 
-LaTeX Warning: Reference `signin-vpn' on page 28 undefined on input line 948.
+LaTeX Warning: Reference `signin-vpn' on page 28 undefined on input line 939.
 
 [28] [29]
 
-LaTeX Warning: Reference `signin-vpn' on page 30 undefined on input line 1035.
+LaTeX Warning: Reference `signin-vpn' on page 30 undefined on input line 1026.
 
 [30]
 
-LaTeX Warning: Reference `signin-vpn' on page 31 undefined on input line 1112.
+LaTeX Warning: Reference `signin-vpn' on page 31 undefined on input line 1103.
 
 [31] [32]
 
-LaTeX Warning: Reference `signin-vpn' on page 33 undefined on input line 1254.
+LaTeX Warning: Reference `signin-vpn' on page 33 undefined on input line 1245.
 
 [33]
 No file _main.bbl.
@@ -838,12 +843,12 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: 3BCAE0EE6BA746513495E7C6E5660102;2998.
+(rerunfilecheck)             Checksum: 85B24F3689A7DE9D944D40A39AD529B5;2968.
  ) 
 Here is how much of TeX's memory you used:
  17532 strings out of 478190
- 321976 string characters out of 5853722
- 766514 words of memory out of 5000000
+ 321948 string characters out of 5853722
+ 766508 words of memory out of 5000000
  37885 multiletter control sequences out of 15000+600000
  475726 words of font info for 83 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191

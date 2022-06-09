@@ -1,0 +1,30 @@
+# Large Scale Storage (LSS) {#lss}
+
+The Large Scale Storage (LSS) is a research file storage service at ISU. CSAFE has purchased storage space on LSS for a handful of CSAFE projects, such as firearms and handwriting, to store project data.
+
+*** Add discussion of folder privileges and their impact on storing IRB data on the server
+
+**Windows**
+
+1. If you are **off campus**, log-in to the ISU VPN
+1. Open file explorer
+1. If you are **off campus** type `\\las-dfs-01.las.iastate.edu\lss` in the top textbox. If you are **on campus** you only need to type `\\las.iastate.edu\lss`
+1. Enter your ISU net-id and password
+1. Open the research folder
+1. Open folder for your CSAFE project
+
+**Mac**
+
+1. If you are off campus, log-in to the ISU VPN
+1. Select Go > Connect to Server <br><div style="margin-bottom:10px; margin-top:10px"> 
+  ![](images/connect_to_server.png){#id .class width=50% height=50%}
+</div>
+1. If you are **off campus** type `smb://las-dfs-01.las.iastate.edu` in the text box. If you are **on campus** type `smb://las.iastate.edu` Click the + sign if you would like your computer to remember the server
+1. Click Connect
+1. Enter your net-id and password
+1. Open the LSS folder
+1. Open the research folder
+1. Open folder for your CSAFE project
+
+
+

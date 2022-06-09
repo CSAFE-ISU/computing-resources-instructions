@@ -1,4 +1,4 @@
-# The CSAFE RStudio Servers
+# The CSAFE RStudio Servers {#rstudio-server}
 
 CSAFE has two RStudio Servers that are operated by CSSM:
 

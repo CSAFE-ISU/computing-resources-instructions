@@ -1,4 +1,4 @@
---- 
+---
 title: "CSAFE Computing Resources"
 author: "Stephanie Reinders"
 date: "`r Sys.Date()`"
@@ -10,15 +10,63 @@ bibliography: [book.bib, packages.bib]
 description: |
   This book gives the reader step-by-step instuctions for accessing and using CSAFE computing resources.
 link-citations: yes
-github-repo: rstudio/bookdown-demo
+github-repo: CSAFE-ISU/computing-resources-instructions
 ---
 
 # Introduction
 
-This book gives the reader step-by-step instuctions for accessing and using the following CSAFE computing resources:
+This book gives the reader step-by-step instructions for accessing and using several CSAFE computing resources. CSAFE has access to
 
-1. File storage on the Center for Survey Statistics & Methodology (CSSM) server
-1. High performance servers managed by CSSM and Research IT
+1.  Large Scale Storage (LSS)
+2.  CSAFE Rstudio Servers
+3.  The Pronto Job Scheduler
 
+## Large Scale Storage (LSS)
 
+ResearchIT at Iowa State University provides Large Scale Storage (LSS) at low cost to research labs. CSAFE has purchased more than 30 terabytes of space on LSS. As of `r Sys.Date()` the following CSAFE project folders are on LSS:
 
+-   csafe-admin-vid
+-   csafe-firearms
+-   csafe-handwriting
+-   csafe-handwriting-irb
+-   csafe-mentisdb
+-   csafe-mobile
+-   csafe-shoeprints
+-   csafe-stego
+-   csafe-transcripts
+-   csafe-wvmediaimp
+
+Chapter \@ref(lss) explains how to connect to LSS.
+
+## CSAFE RStudio Servers
+
+CSAFE has access to two RStudio Servers. To the user, the experience is almost exactly the same as using RStudio on a personal computer. The main benefit of running RStudio on the server is that the server has more RAM and more cores than most personal computers.
+
+Chapter \@ref(rstudio-server) explains how to use the Rstudio servers.
+
+## The Pronto Job Scheduler
+
+ResearchIT at ISU manages a whole host of high performance servers to which CSAFE has purchased access. Instead of accessing one of these servers individually, users submit their jobs (scripts) to the Pronto Job Scheduler which assigns the jobs to the most appropriate servers.
+
+Chapter \@ref(pronto) explains how to run R scripts on the Pronto Job Scheduler. Python, MATLAB, and other programming languages can be run on Pronto, but this book only covers R.
+
+## Do I use the CSAFE Rstudio Server or Pronto?
+
+When deciding whether to use an RStudio server or Pronto, you might want to consider the following benefits and drawbacks of each.
+
+**RStudio Server**
+
+-   *benefits*
+    -   It runs the RStudio graphical user interface so the user experience is quite similar to working in Rstudio on a personal computer.
+-   *drawbacks*
+    -   Each server has less than 20 cores
+    -   It is a shared user machine which means that if a lot of people are using the server, your jobs might run slower.
+
+**Pronto**
+
+-   *benefits*
+    -   It has dozens of servers with hundreds of cores each
+    -   It manages the resources for users so you don't have to worry about slowing down other peoples jobs
+-   *drawbacks*
+    -   It doesn't have a graphical user interface so users interact with Pronto through the command line
+    -   Users submit their jobs to Pronto using something called a SLURM script, which is quite a different workflow compared running scripts in Rstudio

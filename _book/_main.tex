@@ -117,7 +117,7 @@
 
 \title{CSAFE Computing Resources}
 \author{Stephanie Reinders}
-\date{2022-06-07}
+\date{2022-06-08}
 
 \begin{document}
 \maketitle
@@ -129,16 +129,7 @@
 \hypertarget{introduction}{%
 \chapter{Introduction}\label{introduction}}
 
-This book gives the reader step-by-step instuctions for accessing and using the following CSAFE computing resources:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  File storage on the Center for Survey Statistics \& Methodology (CSSM) server
-\item
-  High performance servers managed by CSSM and Research IT
-\end{enumerate}
+This book gives the reader step-by-step instructions for accessing and using several CSAFE computing resources. CSAFE has access to Large Scale Storage (LSS) where CSAFE projects can store multiple terabytes of data. CSAFE also has access to two different sets of servers at ISU for running code; One set of servers is managed by the Center for Survey Statistics \& Methodology (CSSM) the other is managed by Research IT.
 
 \hypertarget{getting-started}{%
 \chapter{Getting Started}\label{getting-started}}
@@ -198,12 +189,12 @@ Iowa State University uses Cisco AnyConnect as their virtual private network (VP
 
 ResearchIT gives instructions for setting up SSH keys at \url{https://researchit.las.iastate.edu/how-generate-ssh-keys}. Setting up my SSH keys took lots of trial and error. If you run into problems or get stuck, email \href{mailto:researchit@iastate.edu}{\nolinkurl{researchit@iastate.edu}}.
 
-\hypertarget{file-storage-on-the-cssm-server}{%
-\chapter{File Storage on the CSSM Server}\label{file-storage-on-the-cssm-server}}
+\hypertarget{lss}{%
+\chapter{Large Scale Storage (LSS)}\label{lss}}
 
-A number of CSAFE projects, such as firearms and handwriting, store project data on the Center for Survey Statistics \& Methodology (CSSM) server.
+The Large Scale Storage (LSS) is a research file storage service at ISU. CSAFE has purchased storage space on LSS for a handful of CSAFE projects, such as firearms and handwriting, to store project data.
 
-Add discussion of folder privileges and their impact on storing IRB data on the server
+*** Add discussion of folder privileges and their impact on storing IRB data on the server
 
 \textbf{Windows}
 
@@ -211,11 +202,11 @@ Add discussion of folder privileges and their impact on storing IRB data on the 
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  If you are off campus, log-in to the ISU VPN
+  If you are \textbf{off campus}, log-in to the ISU VPN
 \item
   Open file explorer
 \item
-  Type \texttt{\textbackslash{}\textbackslash{}las-dfs-01.las.iastate.edu\textbackslash{}lss} in the top textbox
+  If you are \textbf{off campus} type \texttt{\textbackslash{}\textbackslash{}las-dfs-01.las.iastate.edu\textbackslash{}lss} in the top textbox. If you are \textbf{on campus} you only need to type \texttt{\textbackslash{}\textbackslash{}las.iastate.edu\textbackslash{}research}
 \item
   Enter your ISU net-id and password
 \item
@@ -236,7 +227,7 @@ Add discussion of folder privileges and their impact on storing IRB data on the 
 
   \includegraphics[width=0.5\textwidth,height=0.5\textheight]{images/connect_to_server.png}
 \item
-  Type \texttt{smb://las-dfs-01.las.iastate.edu} in the text box. Click the + sign if you would like your computer to remember the server
+  If you are \textbf{off campus} type \texttt{smb://las-dfs-01.las.iastate.edu} in the text box. If you are \textbf{on campus} type \texttt{smb://las.iastate.edu} Click the + sign if you would like your computer to remember the server
 \item
   Click Connect
 \item
