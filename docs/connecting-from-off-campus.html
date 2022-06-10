@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Connecting from off campus | CSAFE Computing Resources</title>
   <meta name="description" content="This book gives the reader step-by-step instuctions for accessing and using CSAFE computing resources." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Connecting from off campus | CSAFE Computing Resources" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This book gives the reader step-by-step instuctions for accessing and using CSAFE computing resources." />
   <meta name="github-repo" content="CSAFE-ISU/computing-resources-instructions" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Stephanie Reinders" />
 
 
-<meta name="date" content="2022-06-09" />
+<meta name="date" content="2022-06-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="quick-start-guide.html"/>
 <link rel="next" href="lss.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,8 +49,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -167,13 +166,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.1" data-path="pronto.html"><a href="pronto.html#connecting-to-pronto"><i class="fa fa-check"></i><b>6.1</b> Connecting to the Pronto job scheduler</a></li>
 <li class="chapter" data-level="6.2" data-path="pronto.html"><a href="pronto.html#prontodtn"><i class="fa fa-check"></i><b>6.2</b> Connecting to the Pronto data transfer node</a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="pronto.html"><a href="pronto.html#transfering-large-amounts-of-data-using-globus"><i class="fa fa-check"></i><b>6.2.1</b> Transfering large amounts of data using Globus</a></li>
+<li class="chapter" data-level="6.2.1" data-path="pronto.html"><a href="pronto.html#transfering-data-from-prontodtn-to-lss"><i class="fa fa-check"></i><b>6.2.1</b> Transfering data from ProntoDTN to LSS</a></li>
+<li class="chapter" data-level="6.2.2" data-path="pronto.html"><a href="pronto.html#transfering-large-amounts-of-data-using-globus"><i class="fa fa-check"></i><b>6.2.2</b> Transfering large amounts of data using Globus</a></li>
 </ul></li>
 <li class="chapter" data-level="6.3" data-path="pronto.html"><a href="pronto.html#running-an-r-script-on-pronto"><i class="fa fa-check"></i><b>6.3</b> Running an R script on Pronto</a></li>
 <li class="chapter" data-level="6.4" data-path="pronto.html"><a href="pronto.html#interactive-sessions"><i class="fa fa-check"></i><b>6.4</b> Interactive Sessions</a>
 <ul>
 <li class="chapter" data-level="6.4.1" data-path="pronto.html"><a href="pronto.html#ex-start-interactive"><i class="fa fa-check"></i><b>6.4.1</b> Example: Start an interactive session</a></li>
-<li class="chapter" data-level="6.4.2" data-path="pronto.html"><a href="pronto.html#ex-interactive-install"><i class="fa fa-check"></i><b>6.4.2</b> Example: Install dplyr package</a></li>
+<li class="chapter" data-level="6.4.2" data-path="pronto.html"><a href="pronto.html#ex-interactive-install"><i class="fa fa-check"></i><b>6.4.2</b> Example: Install a package from CRAN</a></li>
+<li class="chapter" data-level="6.4.3" data-path="pronto.html"><a href="pronto.html#ex-interactive-install-github"><i class="fa fa-check"></i><b>6.4.3</b> Example: Install a package from Github</a></li>
 </ul></li>
 <li class="chapter" data-level="6.5" data-path="pronto.html"><a href="pronto.html#batch-jobs"><i class="fa fa-check"></i><b>6.5</b> Batch Jobs</a>
 <ul>
@@ -220,15 +221,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="connecting-from-off-campus" class="section level1" number="3">
-<h1><span class="header-section-number">Chapter 3</span> Connecting from off campus</h1>
+<div id="connecting-from-off-campus" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Connecting from off campus<a href="connecting-from-off-campus.html#connecting-from-off-campus" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>If you are on campus, you may skip this chapter. If you are off campus, you will need to</p>
 <ol style="list-style-type: decimal">
 <li>Download and sign in to a virtual private network (see <a href="connecting-from-off-campus.html#install-vpn">3.1</a>)</li>
 <li>Generate SSH keys (see <a href="connecting-from-off-campus.html#ssh-keys">3.2</a>)</li>
 </ol>
-<div id="install-vpn" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Install the ISU Virtual Private Network (VPN)</h2>
+<div id="install-vpn" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Install the ISU Virtual Private Network (VPN)<a href="connecting-from-off-campus.html#install-vpn" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Iowa State University uses Cisco AnyConnect as their virtual private network (VPN) software. You will need to install it on your computer.</p>
 <ol style="list-style-type: decimal">
 <li><p>Go to <a href="https://vpn.iastate.edu" class="uri">https://vpn.iastate.edu</a></p></li>
@@ -261,8 +262,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div></li>
 </ol>
 </div>
-<div id="ssh-keys" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Generate SSH keys</h2>
+<div id="ssh-keys" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Generate SSH keys<a href="connecting-from-off-campus.html#ssh-keys" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>ResearchIT gives instructions for setting up SSH keys at <a href="https://researchit.las.iastate.edu/how-generate-ssh-keys" class="uri">https://researchit.las.iastate.edu/how-generate-ssh-keys</a>. Setting up my SSH keys took lots of trial and error. If you run into problems or get stuck, email <a href="mailto:researchit@iastate.edu" class="email">researchit@iastate.edu</a>.</p>
 
 </div>

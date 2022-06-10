@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Quick Start Guide | CSAFE Computing Resources</title>
   <meta name="description" content="This book gives the reader step-by-step instuctions for accessing and using CSAFE computing resources." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Quick Start Guide | CSAFE Computing Resources" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This book gives the reader step-by-step instuctions for accessing and using CSAFE computing resources." />
   <meta name="github-repo" content="CSAFE-ISU/computing-resources-instructions" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Stephanie Reinders" />
 
 
-<meta name="date" content="2022-06-09" />
+<meta name="date" content="2022-06-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="connecting-from-off-campus.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,8 +49,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -167,13 +166,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.1" data-path="pronto.html"><a href="pronto.html#connecting-to-pronto"><i class="fa fa-check"></i><b>6.1</b> Connecting to the Pronto job scheduler</a></li>
 <li class="chapter" data-level="6.2" data-path="pronto.html"><a href="pronto.html#prontodtn"><i class="fa fa-check"></i><b>6.2</b> Connecting to the Pronto data transfer node</a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="pronto.html"><a href="pronto.html#transfering-large-amounts-of-data-using-globus"><i class="fa fa-check"></i><b>6.2.1</b> Transfering large amounts of data using Globus</a></li>
+<li class="chapter" data-level="6.2.1" data-path="pronto.html"><a href="pronto.html#transfering-data-from-prontodtn-to-lss"><i class="fa fa-check"></i><b>6.2.1</b> Transfering data from ProntoDTN to LSS</a></li>
+<li class="chapter" data-level="6.2.2" data-path="pronto.html"><a href="pronto.html#transfering-large-amounts-of-data-using-globus"><i class="fa fa-check"></i><b>6.2.2</b> Transfering large amounts of data using Globus</a></li>
 </ul></li>
 <li class="chapter" data-level="6.3" data-path="pronto.html"><a href="pronto.html#running-an-r-script-on-pronto"><i class="fa fa-check"></i><b>6.3</b> Running an R script on Pronto</a></li>
 <li class="chapter" data-level="6.4" data-path="pronto.html"><a href="pronto.html#interactive-sessions"><i class="fa fa-check"></i><b>6.4</b> Interactive Sessions</a>
 <ul>
 <li class="chapter" data-level="6.4.1" data-path="pronto.html"><a href="pronto.html#ex-start-interactive"><i class="fa fa-check"></i><b>6.4.1</b> Example: Start an interactive session</a></li>
-<li class="chapter" data-level="6.4.2" data-path="pronto.html"><a href="pronto.html#ex-interactive-install"><i class="fa fa-check"></i><b>6.4.2</b> Example: Install dplyr package</a></li>
+<li class="chapter" data-level="6.4.2" data-path="pronto.html"><a href="pronto.html#ex-interactive-install"><i class="fa fa-check"></i><b>6.4.2</b> Example: Install a package from CRAN</a></li>
+<li class="chapter" data-level="6.4.3" data-path="pronto.html"><a href="pronto.html#ex-interactive-install-github"><i class="fa fa-check"></i><b>6.4.3</b> Example: Install a package from Github</a></li>
 </ul></li>
 <li class="chapter" data-level="6.5" data-path="pronto.html"><a href="pronto.html#batch-jobs"><i class="fa fa-check"></i><b>6.5</b> Batch Jobs</a>
 <ul>
@@ -220,10 +221,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="quick-start-guide" class="section level1" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Quick Start Guide</h1>
-<div id="connect-to-large-scale-storage" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Connect to Large Scale Storage</h2>
+<div id="quick-start-guide" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Quick Start Guide<a href="quick-start-guide.html#quick-start-guide" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="connect-to-large-scale-storage" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Connect to Large Scale Storage<a href="quick-start-guide.html#connect-to-large-scale-storage" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>If you are an undergraduate student, use your CSAFE email net-id and password in the following steps.</li>
 <li>If you are off campus, download the ISU virtual private from <a href="https://vpn.iastate.edu" class="uri">https://vpn.iastate.edu</a> and log-in using your ISU net-id and password.</li>
@@ -241,8 +242,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Open the research folder and go to your CSAFE project folder.</li>
 </ol>
 </div>
-<div id="connect-to-csafe-rstudio-server" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Connect to CSAFE Rstudio Server</h2>
+<div id="connect-to-csafe-rstudio-server" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Connect to CSAFE Rstudio Server<a href="quick-start-guide.html#connect-to-csafe-rstudio-server" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>If you are an undergraduate student, use your CSAFE email net-id and password in the following steps.</li>
 <li>If you are off campus, download the ISU virtual private from <a href="https://vpn.iastate.edu" class="uri">https://vpn.iastate.edu</a> and log-in using your ISU net-id and password.</li>
@@ -250,8 +251,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Enter your net-id and password.</li>
 </ol>
 </div>
-<div id="connect-to-the-pronto-job-scheduler" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Connect to the Pronto Job Scheduler</h2>
+<div id="connect-to-the-pronto-job-scheduler" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Connect to the Pronto Job Scheduler<a href="quick-start-guide.html#connect-to-the-pronto-job-scheduler" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>If you are an undergraduate student, use your CSAFE email net-id and password in the following steps.</li>
 <li>If you are off campus, download the ISU virtual private from <a href="https://vpn.iastate.edu" class="uri">https://vpn.iastate.edu</a> and log-in using your ISU net-id and password.</li>
