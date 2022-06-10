@@ -70,6 +70,10 @@ Each user also has a home folder. These folders have limited storage so research
 1. Open the csafe-lab folder
 1. Create a new folder with your net-id as the name
 
+### Transfering data from ProntoDTN to LSS
+1. 
+
+
 ### Transfering large amounts of data using Globus
 
 If you have large amounts of data to transfer, researchIT recommends that you use Globus Connect Personal. Go to https://researchit.las.iastate.edu/how-transfer-files-pronto-globus to download Globus.
@@ -111,11 +115,24 @@ This starts an interactive session.
     $ R
     ```
 
-### Example: Install dplyr package {#ex-interactive-install}
+### Example: Install a package from CRAN {#ex-interactive-install}
 1. Start an interactive R session (see \@ref(ex-start-interactive))
 1. 
     ```{bash install dplyr, eval=FALSE}
     > install.packages("dplyr",lib="/work/LAS/csafe-lab/your_netid/Rlibs", repos="https://mirror.las.iastate.edu/CRAN")
+    ```
+
+### Example: Install a package from Github {#ex-interactive-install-github}
+Occasionally, you might want to install a package that isn't available on CRAN but is available on GitHub. This example shows how to do that on Pronto. 
+
+1. Start an interactive R session (see \@ref(ex-start-interactive))
+1. If you haven't already, you need to install the devtools package
+    ```{bash install devtools, eval=FALSE}
+    > install.packages("devtools",lib="/work/LAS/csafe-lab/your_netid/Rlibs", repos="https://mirror.las.iastate.edu/CRAN")
+    ```
+1. Every GitHub repository url has the format https://github.com/GithubUsernam/GithubRepo. Use the GithubUsername/GithubRepo in the install_github function.
+    ```{bash install github, eval=FALSE}
+    > devtools::install_github("GithubUsername/GithubRepo")
     ```
 
 ## Batch Jobs

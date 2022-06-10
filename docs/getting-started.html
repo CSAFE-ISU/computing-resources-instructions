@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Large Scale Storage (LSS) | CSAFE Computing Resources</title>
+  <title>Chapter 2 Getting Started | CSAFE Computing Resources</title>
   <meta name="description" content="This book gives the reader step-by-step instuctions for accessing and using CSAFE computing resources." />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Large Scale Storage (LSS) | CSAFE Computing Resources" />
+  <meta property="og:title" content="Chapter 2 Getting Started | CSAFE Computing Resources" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This book gives the reader step-by-step instuctions for accessing and using CSAFE computing resources." />
   <meta name="github-repo" content="CSAFE-ISU/computing-resources-instructions" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Large Scale Storage (LSS) | CSAFE Computing Resources" />
+  <meta name="twitter:title" content="Chapter 2 Getting Started | CSAFE Computing Resources" />
   
   <meta name="twitter:description" content="This book gives the reader step-by-step instuctions for accessing and using CSAFE computing resources." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="getting-started.html"/>
-<link rel="next" href="rstudio-server.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="lss.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -224,42 +224,107 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lss" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">Chapter 3</span> Large Scale Storage (LSS)<a href="lss.html#lss" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>The Large Scale Storage (LSS) is a research file storage service at ISU. CSAFE has purchased storage space on LSS for a handful of CSAFE projects, such as firearms and handwriting, to store project data.</p>
-<p>*** Add discussion of folder privileges and their impact on storing IRB data on the server</p>
-<p><strong>Windows</strong></p>
+<div id="getting-started" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Getting Started<a href="getting-started.html#getting-started" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>If you are working from off campus you need to use ISU’s virtual private network (VPN) to connect to any of the computing resources covered in this guide. You also need to set up SSH keys. Section (off-campus) explains how to install and use the ISU VPN and SSH keys. If you will only be working on campus, you may skip this section.</p>
+<p>This chapter also includes a Quick Start Guide (Section (quick-start)) for people who are already comfortable with virtual private networks and command line prompts.</p>
+<p>The last section in this chapter explains how people are granted access to the computing resources covered in this guide.</p>
+<div id="quick-start" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Quick Start Guide<a href="getting-started.html#quick-start" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="connect-to-large-scale-storage" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Connect to Large Scale Storage<a href="getting-started.html#connect-to-large-scale-storage" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
-<li>If you are <strong>off campus</strong>, log-in to the ISU VPN</li>
-<li>Open file explorer</li>
-<li>If you are <strong>off campus</strong> type <code>\\las-dfs-01.las.iastate.edu\lss</code> in the top textbox. If you are <strong>on campus</strong> you only need to type <code>\\las.iastate.edu\lss</code></li>
-<li>Enter your ISU net-id and password</li>
-<li>Open the research folder</li>
-<li>Open folder for your CSAFE project</li>
+<li>If you are an undergraduate student, use your CSAFE email net-id and password in the following steps.</li>
+<li>If you are off campus, download the ISU virtual private from <a href="https://vpn.iastate.edu" class="uri">https://vpn.iastate.edu</a> and log-in using your ISU net-id and password.</li>
+<li>On <strong>Windows</strong> open File Explorer and in the top textbox type
+<ul>
+<li><code>\\las.iastate.edu\research</code> if you are <strong>on campus</strong> or</li>
+<li><code>\\las-dfs-01.las.iastate.edu\lss</code> if you are <strong>off campus</strong>.</li>
+</ul></li>
+<li>On <strong>Mac</strong> click Go &gt; Connect to Server and type
+<ul>
+<li><code>smb://iastate/lss/research</code> if you are <strong>on campus</strong> or</li>
+<li><code>smb://las-dfs-01.las.iastate.edu</code> if you are <strong>off campus</strong>.</li>
+</ul></li>
+<li>Enter your net-id and password.</li>
+<li>Open the research folder and go to your CSAFE project folder.</li>
 </ol>
-<p><strong>Mac</strong></p>
+</div>
+<div id="connect-to-csafe-rstudio-server" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Connect to CSAFE Rstudio Server<a href="getting-started.html#connect-to-csafe-rstudio-server" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
-<li>If you are off campus, log-in to the ISU VPN</li>
-<li>Select Go &gt; Connect to Server <br>
+<li>If you are an undergraduate student, use your CSAFE email net-id and password in the following steps.</li>
+<li>If you are off campus, download the ISU virtual private from <a href="https://vpn.iastate.edu" class="uri">https://vpn.iastate.edu</a> and log-in using your ISU net-id and password.</li>
+<li>Go to the website <a href="https://reiss.csafe.iastate.edu/" class="uri">https://reiss.csafe.iastate.edu/</a> or <a href="https://locard.csafe.iastate.edu/" class="uri">https://locard.csafe.iastate.edu/</a>.</li>
+<li>Enter your net-id and password.</li>
+</ol>
+</div>
+<div id="connect-to-the-pronto-job-scheduler" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Connect to the Pronto Job Scheduler<a href="getting-started.html#connect-to-the-pronto-job-scheduler" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>If you are an undergraduate student, use your CSAFE email net-id and password in the following steps.</li>
+<li>If you are off campus, download the ISU virtual private from <a href="https://vpn.iastate.edu" class="uri">https://vpn.iastate.edu</a> and log-in using your ISU net-id and password.</li>
+<li>On <strong>Windows</strong> open the PowerShell. On <strong>Mac</strong> open the Terminal.</li>
+<li>Type <code>ssh your-netid@pronto.las.iastate.edu</code></li>
+<li>Enter your net-id and password.</li>
+</ol>
+</div>
+</div>
+<div id="off-campus" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Working Off Campus<a href="getting-started.html#off-campus" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If you are on campus, you may skip this section. If you are off campus, you will need to</p>
+<ol style="list-style-type: decimal">
+<li>Download and sign in to a virtual private network (see <a href="getting-started.html#install-vpn">2.2.1</a>)</li>
+<li>Generate SSH keys (see <a href="getting-started.html#ssh-keys">2.2.2</a>)</li>
+</ol>
+<div id="install-vpn" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Install the ISU Virtual Private Network (VPN)<a href="getting-started.html#install-vpn" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Iowa State University uses Cisco AnyConnect as their virtual private network (VPN) software. You will need to install it on your computer.</p>
+<ol style="list-style-type: decimal">
+<li><p>Go to <a href="https://vpn.iastate.edu" class="uri">https://vpn.iastate.edu</a></p></li>
+<li><p>Select Primary as the GROUP and click Login
+<br></p>
 <div style="margin-bottom:10px; margin-top:10px">
-<p><img src="images/connect_to_server.png" id="id" class="class" style="width:50.0%;height:50.0%" /></p>
+<p><img src="images/group_primary.png" id="id" class="class" style="width:50.0%;height:50.0%" /></p>
 </div></li>
-<li>If you are <strong>off campus</strong> type <code>smb://las-dfs-01.las.iastate.edu</code> in the text box. If you are <strong>on campus</strong> type <code>smb://las.iastate.edu</code> Click the + sign if you would like your computer to remember the server</li>
-<li>Click Connect</li>
-<li>Enter your net-id and password</li>
-<li>Open the LSS folder</li>
-<li>Open the research folder</li>
-<li>Open folder for your CSAFE project</li>
+<li><p>Sign in with your ISU net-id and password
+<br></p>
+<div style="margin-bottom:10px; margin-top:10px">
+<p><img src="images/isu_login.png" id="id" class="class" style="width:30.0%;height:30.0%" /></p>
+</div></li>
+<li><p>The site should detect your computer’s operating system and give you the option to download the VPN for your operating system. <br></p>
+<div style="margin-bottom:10px; margin-top:10px">
+<img src="images/cisco_detect_os.png" id="id" class="class" style="width:50.0%;height:50.0%" />
+</div></li>
+<li><p>Click Download
+### Sign In to the ISU VPN {#signin-vpn}</p></li>
+<li><p>Open Cisco AnyConnect</p></li>
+<li><p>Type <code>vpn.iastate.edu</code> and click Connect
+<br></p>
+<div style="margin-bottom:10px; margin-top:10px">
+<p><img src="images/cisco.png" id="id" class="class" style="width:50.0%;height:50.0%" /></p>
+</div></li>
+<li><p>Sign in with your ISU net-id and password
+<br></p>
+<div style="margin-bottom:10px; margin-top:10px">
+<p><img src="images/isu_login.png" id="id" class="class" style="width:30.0%;height:30.0%" /></p>
+</div></li>
 </ol>
+</div>
+<div id="ssh-keys" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Generate SSH keys<a href="getting-started.html#ssh-keys" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>ResearchIT gives instructions for setting up SSH keys at <a href="https://researchit.las.iastate.edu/how-generate-ssh-keys" class="uri">https://researchit.las.iastate.edu/how-generate-ssh-keys</a>. Setting up my SSH keys took lots of trial and error. If you run into problems or get stuck, email <a href="mailto:researchit@iastate.edu" class="email">researchit@iastate.edu</a>.</p>
 
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="getting-started.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="rstudio-server.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lss.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -290,7 +355,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-large-scale-storage.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-getting-started.Rmd",
 "text": "Edit"
 },
 "history": {
