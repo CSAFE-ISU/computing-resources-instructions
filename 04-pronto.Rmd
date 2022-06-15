@@ -611,6 +611,13 @@ Save the file as `log.txt`.
     ```` 
 where jobid is the six-digit number for the job you want to cancel. 
 
+### View information about a job
+1. In the pronto terminal (not in an interactive session), type
+    ```{bash cancel, eval=FALSE}
+    $ scontrol show job jobid
+    ```` 
+
+
 ## Install the handwriter package
 CSAFE created an R package for statistical handwriting analysis called handwriter. The handwriter package requires a number of other R packages, some of which caused errors when I tried to install handwriter in an interactive session on Pronto following the instructions in \@ref(ex-interactive-install). ResearchIT helped me figure out how to install the problem packages and ultimately install handwriter. This section records the step-by-step details of how I was able to install handwriter. My hope is that you will also be able to sucessfully install handwriter if you follow these steps. If you run into problems, email researchit@iastate.edu.
 
