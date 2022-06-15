@@ -70,8 +70,11 @@ Each user also has a home folder. These folders have limited storage so research
 1. Open the csafe-lab folder
 1. Create a new folder with your net-id as the name
 
-### Transfering data from ProntoDTN to LSS
-1. 
+### Transfering data between ProntoDTN and LSS
+1. Open the Terminal on Mac or the PowerShell on Windows
+1. Type `ssh your_netid@prontodtn.las.iastate.edu` to connect to ProntoDTN using SSH
+1. Enter your netid password
+1. To copy the contents of a folder from ProntoDTN to LSS, type `cp -r /work/LAS/csafe-lab/your_netid/pronto_folder/ /lss/research/csafe-project/lss_folder/`. If you want to copy a folder from LSS to ProntoDTN, use the same command but switch the order of the folders: `cp -r /lss/research/csafe-project/lss_folder/ /work/LAS/csafe-lab/your_netid/pronto_folder/`.
 
 
 ### Transfering large amounts of data using Globus
