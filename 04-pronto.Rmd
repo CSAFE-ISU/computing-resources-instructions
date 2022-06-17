@@ -71,7 +71,11 @@ Each user also has a home folder. These folders have limited storage so research
 1. Create a new folder with your net-id as the name
 
 ### Transfering data from ProntoDTN to LSS
-1. 
+If you want to transfer large amounts of data from the Pronto Data Transfer Node (ProntoDTN) to Large Scale Storage (LSS) do the following:
+
+1. Open the PowerShell on Windows or the Terminal on Mac.
+1. Connect to the Pronto Data Transfer Node by typing `ssh your_netid@prontodtn.las.iastate.edu`
+1. Type `cp -r /work/LAS/csafe-lab/your_netid/copy_from_this_folder/ /lss/research/csafe-handwriting/copy_to_this_folder/`
 
 
 ### Transfering large amounts of data using Globus
@@ -362,6 +366,56 @@ Save the file as `parallel.txt`.
     ```` 
 1. The results of the parallel loop should be saved in `parallel.txt` in your csafe-lab work folder.
 
+
+### Example: Check whether code is running in parallel {#ex-check-parallel}
+1. If you are off campus, connect to the ISU VPN (see \@ref(signin-vpn)) 
+1. Sign-in to Pronto (see \@ref(pronto)).
+1. Open your csafe-lab work folder `prontodtn.las.iastate.edu > work > LAS > csafe-lab > your_netid` (see \@ref(prontodtn))
+1. Create a new R script with the following lines of code:
+    ```{r check parallel script, eval=FALSE}
+library(doParallel)
+library(doRNG)
+
+
+nCores = as.integer(Sys.getenv("SLURM_CPUS_PER_TASK"))
+myCluster = parallel::makeCluster(nCores)
+doParallel::registerDoParallel(myCluster)
+
+r1 = foreach(i=1:10) %dorng% {
+  if (i==1){Sys.sleep(30)}
+  time = Sys.time()
+  saveRDS(object=time, file=paste0("time_", i,".rds"))
+}
+    ```
+Save the script as `check_parallel.R`. Copy the script to your csafe-lab work folder.
+1. Create a text file for Slurm with the following text:
+    ```{bash slurm for check parallel script, eval=FALSE}
+    #!/bin/bash
+
+#SBATCH --nodes=1 # request one node
+#SBATCH --cpus-per-task=10  # ask for 10 cpu
+#SBATCH --mem=1G #  asks for 1 GB of RAM
+#SBATCH --time=00:30:02 # ask that the job be allowed to run for 30 minutes and 2 seconds.
+
+# everything below this line is optional
+#SBATCH --output=/work/LAS/csafe-lab/your_netid/job_%J_out.txt # store console output
+#SBATCH --error=/work/LAS/csafe-lab/your_netid/job_%J_err.txt # store error messages
+
+export R_LIBS_USER=/work/LAS/csafe-lab/your_netid/Rlibs
+
+module load r
+cd /work/LAS/csafe-lab/your_netid
+R --save < check_parallel.R
+    ```
+Save the file as `check_parallel.txt`.
+1. (Windows Only) If you are using Windows, your text file will likely have DOS line breaks instead of UNIX line breaks which will cause an error when the file is run on Pronto. Open Terminal in RStudio, use `cd folder/containing/text_file` to change directories to the folder containing your text file, and type `dos2unix check_parallel.txt` to change the line breaks to UNIX format.
+1. Copy the text file to your csafe-lab work folder.
+1. In the command line prompt where you are connected to Pronto, type
+    ```{bash run check parallel script, eval=FALSE}
+    $ sbatch /work/LAS/csafe-lab/your_netid/check_parallel.txt
+    ```` 
+1. The script should have created 10 RDS files in your csafe-lab work folder. Check the times recorded in each file. The first file should contain a time after the other files.
+
 ### Example: Set the seed for the random number generator {#ex-seed}
 If you run Example \@ref(ex-parallel) multiple times, the numbers sampled from the normal distribution will likely be different each time. If you want to make the sample reproducible
 (produce the same sample each time), set the seed for the random number generator. The most common way to set a seed is with the `set.seed()` function. This function does not work with `%dopar%` from the doParallel package, but it does work with `%dorng%`.
@@ -581,6 +635,73 @@ Save the file as `log.txt`.
     INFO [2022-05-04 10:42:37] start script...
     INFO [2022-05-04 10:42:37] variable a = 5
     ```` 
+
+### Example: Write a log message inside a parallel loop
+1. If you are off campus, connect to the ISU VPN (see \@ref(signin-vpn)) 
+1. Sign-in to Pronto (see \@ref(pronto)).
+1. Open your csafe-lab work folder `prontodtn.las.iastate.edu > work > LAS > csafe-lab > your_netid` (see \@ref(prontodtn))
+1. Create a new R script with the following lines of code:
+    ```{r parallel log script, eval=FALSE}
+  library(doParallel)
+  library(futile.logger)
+    
+  nCores = as.integer(Sys.getenv("SLURM_CPUS_PER_TASK"))
+  myCluster = parallel::makeCluster(nCores, outfile="log_parallel_loop.txt")
+  doParallel::registerDoParallel(myCluster)
+
+  # Parallel loop
+  r1 = foreach(i=1:4, .packages=c("futile.logger")) %dorng%{ 
+    runif(1) 
+    futile.logger::flog.info("Finished iteration %d", i)
+  }
+
+    ```
+Save the script as `parallel_log.R`. Copy the script to your csafe-lab work folder.
+1. Create a text file for Slurm with the following text:
+    ```{bash slurm for parallel log script, eval=FALSE}
+#!/bin/bash
+
+#SBATCH --nodes=1 # request one node
+#SBATCH --cpus-per-task=4  # ask for 4 cpu
+#SBATCH --mem=1G #  asks for 1 GB of RAM
+#SBATCH --time=00:30:00 # ask that the job be allowed to run for 30 minutes and 0 seconds.
+
+# everything below this line is optional
+#SBATCH --output=/work/LAS/csafe-lab/your_netid/job_%J_out.txt # store console output
+#SBATCH --error=/work/LAS/csafe-lab/your_netid/job_%J_err.txt # store error messages
+
+export R_LIBS_USER=/work/LAS/csafe-lab/your_netid/Rlibs
+
+module load r
+cd /work/LAS/csafe-lab/your_netid
+R --save < parallel_log.R
+    ```
+Save the file as `parallel_log.txt`.
+1. (Windows Only) If you are using Windows, your text file will likely have DOS line breaks instead of UNIX line breaks which will cause an error when the file is run on Pronto. Open Terminal in RStudio, use `cd folder/containing/text_file` to change directories to the folder containing your text file, and type `dos2unix parallel_log.txt` to change the line breaks to UNIX format.
+1. Copy the text file to your csafe-lab work folder.
+1. In the command line prompt where you are connected to Pronto, type
+    ```{bash run parallel log script, eval=FALSE}
+    $ sbatch /work/LAS/csafe-lab/your_netid/parallel_log.txt
+    ```` 
+1. A log file called `log_parallel_loop.txt` should appear in your csafe-lab work folder. The contents of the log should look like 
+    ```{bash parallel log script output, eval=FALSE}
+starting worker pid=149912 on localhost:11324 at 15:05:55.201
+starting worker pid=149924 on localhost:11324 at 15:05:55.452
+starting worker pid=149936 on localhost:11324 at 15:05:55.706
+starting worker pid=149948 on localhost:11324 at 15:05:55.963
+Loading required package: foreach
+Loading required package: rngtools
+Loading required package: foreach
+Loading required package: rngtools
+Loading required package: foreach
+Loading required package: foreach
+Loading required package: rngtools
+Loading required package: rngtools
+INFO [2022-06-17 15:05:56] Finished iteration 3
+INFO [2022-06-17 15:05:56] Finished iteration 1
+INFO [2022-06-17 15:05:56] Finished iteration 2
+INFO [2022-06-17 15:05:56] Finished iteration 4
+    ````
 
 ## Pronto Commands
 ### List loaded modules

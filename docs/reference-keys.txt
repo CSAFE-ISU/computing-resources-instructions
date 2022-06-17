@@ -32,10 +32,12 @@ ex-save
 ex-load
 ex-batch-install
 ex-parallel
+ex-check-parallel
 ex-seed
 ex-packages-parallel
 example-use-a-user-defined-function-to-save-results-inside-a-parallel-loop
 ex-log
+example-write-a-log-message-inside-a-parallel-loop
 pronto-commands
 list-loaded-modules
 purge-all-loaded-modules

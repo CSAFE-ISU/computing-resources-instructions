@@ -117,7 +117,7 @@
 
 \title{CSAFE Computing Resources}
 \author{Stephanie Reinders}
-\date{2022-06-10}
+\date{2022-06-17}
 
 \begin{document}
 \maketitle
@@ -145,7 +145,7 @@ This book gives the reader step-by-step instructions for accessing and using sev
 \hypertarget{large-scale-storage-lss}{%
 \section{Large Scale Storage (LSS)}\label{large-scale-storage-lss}}
 
-ResearchIT at Iowa State University provides Large Scale Storage (LSS) at low cost to research labs. CSAFE has purchased more than 30 terabytes of space on LSS. As of 2022-06-10 the following CSAFE project folders are on LSS:
+ResearchIT at Iowa State University provides Large Scale Storage (LSS) at low cost to research labs. CSAFE has purchased more than 30 terabytes of space on LSS. As of 2022-06-17 the following CSAFE project folders are on LSS:
 
 \begin{itemize}
 \tightlist
@@ -588,10 +588,17 @@ Each user also has a home folder. These folders have limited storage so research
 \hypertarget{transfering-data-from-prontodtn-to-lss}{%
 \subsection{Transfering data from ProntoDTN to LSS}\label{transfering-data-from-prontodtn-to-lss}}
 
+If you want to transfer large amounts of data from the Pronto Data Transfer Node (ProntoDTN) to Large Scale Storage (LSS) do the following:
+
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
+  Open the PowerShell on Windows or the Terminal on Mac.
+\item
+  Connect to the Pronto Data Transfer Node by typing \texttt{ssh\ your\_netid@prontodtn.las.iastate.edu}
+\item
+  Type \texttt{cp\ -r\ /work/LAS/csafe-lab/your\_netid/copy\_from\_this\_folder/\ /lss/research/csafe-handwriting/copy\_to\_this\_folder/}
 \end{enumerate}
 
 \hypertarget{transfering-large-amounts-of-data-using-globus}{%
@@ -1072,6 +1079,80 @@ If you completed Example \ref{ex-batch-install} the doParallel package will alre
   The results of the parallel loop should be saved in \texttt{parallel.txt} in your csafe-lab work folder.
 \end{enumerate}
 
+\hypertarget{ex-check-parallel}{%
+\subsection{Example: Check whether code is running in parallel}\label{ex-check-parallel}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  If you are off campus, connect to the ISU VPN (see \ref{signin-vpn})
+\item
+  Sign-in to Pronto (see \ref{pronto}).
+\item
+  Open your csafe-lab work folder \texttt{prontodtn.las.iastate.edu\ \textgreater{}\ work\ \textgreater{}\ LAS\ \textgreater{}\ csafe-lab\ \textgreater{}\ your\_netid} (see \ref{prontodtn})
+\item
+  Create a new R script with the following lines of code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(doParallel)}
+\FunctionTok{library}\NormalTok{(doRNG)}
+
+
+\NormalTok{nCores }\OtherTok{=} \FunctionTok{as.integer}\NormalTok{(}\FunctionTok{Sys.getenv}\NormalTok{(}\StringTok{"SLURM\_CPUS\_PER\_TASK"}\NormalTok{))}
+\NormalTok{myCluster }\OtherTok{=}\NormalTok{ parallel}\SpecialCharTok{::}\FunctionTok{makeCluster}\NormalTok{(nCores)}
+\NormalTok{doParallel}\SpecialCharTok{::}\FunctionTok{registerDoParallel}\NormalTok{(myCluster)}
+
+\NormalTok{r1 }\OtherTok{=} \FunctionTok{foreach}\NormalTok{(}\AttributeTok{i=}\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{) }\SpecialCharTok{\%dorng\%}\NormalTok{ \{}
+  \ControlFlowTok{if}\NormalTok{ (i}\SpecialCharTok{==}\DecValTok{1}\NormalTok{)\{}\FunctionTok{Sys.sleep}\NormalTok{(}\DecValTok{30}\NormalTok{)\}}
+\NormalTok{  time }\OtherTok{=} \FunctionTok{Sys.time}\NormalTok{()}
+  \FunctionTok{saveRDS}\NormalTok{(}\AttributeTok{object=}\NormalTok{time, }\AttributeTok{file=}\FunctionTok{paste0}\NormalTok{(}\StringTok{"time\_"}\NormalTok{, i,}\StringTok{".rds"}\NormalTok{))}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+  Save the script as \texttt{check\_parallel.R}. Copy the script to your csafe-lab work folder.
+\item
+  Create a text file for Slurm with the following text:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#!/bin/bash}
+
+\CommentTok{\#SBATCH {-}{-}nodes=1 \# request one node}
+\CommentTok{\#SBATCH {-}{-}cpus{-}per{-}task=10  \# ask for 10 cpu}
+\CommentTok{\#SBATCH {-}{-}mem=1G \#  asks for 1 GB of RAM}
+\CommentTok{\#SBATCH {-}{-}time=00:30:02 \# ask that the job be allowed to run for 30 minutes and 2 seconds.}
+
+\CommentTok{\# everything below this line is optional}
+\CommentTok{\#SBATCH {-}{-}output=/work/LAS/csafe{-}lab/your\_netid/job\_\%J\_out.txt \# store console output}
+\CommentTok{\#SBATCH {-}{-}error=/work/LAS/csafe{-}lab/your\_netid/job\_\%J\_err.txt \# store error messages}
+
+\BuiltInTok{export} \VariableTok{R\_LIBS\_USER}\OperatorTok{=}\NormalTok{/work/LAS/csafe{-}lab/your\_netid/Rlibs}
+
+\ExtensionTok{module}\NormalTok{ load r}
+\BuiltInTok{cd}\NormalTok{ /work/LAS/csafe{-}lab/your\_netid}
+\ExtensionTok{R} \AttributeTok{{-}{-}save} \OperatorTok{\textless{}}\NormalTok{ check\_parallel.R}
+\end{Highlighting}
+\end{Shaded}
+
+  Save the file as \texttt{check\_parallel.txt}.
+\item
+  (Windows Only) If you are using Windows, your text file will likely have DOS line breaks instead of UNIX line breaks which will cause an error when the file is run on Pronto. Open Terminal in RStudio, use \texttt{cd\ folder/containing/text\_file} to change directories to the folder containing your text file, and type \texttt{dos2unix\ check\_parallel.txt} to change the line breaks to UNIX format.
+\item
+  Copy the text file to your csafe-lab work folder.
+\item
+  In the command line prompt where you are connected to Pronto, type
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{$}\NormalTok{ sbatch /work/LAS/csafe{-}lab/your\_netid/check\_parallel.txt}
+\end{Highlighting}
+\end{Shaded}
+\item
+  The script should have created 10 RDS files in your csafe-lab work folder. Check the times recorded in each file. The first file should contain a time after the other files.
+\end{enumerate}
+
 \hypertarget{ex-seed}{%
 \subsection{Example: Set the seed for the random number generator}\label{ex-seed}}
 
@@ -1391,6 +1472,100 @@ In this example we will create a simple log file using the \texttt{futile.logger
 \begin{Highlighting}[]
 \ExtensionTok{INFO}\NormalTok{ [2022{-}05{-}04 10:42:37] start script...}
 \ExtensionTok{INFO}\NormalTok{ [2022{-}05{-}04 10:42:37] variable a = 5}
+\end{Highlighting}
+\end{Shaded}
+\end{enumerate}
+
+\hypertarget{example-write-a-log-message-inside-a-parallel-loop}{%
+\subsection{Example: Write a log message inside a parallel loop}\label{example-write-a-log-message-inside-a-parallel-loop}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  If you are off campus, connect to the ISU VPN (see \ref{signin-vpn})
+\item
+  Sign-in to Pronto (see \ref{pronto}).
+\item
+  Open your csafe-lab work folder \texttt{prontodtn.las.iastate.edu\ \textgreater{}\ work\ \textgreater{}\ LAS\ \textgreater{}\ csafe-lab\ \textgreater{}\ your\_netid} (see \ref{prontodtn})
+\item
+  Create a new R script with the following lines of code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+  \FunctionTok{library}\NormalTok{(doParallel)}
+  \FunctionTok{library}\NormalTok{(futile.logger)}
+
+\NormalTok{  nCores }\OtherTok{=} \FunctionTok{as.integer}\NormalTok{(}\FunctionTok{Sys.getenv}\NormalTok{(}\StringTok{"SLURM\_CPUS\_PER\_TASK"}\NormalTok{))}
+\NormalTok{  myCluster }\OtherTok{=}\NormalTok{ parallel}\SpecialCharTok{::}\FunctionTok{makeCluster}\NormalTok{(nCores, }\AttributeTok{outfile=}\StringTok{"log\_parallel\_loop.txt"}\NormalTok{)}
+\NormalTok{  doParallel}\SpecialCharTok{::}\FunctionTok{registerDoParallel}\NormalTok{(myCluster)}
+
+  \CommentTok{\# Parallel loop}
+\NormalTok{  r1 }\OtherTok{=} \FunctionTok{foreach}\NormalTok{(}\AttributeTok{i=}\DecValTok{1}\SpecialCharTok{:}\DecValTok{4}\NormalTok{, }\AttributeTok{.packages=}\FunctionTok{c}\NormalTok{(}\StringTok{"futile.logger"}\NormalTok{)) }\SpecialCharTok{\%dorng\%}\NormalTok{\{ }
+\FunctionTok{runif}\NormalTok{(}\DecValTok{1}\NormalTok{) }
+\NormalTok{futile.logger}\SpecialCharTok{::}\FunctionTok{flog.info}\NormalTok{(}\StringTok{"Finished iteration \%d"}\NormalTok{, i)}
+\NormalTok{  \}}
+\end{Highlighting}
+\end{Shaded}
+
+  Save the script as \texttt{parallel\_log.R}. Copy the script to your csafe-lab work folder.
+\item
+  Create a text file for Slurm with the following text:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#!/bin/bash}
+
+\CommentTok{\#SBATCH {-}{-}nodes=1 \# request one node}
+\CommentTok{\#SBATCH {-}{-}cpus{-}per{-}task=4  \# ask for 4 cpu}
+\CommentTok{\#SBATCH {-}{-}mem=1G \#  asks for 1 GB of RAM}
+\CommentTok{\#SBATCH {-}{-}time=00:30:00 \# ask that the job be allowed to run for 30 minutes and 0 seconds.}
+
+\CommentTok{\# everything below this line is optional}
+\CommentTok{\#SBATCH {-}{-}output=/work/LAS/csafe{-}lab/your\_netid/job\_\%J\_out.txt \# store console output}
+\CommentTok{\#SBATCH {-}{-}error=/work/LAS/csafe{-}lab/your\_netid/job\_\%J\_err.txt \# store error messages}
+
+\BuiltInTok{export} \VariableTok{R\_LIBS\_USER}\OperatorTok{=}\NormalTok{/work/LAS/csafe{-}lab/your\_netid/Rlibs}
+
+\ExtensionTok{module}\NormalTok{ load r}
+\BuiltInTok{cd}\NormalTok{ /work/LAS/csafe{-}lab/your\_netid}
+\ExtensionTok{R} \AttributeTok{{-}{-}save} \OperatorTok{\textless{}}\NormalTok{ parallel\_log.R}
+\end{Highlighting}
+\end{Shaded}
+
+  Save the file as \texttt{parallel\_log.txt}.
+\item
+  (Windows Only) If you are using Windows, your text file will likely have DOS line breaks instead of UNIX line breaks which will cause an error when the file is run on Pronto. Open Terminal in RStudio, use \texttt{cd\ folder/containing/text\_file} to change directories to the folder containing your text file, and type \texttt{dos2unix\ parallel\_log.txt} to change the line breaks to UNIX format.
+\item
+  Copy the text file to your csafe-lab work folder.
+\item
+  In the command line prompt where you are connected to Pronto, type
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{$}\NormalTok{ sbatch /work/LAS/csafe{-}lab/your\_netid/parallel\_log.txt}
+\end{Highlighting}
+\end{Shaded}
+\item
+  A log file called \texttt{log\_parallel\_loop.txt} should appear in your csafe-lab work folder. The contents of the log should look like
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{starting}\NormalTok{ worker pid=149912 on localhost:11324 at 15:05:55.201}
+\ExtensionTok{starting}\NormalTok{ worker pid=149924 on localhost:11324 at 15:05:55.452}
+\ExtensionTok{starting}\NormalTok{ worker pid=149936 on localhost:11324 at 15:05:55.706}
+\ExtensionTok{starting}\NormalTok{ worker pid=149948 on localhost:11324 at 15:05:55.963}
+\ExtensionTok{Loading}\NormalTok{ required package: foreach}
+\ExtensionTok{Loading}\NormalTok{ required package: rngtools}
+\ExtensionTok{Loading}\NormalTok{ required package: foreach}
+\ExtensionTok{Loading}\NormalTok{ required package: rngtools}
+\ExtensionTok{Loading}\NormalTok{ required package: foreach}
+\ExtensionTok{Loading}\NormalTok{ required package: foreach}
+\ExtensionTok{Loading}\NormalTok{ required package: rngtools}
+\ExtensionTok{Loading}\NormalTok{ required package: rngtools}
+\ExtensionTok{INFO}\NormalTok{ [2022{-}06{-}17 15:05:56] Finished iteration 3}
+\ExtensionTok{INFO}\NormalTok{ [2022{-}06{-}17 15:05:56] Finished iteration 1}
+\ExtensionTok{INFO}\NormalTok{ [2022{-}06{-}17 15:05:56] Finished iteration 2}
+\ExtensionTok{INFO}\NormalTok{ [2022{-}06{-}17 15:05:56] Finished iteration 4}
 \end{Highlighting}
 \end{Shaded}
 \end{enumerate}
