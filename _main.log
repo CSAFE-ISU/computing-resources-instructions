@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.6)  10 JUN 2022 09:57
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.6)  17 JUN 2022 15:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -780,40 +780,51 @@ File: images/connect_to_server.png Graphic file (type bmp)
 <images/connect_to_server.png>
 File: images/add_server.png Graphic file (type bmp)
 <images/add_server.png>
-[19]
 
-LaTeX Warning: Reference `signin-vpn' on page 20 undefined on input line 631.
-
-[20]
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 682.
-
-Underfull \hbox (badness 2635) in paragraph at lines 705--706
-[]\TU/lmr/m/n/10 Every GitHub repository url has the format []$[][][][][] [] [] [] [][][][][][] [] [][][] []
+Overfull \hbox (117.66pt too wide) in paragraph at lines 599--601
+[]\TU/lmr/m/n/10 Connect to the Pronto Data Transfer Node by typing \TU/lmtt/m/n/10 ssh your_netid@prontodtn.las.iastate.edu 
  []
 
 
-LaTeX Warning: Reference `signin-vpn' on page 21 undefined on input line 723.
+Overfull \hbox (14.47pt too wide) in paragraph at lines 601--602
+[]\TU/lmr/m/n/10 Type \TU/lmtt/m/n/10 cp -r /work/LAS/csafe-lab/your_netid/copy_from_this_folder/
+ []
 
-[21] [22]
+[19]
 
-LaTeX Warning: Reference `signin-vpn' on page 23 undefined on input line 799.
+LaTeX Warning: Reference `signin-vpn' on page 20 undefined on input line 638.
+
+[20]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 689.
+
+Underfull \hbox (badness 2635) in paragraph at lines 712--713
+[]\TU/lmr/m/n/10 Every GitHub repository url has the format []$[][][][][] [] [] [] [][][][][][] [] [][][] []
+ []
+
+[21]
+
+LaTeX Warning: Reference `signin-vpn' on page 22 undefined on input line 730.
+
+[22]
+
+LaTeX Warning: Reference `signin-vpn' on page 23 undefined on input line 806.
 
 [23]
 
-LaTeX Warning: Reference `signin-vpn' on page 24 undefined on input line 870.
+LaTeX Warning: Reference `signin-vpn' on page 24 undefined on input line 877.
 
 [24] [25]
 
-LaTeX Warning: Reference `signin-vpn' on page 26 undefined on input line 937.
+LaTeX Warning: Reference `signin-vpn' on page 26 undefined on input line 944.
 
 [26]
 
-LaTeX Warning: Reference `signin-vpn' on page 27 undefined on input line 1011.
+LaTeX Warning: Reference `signin-vpn' on page 27 undefined on input line 1018.
 
 [27] [28]
 
-LaTeX Warning: Reference `signin-vpn' on page 29 undefined on input line 1084.
+LaTeX Warning: Reference `signin-vpn' on page 29 undefined on input line 1088.
 
 [29]
 
@@ -821,19 +832,27 @@ LaTeX Warning: Reference `signin-vpn' on page 30 undefined on input line 1165.
 
 [30] [31]
 
-LaTeX Warning: Reference `signin-vpn' on page 32 undefined on input line 1252.
+LaTeX Warning: Reference `signin-vpn' on page 32 undefined on input line 1246.
 
 [32] [33]
 
-LaTeX Warning: Reference `signin-vpn' on page 34 undefined on input line 1329.
+LaTeX Warning: Reference `signin-vpn' on page 34 undefined on input line 1333.
 
-[34] [35]
+[34]
 
-LaTeX Warning: Reference `signin-vpn' on page 36 undefined on input line 1471.
+LaTeX Warning: Reference `signin-vpn' on page 35 undefined on input line 1410.
 
-[36]
+[35]
+
+LaTeX Warning: Reference `signin-vpn' on page 36 undefined on input line 1485.
+
+[36] [37] [38]
+
+LaTeX Warning: Reference `signin-vpn' on page 39 undefined on input line 1646.
+
+[39]
 No file _main.bbl.
-[37] (./_main.aux)
+[40] (./_main.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -841,12 +860,12 @@ Package rerunfilecheck Info: File `_main.out' has not changed.
 (rerunfilecheck)             Checksum: CE5B2D9035EBAB81B2EF858D21E955D2;3915.
  ) 
 Here is how much of TeX's memory you used:
- 17524 strings out of 478126
- 323498 string characters out of 5851199
- 775753 words of memory out of 5000000
- 37944 multiletter control sequences out of 15000+600000
+ 17526 strings out of 478126
+ 323569 string characters out of 5851199
+ 774928 words of memory out of 5000000
+ 37946 multiletter control sequences out of 15000+600000
  475734 words of font info for 84 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  86i,6n,121p,860b,501s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on _main.pdf (37 pages).
+Output written on _main.pdf (40 pages).

@@ -70,15 +70,17 @@ Each user also has a home folder. These folders have limited storage so research
 1. Open the csafe-lab folder
 1. Create a new folder with your net-id as the name
 
-### Transfering data from ProntoDTN to LSS
+
+### Transfering large amounts of data from ProntoDTN to LSS using SSH
 If you want to transfer large amounts of data from the Pronto Data Transfer Node (ProntoDTN) to Large Scale Storage (LSS) do the following:
 
 1. Open the PowerShell on Windows or the Terminal on Mac.
 1. Connect to the Pronto Data Transfer Node by typing `ssh your_netid@prontodtn.las.iastate.edu`
+1. Enter your netid password
 1. Type `cp -r /work/LAS/csafe-lab/your_netid/copy_from_this_folder/ /lss/research/csafe-handwriting/copy_to_this_folder/`
 
 
-### Transfering large amounts of data using Globus
+### Transfering large amounts of data between ProntoDTN and your computer using Globus
 
 If you have large amounts of data to transfer, researchIT recommends that you use Globus Connect Personal. Go to https://researchit.las.iastate.edu/how-transfer-files-pronto-globus to download Globus.
 
@@ -728,6 +730,13 @@ INFO [2022-06-17 15:05:56] Finished iteration 4
     $ scancel jobid
     ```` 
 where jobid is the six-digit number for the job you want to cancel. 
+
+### View information about a job
+1. In the pronto terminal (not in an interactive session), type
+    ```{bash cancel, eval=FALSE}
+    $ scontrol show job jobid
+    ```` 
+
 
 ## Install the handwriter package
 CSAFE created an R package for statistical handwriting analysis called handwriter. The handwriter package requires a number of other R packages, some of which caused errors when I tried to install handwriter in an interactive session on Pronto following the instructions in \@ref(ex-interactive-install). ResearchIT helped me figure out how to install the problem packages and ultimately install handwriter. This section records the step-by-step details of how I was able to install handwriter. My hope is that you will also be able to sucessfully install handwriter if you follow these steps. If you run into problems, email researchit@iastate.edu.
