@@ -733,7 +733,7 @@ where jobid is the six-digit number for the job you want to cancel.
 
 ### View information about a job
 1. In the pronto terminal (not in an interactive session), type
-    ```{bash cancel, eval=FALSE}
+    ```{bash job info, eval=FALSE}
     $ scontrol show job jobid
     ```` 
 

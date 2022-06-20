@@ -19,8 +19,8 @@ trouble-shooting
 pronto
 connecting-to-pronto
 prontodtn
-transfering-data-from-prontodtn-to-lss
-transfering-large-amounts-of-data-using-globus
+transfering-large-amounts-of-data-from-prontodtn-to-lss-using-ssh
+transfering-large-amounts-of-data-between-prontodtn-and-your-computer-using-globus
 running-an-r-script-on-pronto
 interactive-sessions
 ex-start-interactive
@@ -43,6 +43,7 @@ list-loaded-modules
 purge-all-loaded-modules
 view-your-jobs-in-the-pronto-queue
 cancel-a-job
+view-information-about-a-job
 install-the-handwriter-package
 trouble-shooting-1
 ex-line-breaks

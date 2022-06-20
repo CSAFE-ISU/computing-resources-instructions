@@ -6,10 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Pronto | CSAFE Computing Resources</title>
   <meta name="description" content="This book gives the reader step-by-step instuctions for accessing and using CSAFE computing resources." />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Pronto | CSAFE Computing Resources" />
   <meta property="og:type" content="book" />
+  
   
   <meta property="og:description" content="This book gives the reader step-by-step instuctions for accessing and using CSAFE computing resources." />
   <meta name="github-repo" content="CSAFE-ISU/computing-resources-instructions" />
@@ -23,7 +24,7 @@
 <meta name="author" content="Stephanie Reinders" />
 
 
-<meta name="date" content="2022-06-17" />
+<meta name="date" content="2022-06-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,6 +33,7 @@
   
 <link rel="prev" href="rstudio-server.html"/>
 
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -49,9 +51,8 @@
 
 
 
-<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
-<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -169,8 +170,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.1" data-path="pronto.html"><a href="pronto.html#connecting-to-pronto"><i class="fa fa-check"></i><b>5.1</b> Connecting to the Pronto job scheduler</a></li>
 <li class="chapter" data-level="5.2" data-path="pronto.html"><a href="pronto.html#prontodtn"><i class="fa fa-check"></i><b>5.2</b> Connecting to the Pronto data transfer node</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="pronto.html"><a href="pronto.html#transfering-data-from-prontodtn-to-lss"><i class="fa fa-check"></i><b>5.2.1</b> Transfering data from ProntoDTN to LSS</a></li>
-<li class="chapter" data-level="5.2.2" data-path="pronto.html"><a href="pronto.html#transfering-large-amounts-of-data-using-globus"><i class="fa fa-check"></i><b>5.2.2</b> Transfering large amounts of data using Globus</a></li>
+<li class="chapter" data-level="5.2.1" data-path="pronto.html"><a href="pronto.html#transfering-large-amounts-of-data-from-prontodtn-to-lss-using-ssh"><i class="fa fa-check"></i><b>5.2.1</b> Transfering large amounts of data from ProntoDTN to LSS using SSH</a></li>
+<li class="chapter" data-level="5.2.2" data-path="pronto.html"><a href="pronto.html#transfering-large-amounts-of-data-between-prontodtn-and-your-computer-using-globus"><i class="fa fa-check"></i><b>5.2.2</b> Transfering large amounts of data between ProntoDTN and your computer using Globus</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="pronto.html"><a href="pronto.html#running-an-r-script-on-pronto"><i class="fa fa-check"></i><b>5.3</b> Running an R script on Pronto</a></li>
 <li class="chapter" data-level="5.4" data-path="pronto.html"><a href="pronto.html#interactive-sessions"><i class="fa fa-check"></i><b>5.4</b> Interactive Sessions</a>
@@ -199,6 +200,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6.2" data-path="pronto.html"><a href="pronto.html#purge-all-loaded-modules"><i class="fa fa-check"></i><b>5.6.2</b> Purge all loaded modules</a></li>
 <li class="chapter" data-level="5.6.3" data-path="pronto.html"><a href="pronto.html#view-your-jobs-in-the-pronto-queue"><i class="fa fa-check"></i><b>5.6.3</b> View your job(s) in the Pronto queue</a></li>
 <li class="chapter" data-level="5.6.4" data-path="pronto.html"><a href="pronto.html#cancel-a-job"><i class="fa fa-check"></i><b>5.6.4</b> Cancel a job</a></li>
+<li class="chapter" data-level="5.6.5" data-path="pronto.html"><a href="pronto.html#view-information-about-a-job"><i class="fa fa-check"></i><b>5.6.5</b> View information about a job</a></li>
 </ul></li>
 <li class="chapter" data-level="5.7" data-path="pronto.html"><a href="pronto.html#install-the-handwriter-package"><i class="fa fa-check"></i><b>5.7</b> Install the handwriter package</a></li>
 <li class="chapter" data-level="5.8" data-path="pronto.html"><a href="pronto.html#trouble-shooting-1"><i class="fa fa-check"></i><b>5.8</b> Trouble-Shooting</a>
@@ -226,10 +228,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="pronto" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">Chapter 5</span> Pronto<a href="pronto.html#pronto" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="connecting-to-pronto" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> Connecting to the Pronto job scheduler<a href="pronto.html#connecting-to-pronto" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="pronto" class="section level1" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Pronto</h1>
+<div id="connecting-to-pronto" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Connecting to the Pronto job scheduler</h2>
 <p>You connect to the pronto job scheduler through the PowerShell on Windows or the Terminal on Mac.</p>
 <p><strong>Windows</strong></p>
 <ol style="list-style-type: decimal">
@@ -269,8 +271,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Type your net-id password</li>
 </ol>
 </div>
-<div id="prontodtn" class="section level2 hasAnchor" number="5.2">
-<h2><span class="header-section-number">5.2</span> Connecting to the Pronto data transfer node<a href="pronto.html#prontodtn" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="prontodtn" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Connecting to the Pronto data transfer node</h2>
 <p>You need to transfer your data to Pronto using the Pronto data transfer node (ProntoDTN). CSAFE has a folder for CSAFE users on ProntoDTN. The file path is <code>prontodtn.las.iastate.edu &gt; work &gt; LAS &gt; csafe-lab</code>. Create a folder for yourself in the csafe-lab folder. Most users use their net-id as the folder name, but I think you can name it anything you want.</p>
 <p>The work directory is not backed-up so don’t use this folder for long term storage.</p>
 <p>Each user also has a home folder. These folders have limited storage so researchIT recommends only placing small files in the home folder. I find it easier to store everything in my work folder and not use my home folder at all.</p>
@@ -303,23 +305,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Open the csafe-lab folder</li>
 <li>Create a new folder with your net-id as the name</li>
 </ol>
-<div id="transfering-data-from-prontodtn-to-lss" class="section level3 hasAnchor" number="5.2.1">
-<h3><span class="header-section-number">5.2.1</span> Transfering data from ProntoDTN to LSS<a href="pronto.html#transfering-data-from-prontodtn-to-lss" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="transfering-large-amounts-of-data-from-prontodtn-to-lss-using-ssh" class="section level3" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Transfering large amounts of data from ProntoDTN to LSS using SSH</h3>
 <p>If you want to transfer large amounts of data from the Pronto Data Transfer Node (ProntoDTN) to Large Scale Storage (LSS) do the following:</p>
 <ol style="list-style-type: decimal">
 <li>Open the PowerShell on Windows or the Terminal on Mac.</li>
 <li>Connect to the Pronto Data Transfer Node by typing <code>ssh your_netid@prontodtn.las.iastate.edu</code></li>
+<li>Enter your netid password</li>
 <li>Type <code>cp -r /work/LAS/csafe-lab/your_netid/copy_from_this_folder/ /lss/research/csafe-handwriting/copy_to_this_folder/</code></li>
 </ol>
 </div>
-<div id="transfering-large-amounts-of-data-using-globus" class="section level3 hasAnchor" number="5.2.2">
-<h3><span class="header-section-number">5.2.2</span> Transfering large amounts of data using Globus<a href="pronto.html#transfering-large-amounts-of-data-using-globus" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="transfering-large-amounts-of-data-between-prontodtn-and-your-computer-using-globus" class="section level3" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Transfering large amounts of data between ProntoDTN and your computer using Globus</h3>
 <p>If you have large amounts of data to transfer, researchIT recommends that you use Globus Connect Personal. Go to <a href="https://researchit.las.iastate.edu/how-transfer-files-pronto-globus" class="uri">https://researchit.las.iastate.edu/how-transfer-files-pronto-globus</a> to download Globus.</p>
 <p>Instructions for transferring data with Globus are here: <a href="https://docs.globus.org/how-to/get-started/" class="uri">https://docs.globus.org/how-to/get-started/</a>.</p>
 </div>
 </div>
-<div id="running-an-r-script-on-pronto" class="section level2 hasAnchor" number="5.3">
-<h2><span class="header-section-number">5.3</span> Running an R script on Pronto<a href="pronto.html#running-an-r-script-on-pronto" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="running-an-r-script-on-pronto" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Running an R script on Pronto</h2>
 <p>There are two ways to run a script on Pronto:</p>
 <ol style="list-style-type: decimal">
 <li>in an interactive session</li>
@@ -328,10 +331,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>If I understand correctly, an interactive session is intended for troubleshooting your code. ResearchIT says, “Once you’ve got your program running in an interactive session please switch to an sbatch script if possible.” [<a href="https://researchit.las.iastate.edu/pronto?msclkid=3263c889c17811ec81e13068586d8872" class="uri">https://researchit.las.iastate.edu/pronto?msclkid=3263c889c17811ec81e13068586d8872</a>]</p>
 <p>Pronto uses the Simple Linux Utility for Resource Management (Slurm) to allocate resources (computer nodes and clusters) to users [<a href="https://en.wikipedia.org/wiki/Slurm_Workload_Manager" class="uri">https://en.wikipedia.org/wiki/Slurm_Workload_Manager</a>]. In order to run your script as a batch job, you need to write a Slurm file that includes information about your job and the resources your would like to request.</p>
 </div>
-<div id="interactive-sessions" class="section level2 hasAnchor" number="5.4">
-<h2><span class="header-section-number">5.4</span> Interactive Sessions<a href="pronto.html#interactive-sessions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="ex-start-interactive" class="section level3 hasAnchor" number="5.4.1">
-<h3><span class="header-section-number">5.4.1</span> Example: Start an interactive session<a href="pronto.html#ex-start-interactive" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="interactive-sessions" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Interactive Sessions</h2>
+<div id="ex-start-interactive" class="section level3" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Example: Start an interactive session</h3>
 <ol style="list-style-type: decimal">
 <li><p>If you are off campus, connect to the ISU VPN (see <a href="#signin-vpn"><strong>??</strong></a>)</p></li>
 <li><p>Sign-in to Pronto (see <a href="pronto.html#pronto">5</a>).</p></li>
@@ -348,15 +351,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="pronto.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> R</span></code></pre></div></li>
 </ol>
 </div>
-<div id="ex-interactive-install" class="section level3 hasAnchor" number="5.4.2">
-<h3><span class="header-section-number">5.4.2</span> Example: Install a package from CRAN<a href="pronto.html#ex-interactive-install" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="ex-interactive-install" class="section level3" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> Example: Install a package from CRAN</h3>
 <ol style="list-style-type: decimal">
 <li>Start an interactive R session (see <a href="pronto.html#ex-start-interactive">5.4.1</a>)</li>
 <li><div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="pronto.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> install.packages<span class="kw">(</span><span class="st">&quot;dplyr&quot;</span><span class="ex">,lib=</span><span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span><span class="ex">,</span> repos=<span class="st">&quot;https://mirror.las.iastate.edu/CRAN&quot;</span><span class="kw">)</span></span></code></pre></div></li>
 </ol>
 </div>
-<div id="ex-interactive-install-github" class="section level3 hasAnchor" number="5.4.3">
-<h3><span class="header-section-number">5.4.3</span> Example: Install a package from Github<a href="pronto.html#ex-interactive-install-github" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="ex-interactive-install-github" class="section level3" number="5.4.3">
+<h3><span class="header-section-number">5.4.3</span> Example: Install a package from Github</h3>
 <p>Occasionally, you might want to install a package that isn’t available on CRAN but is available on GitHub. This example shows how to do that on Pronto.</p>
 <ol style="list-style-type: decimal">
 <li><p>Start an interactive R session (see <a href="pronto.html#ex-start-interactive">5.4.1</a>)</p></li>
@@ -367,10 +370,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 </div>
 </div>
-<div id="batch-jobs" class="section level2 hasAnchor" number="5.5">
-<h2><span class="header-section-number">5.5</span> Batch Jobs<a href="pronto.html#batch-jobs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="ex-basic" class="section level3 hasAnchor" number="5.5.1">
-<h3><span class="header-section-number">5.5.1</span> Example: A basic R script<a href="pronto.html#ex-basic" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="batch-jobs" class="section level2" number="5.5">
+<h2><span class="header-section-number">5.5</span> Batch Jobs</h2>
+<div id="ex-basic" class="section level3" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> Example: A basic R script</h3>
 <ol style="list-style-type: decimal">
 <li><p>If you are off campus, connect to the ISU VPN (see <a href="#signin-vpn"><strong>??</strong></a>)</p></li>
 <li><p>Sign-in to Pronto (see <a href="pronto.html#pronto">5</a>).</p></li>
@@ -408,8 +411,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>and <code>job_&lt;job#&gt;_err.txt</code> should be blank. If the error file isn’t blank, troubleshoot the error(s). If you get stuck, email <a href="mailto:researchit@iastate.edu" class="email">researchit@iastate.edu</a>.</p></li>
 </ol>
 </div>
-<div id="ex-save" class="section level3 hasAnchor" number="5.5.2">
-<h3><span class="header-section-number">5.5.2</span> Example: Save a dataframe to a CSV file<a href="pronto.html#ex-save" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="ex-save" class="section level3" number="5.5.2">
+<h3><span class="header-section-number">5.5.2</span> Example: Save a dataframe to a CSV file</h3>
 <p>In this example, I will show you how to save a dataframe to a csv file.</p>
 <ol style="list-style-type: decimal">
 <li><p>If you are off campus, connect to the ISU VPN (see <a href="#signin-vpn"><strong>??</strong></a>)</p></li>
@@ -449,8 +452,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>The dataframe should be saved in a file <code>data.csv</code> in your csafe-lab work folder. There should be two other new files – <code>data.csv</code>, <code>job_&lt;job#&gt;_err.txt</code> and <code>job_&lt;job#&gt;_out.txt</code> – in your csafe-lab work folder as well. If the error file isn’t blank, troubleshoot the error(s). If you get stuck, email <a href="mailto:researchit@iastate.edu" class="email">researchit@iastate.edu</a>.</p></li>
 </ol>
 </div>
-<div id="ex-load" class="section level3 hasAnchor" number="5.5.3">
-<h3><span class="header-section-number">5.5.3</span> Example: Load data from a CSV file<a href="pronto.html#ex-load" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="ex-load" class="section level3" number="5.5.3">
+<h3><span class="header-section-number">5.5.3</span> Example: Load data from a CSV file</h3>
 <p>In this example, we will load the csv file <code>data.csv</code> that we saved in Example <a href="pronto.html#ex-save">5.5.2</a>.</p>
 <ol style="list-style-type: decimal">
 <li><p>If you are off campus, connect to the ISU VPN (see <a href="#signin-vpn"><strong>??</strong></a>)</p></li>
@@ -485,8 +488,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Open the file <code>job_&lt;job#&gt;_out.txt</code> in your csafe-lab work folder and make sure that the first six lines of the dataframe were printed.</p></li>
 </ol>
 </div>
-<div id="ex-batch-install" class="section level3 hasAnchor" number="5.5.4">
-<h3><span class="header-section-number">5.5.4</span> Example: Install R packages<a href="pronto.html#ex-batch-install" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="ex-batch-install" class="section level3" number="5.5.4">
+<h3><span class="header-section-number">5.5.4</span> Example: Install R packages</h3>
 <p>Just like in Rstudio on your local machine, you will need to install any R packages that you want use. In this example, we will install futile.logger, doParallel, doRNG, and tidyverse so that we can use these packages in future examples.</p>
 <ol style="list-style-type: decimal">
 <li><p>If you are off campus, connect to the ISU VPN (see <a href="#signin-vpn"><strong>??</strong></a>)</p></li>
@@ -527,8 +530,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>There should be two other new files – <code>data.csv</code>, <code>job_&lt;job#&gt;_err.txt</code> and <code>job_&lt;job#&gt;_out.txt</code> – in your csafe-lab work folder.</p></li>
 </ol>
 </div>
-<div id="ex-parallel" class="section level3 hasAnchor" number="5.5.5">
-<h3><span class="header-section-number">5.5.5</span> Example: Run code in parallel<a href="pronto.html#ex-parallel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="ex-parallel" class="section level3" number="5.5.5">
+<h3><span class="header-section-number">5.5.5</span> Example: Run code in parallel</h3>
 <p>The main benefit of Pronto is that it can run code in parallel. In this example, I will show you how to run a for loop in parallel using the doParallel library. R has other packages for parallel computing, but ResearchIT uses doParallel in their how-to [<a href="https://researchit.las.iastate.edu/how-run-r-pronto" class="uri">https://researchit.las.iastate.edu/how-run-r-pronto</a>] so that’s what I will use here.</p>
 <p>If you completed Example <a href="pronto.html#ex-batch-install">5.5.4</a> the doParallel package will already be installed. If you need to install the doParallel package see Examples <a href="pronto.html#ex-interactive-install">5.4.2</a> or <a href="pronto.html#ex-batch-install">5.5.4</a> for instructions.</p>
 <ol style="list-style-type: decimal">
@@ -571,8 +574,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>The results of the parallel loop should be saved in <code>parallel.txt</code> in your csafe-lab work folder.</p></li>
 </ol>
 </div>
-<div id="ex-check-parallel" class="section level3 hasAnchor" number="5.5.6">
-<h3><span class="header-section-number">5.5.6</span> Example: Check whether code is running in parallel<a href="pronto.html#ex-check-parallel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="ex-check-parallel" class="section level3" number="5.5.6">
+<h3><span class="header-section-number">5.5.6</span> Example: Check whether code is running in parallel</h3>
 <ol style="list-style-type: decimal">
 <li><p>If you are off campus, connect to the ISU VPN (see <a href="#signin-vpn"><strong>??</strong></a>)</p></li>
 <li><p>Sign-in to Pronto (see <a href="pronto.html#pronto">5</a>).</p></li>
@@ -617,8 +620,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>The script should have created 10 RDS files in your csafe-lab work folder. Check the times recorded in each file. The first file should contain a time after the other files.</p></li>
 </ol>
 </div>
-<div id="ex-seed" class="section level3 hasAnchor" number="5.5.7">
-<h3><span class="header-section-number">5.5.7</span> Example: Set the seed for the random number generator<a href="pronto.html#ex-seed" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="ex-seed" class="section level3" number="5.5.7">
+<h3><span class="header-section-number">5.5.7</span> Example: Set the seed for the random number generator</h3>
 <p>If you run Example <a href="pronto.html#ex-parallel">5.5.5</a> multiple times, the numbers sampled from the normal distribution will likely be different each time. If you want to make the sample reproducible
 (produce the same sample each time), set the seed for the random number generator. The most common way to set a seed is with the <code>set.seed()</code> function. This function does not work with <code>%dopar%</code> from the doParallel package, but it does work with <code>%dorng%</code>.</p>
 <ol style="list-style-type: decimal">
@@ -667,8 +670,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Open the <code>job_&lt;job#&gt;_out.txt</code> file to make sure that the result of <code>identical(r1, r2)</code> is <code>TRUE</code>.</p></li>
 </ol>
 </div>
-<div id="ex-packages-parallel" class="section level3 hasAnchor" number="5.5.8">
-<h3><span class="header-section-number">5.5.8</span> Example: Use functions from dplyr and magrittr in parallel<a href="pronto.html#ex-packages-parallel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="ex-packages-parallel" class="section level3" number="5.5.8">
+<h3><span class="header-section-number">5.5.8</span> Example: Use functions from dplyr and magrittr in parallel</h3>
 <p>The previous parallel examples used the base R functions <code>rnorm</code> and <code>runif</code>. If we want to use
 functions from packages that we install, we need to pass the package names to the <code>%dorng%</code> operator. We will learn how to do this in this example.</p>
 <p>If you haven’t already installed the <code>tidyverse</code> package, follow the steps in Example 4 to install the <code>tidyverse</code> or install <code>dplyr</code> and <code>magrittr</code> separately.</p>
@@ -729,8 +732,8 @@ functions from packages that we install, we need to pass the package names to th
 <li><p>Open the <code>job_&lt;job#&gt;_out.txt</code> file to make sure that the result of <code>identical(r1, r2)</code> is <code>TRUE</code> and <code>identical(r1, r3)</code> is <code>FALSE</code>.</p></li>
 </ol>
 </div>
-<div id="example-use-a-user-defined-function-to-save-results-inside-a-parallel-loop" class="section level3 hasAnchor" number="5.5.9">
-<h3><span class="header-section-number">5.5.9</span> Example: Use a user-defined function to save results inside a parallel loop<a href="pronto.html#example-use-a-user-defined-function-to-save-results-inside-a-parallel-loop" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="example-use-a-user-defined-function-to-save-results-inside-a-parallel-loop" class="section level3" number="5.5.9">
+<h3><span class="header-section-number">5.5.9</span> Example: Use a user-defined function to save results inside a parallel loop</h3>
 <ol style="list-style-type: decimal">
 <li><p>If you are off campus, connect to the ISU VPN (see <a href="#signin-vpn"><strong>??</strong></a>)</p></li>
 <li><p>Sign-in to Pronto (see <a href="pronto.html#pronto">5</a>).</p></li>
@@ -776,8 +779,8 @@ functions from packages that we install, we need to pass the package names to th
 <li><p>There should be ten rds files names sample_1.rds, sample_2.rds, etc. in your csafe-lab folder.</p></li>
 </ol>
 </div>
-<div id="ex-log" class="section level3 hasAnchor" number="5.5.10">
-<h3><span class="header-section-number">5.5.10</span> Example: Create a log file<a href="pronto.html#ex-log" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="ex-log" class="section level3" number="5.5.10">
+<h3><span class="header-section-number">5.5.10</span> Example: Create a log file</h3>
 <p>In this example we will create a simple log file using the <code>futile.logger</code> package.</p>
 <ol style="list-style-type: decimal">
 <li><p>If you are off campus, connect to the ISU VPN (see <a href="#signin-vpn"><strong>??</strong></a>)</p></li>
@@ -819,8 +822,8 @@ functions from packages that we install, we need to pass the package names to th
 <span id="cb40-2"><a href="pronto.html#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="ex">INFO</span> [2022-05-04 10:42:37] variable a = 5</span></code></pre></div></li>
 </ol>
 </div>
-<div id="example-write-a-log-message-inside-a-parallel-loop" class="section level3 hasAnchor" number="5.5.11">
-<h3><span class="header-section-number">5.5.11</span> Example: Write a log message inside a parallel loop<a href="pronto.html#example-write-a-log-message-inside-a-parallel-loop" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="example-write-a-log-message-inside-a-parallel-loop" class="section level3" number="5.5.11">
+<h3><span class="header-section-number">5.5.11</span> Example: Write a log message inside a parallel loop</h3>
 <ol style="list-style-type: decimal">
 <li><p>If you are off campus, connect to the ISU VPN (see <a href="#signin-vpn"><strong>??</strong></a>)</p></li>
 <li><p>Sign-in to Pronto (see <a href="pronto.html#pronto">5</a>).</p></li>
@@ -881,71 +884,78 @@ functions from packages that we install, we need to pass the package names to th
 </ol>
 </div>
 </div>
-<div id="pronto-commands" class="section level2 hasAnchor" number="5.6">
-<h2><span class="header-section-number">5.6</span> Pronto Commands<a href="pronto.html#pronto-commands" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="list-loaded-modules" class="section level3 hasAnchor" number="5.6.1">
-<h3><span class="header-section-number">5.6.1</span> List loaded modules<a href="pronto.html#list-loaded-modules" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="pronto-commands" class="section level2" number="5.6">
+<h2><span class="header-section-number">5.6</span> Pronto Commands</h2>
+<div id="list-loaded-modules" class="section level3" number="5.6.1">
+<h3><span class="header-section-number">5.6.1</span> List loaded modules</h3>
 <ol style="list-style-type: decimal">
 <li><p>In an interactive session, type</p>
 <div class="sourceCode" id="cb45"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb45-1"><a href="pronto.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> module list</span></code></pre></div></li>
 </ol>
 </div>
-<div id="purge-all-loaded-modules" class="section level3 hasAnchor" number="5.6.2">
-<h3><span class="header-section-number">5.6.2</span> Purge all loaded modules<a href="pronto.html#purge-all-loaded-modules" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="purge-all-loaded-modules" class="section level3" number="5.6.2">
+<h3><span class="header-section-number">5.6.2</span> Purge all loaded modules</h3>
 <ol style="list-style-type: decimal">
 <li><p>In an interactive session, type</p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb46-1"><a href="pronto.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> module purge</span></code></pre></div></li>
 </ol>
 </div>
-<div id="view-your-jobs-in-the-pronto-queue" class="section level3 hasAnchor" number="5.6.3">
-<h3><span class="header-section-number">5.6.3</span> View your job(s) in the Pronto queue<a href="pronto.html#view-your-jobs-in-the-pronto-queue" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="view-your-jobs-in-the-pronto-queue" class="section level3" number="5.6.3">
+<h3><span class="header-section-number">5.6.3</span> View your job(s) in the Pronto queue</h3>
 <ol style="list-style-type: decimal">
 <li><p>In pronto terminal (not in an interactive session), type</p>
 <div class="sourceCode" id="cb47"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb47-1"><a href="pronto.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> squeue <span class="at">-u</span> your-netid</span></code></pre></div></li>
 </ol>
 </div>
-<div id="cancel-a-job" class="section level3 hasAnchor" number="5.6.4">
-<h3><span class="header-section-number">5.6.4</span> Cancel a job<a href="pronto.html#cancel-a-job" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="cancel-a-job" class="section level3" number="5.6.4">
+<h3><span class="header-section-number">5.6.4</span> Cancel a job</h3>
 <ol style="list-style-type: decimal">
 <li><p>In pronto terminal (not in an interactive session), type</p>
 <div class="sourceCode" id="cb48"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb48-1"><a href="pronto.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> scancel jobid</span></code></pre></div>
 <p>where jobid is the six-digit number for the job you want to cancel.</p></li>
 </ol>
 </div>
+<div id="view-information-about-a-job" class="section level3" number="5.6.5">
+<h3><span class="header-section-number">5.6.5</span> View information about a job</h3>
+<ol style="list-style-type: decimal">
+<li><p>In the pronto terminal (not in an interactive session), type</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb49-1"><a href="pronto.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> scontrol show job jobid</span></code></pre></div></li>
+</ol>
 </div>
-<div id="install-the-handwriter-package" class="section level2 hasAnchor" number="5.7">
-<h2><span class="header-section-number">5.7</span> Install the handwriter package<a href="pronto.html#install-the-handwriter-package" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="install-the-handwriter-package" class="section level2" number="5.7">
+<h2><span class="header-section-number">5.7</span> Install the handwriter package</h2>
 <p>CSAFE created an R package for statistical handwriting analysis called handwriter. The handwriter package requires a number of other R packages, some of which caused errors when I tried to install handwriter in an interactive session on Pronto following the instructions in <a href="pronto.html#ex-interactive-install">5.4.2</a>. ResearchIT helped me figure out how to install the problem packages and ultimately install handwriter. This section records the step-by-step details of how I was able to install handwriter. My hope is that you will also be able to sucessfully install handwriter if you follow these steps. If you run into problems, email <a href="mailto:researchit@iastate.edu" class="email">researchit@iastate.edu</a>.</p>
 <ol style="list-style-type: decimal">
 <li><p>If you are off campus, connect to the ISU VPN (see <a href="#signin-vpn"><strong>??</strong></a>)</p></li>
 <li><p>Sign-in to Pronto (see <a href="pronto.html#pronto">5</a>).</p></li>
 <li><p>Some of the packages used by handwriter are only available on Pronto for R 4.0.4. Start the R 4.0.4 interpreter in an interactive session on Pronto.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb49-1"><a href="pronto.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> srun <span class="at">--nodes</span> 1 <span class="at">--tasks</span> 4 <span class="at">--partition</span> interactive <span class="at">--time</span> 01:00:00 <span class="at">--pty</span> bash</span>
-<span id="cb49-2"><a href="pronto.html#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> module purge</span>
-<span id="cb49-3"><a href="pronto.html#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> module load gcc/10.2.0-zuvaafu</span>
-<span id="cb49-4"><a href="pronto.html#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> module load r/4.0.4-py3-4khjixy</span>
-<span id="cb49-5"><a href="pronto.html#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> R</span></code></pre></div></li>
+<div class="sourceCode" id="cb50"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb50-1"><a href="pronto.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> srun <span class="at">--nodes</span> 1 <span class="at">--tasks</span> 4 <span class="at">--partition</span> interactive <span class="at">--time</span> 01:00:00 <span class="at">--pty</span> bash</span>
+<span id="cb50-2"><a href="pronto.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> module purge</span>
+<span id="cb50-3"><a href="pronto.html#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> module load gcc/10.2.0-zuvaafu</span>
+<span id="cb50-4"><a href="pronto.html#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> module load r/4.0.4-py3-4khjixy</span>
+<span id="cb50-5"><a href="pronto.html#cb50-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> R</span></code></pre></div></li>
 <li><p>Try to install the handwriter package</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb50-1"><a href="pronto.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> install.packages<span class="kw">(</span><span class="st">&quot;handwriter&quot;</span><span class="ex">,lib=</span><span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span><span class="ex">,</span> repos=<span class="st">&quot;https://mirror.las.iastate.edu/CRAN&quot;</span><span class="kw">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb51-1"><a href="pronto.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> install.packages<span class="kw">(</span><span class="st">&quot;handwriter&quot;</span><span class="ex">,lib=</span><span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span><span class="ex">,</span> repos=<span class="st">&quot;https://mirror.las.iastate.edu/CRAN&quot;</span><span class="kw">)</span></span></code></pre></div>
 <p>I received error messages stating that the packages igraph, randomForest, and magick could not be installed. I had to install these packages separately.</p></li>
 <li><p>Install igraph</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb51-1"><a href="pronto.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> install.packages<span class="kw">(</span><span class="st">&quot;igraph&quot;</span><span class="ex">,lib=</span><span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span><span class="ex">,</span> repos=<span class="st">&quot;https://mirror.las.iastate.edu/CRAN&quot;</span><span class="kw">)</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb52"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb52-1"><a href="pronto.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> install.packages<span class="kw">(</span><span class="st">&quot;igraph&quot;</span><span class="ex">,lib=</span><span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span><span class="ex">,</span> repos=<span class="st">&quot;https://mirror.las.iastate.edu/CRAN&quot;</span><span class="kw">)</span></span></code></pre></div></li>
 <li><p>Then randomForest</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb52-1"><a href="pronto.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> install.packages<span class="kw">(</span><span class="st">&quot;https://cran.r-project.org/src/contrib/Archive/randomForest/randomForest_4.6-14.tar.gz&quot;</span><span class="ex">,</span> repos=NULL, type=<span class="st">&quot;source&quot;</span>,lib=<span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span><span class="kw">)</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb53"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb53-1"><a href="pronto.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> install.packages<span class="kw">(</span><span class="st">&quot;https://cran.r-project.org/src/contrib/Archive/randomForest/randomForest_4.6-14.tar.gz&quot;</span><span class="ex">,</span> repos=NULL, type=<span class="st">&quot;source&quot;</span>,lib=<span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span><span class="kw">)</span></span></code></pre></div></li>
 <li><p>Install magick</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb53-1"><a href="pronto.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> install.packages<span class="kw">(</span><span class="st">&quot;magick&quot;</span><span class="ex">,</span> </span>
-<span id="cb53-2"><a href="pronto.html#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="ex">configure.vars=c</span><span class="er">(</span><span class="st">&quot;INCLUDE_DIR=&#39;. -D_GLIBCXX_USE_CXX11_ABI=0 -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/opt/rit/spack-app/linux-rhel7-x86_64/gcc-4.8.5/image-magick-7.0.5-9-6xplmhr3zv6pu2frzsuyof2coe4tuguh/include/ImageMagick-7&#39; LIB_DIR=&#39;. -D_GLIBCXX_USE_CXX11_ABI=0 -Wl,-rpath,/opt/rit/spack-app/linux-rhel7-x86_64/gcc-4.8.5/image-magick-7.0.5-9-6xplmhr3zv6pu2frzsuyof2coe4tuguh/lib -L/opt/rit/spack-app/linux-rhel7-x86_64/gcc-4.8.5/image-magick-7.0.5-9-6xplmhr3zv6pu2frzsuyof2coe4tuguh/lib -lMagick++-7.Q16HDRI -lMagickWand-7.Q16HDRI -lMagickCore-7.Q16HDRI #&#39;&quot;</span><span class="kw">)</span><span class="ex">,</span></span>
-<span id="cb53-3"><a href="pronto.html#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="va">lib</span><span class="op">=</span><span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span>,</span>
-<span id="cb53-4"><a href="pronto.html#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="va">repos</span><span class="op">=</span><span class="st">&quot;https://mirror.las.iastate.edu/CRAN&quot;</span><span class="kw">)</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb54"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb54-1"><a href="pronto.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> install.packages<span class="kw">(</span><span class="st">&quot;magick&quot;</span><span class="ex">,</span> </span>
+<span id="cb54-2"><a href="pronto.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="ex">configure.vars=c</span><span class="er">(</span><span class="st">&quot;INCLUDE_DIR=&#39;. -D_GLIBCXX_USE_CXX11_ABI=0 -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/opt/rit/spack-app/linux-rhel7-x86_64/gcc-4.8.5/image-magick-7.0.5-9-6xplmhr3zv6pu2frzsuyof2coe4tuguh/include/ImageMagick-7&#39; LIB_DIR=&#39;. -D_GLIBCXX_USE_CXX11_ABI=0 -Wl,-rpath,/opt/rit/spack-app/linux-rhel7-x86_64/gcc-4.8.5/image-magick-7.0.5-9-6xplmhr3zv6pu2frzsuyof2coe4tuguh/lib -L/opt/rit/spack-app/linux-rhel7-x86_64/gcc-4.8.5/image-magick-7.0.5-9-6xplmhr3zv6pu2frzsuyof2coe4tuguh/lib -lMagick++-7.Q16HDRI -lMagickWand-7.Q16HDRI -lMagickCore-7.Q16HDRI #&#39;&quot;</span><span class="kw">)</span><span class="ex">,</span></span>
+<span id="cb54-3"><a href="pronto.html#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="va">lib</span><span class="op">=</span><span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span>,</span>
+<span id="cb54-4"><a href="pronto.html#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="va">repos</span><span class="op">=</span><span class="st">&quot;https://mirror.las.iastate.edu/CRAN&quot;</span><span class="kw">)</span></span></code></pre></div></li>
 </ol>
 </div>
-<div id="trouble-shooting-1" class="section level2 hasAnchor" number="5.8">
-<h2><span class="header-section-number">5.8</span> Trouble-Shooting<a href="pronto.html#trouble-shooting-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="ex-line-breaks" class="section level3 hasAnchor" number="5.8.1">
-<h3><span class="header-section-number">5.8.1</span> Line breaks error<a href="pronto.html#ex-line-breaks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="trouble-shooting-1" class="section level2" number="5.8">
+<h2><span class="header-section-number">5.8</span> Trouble-Shooting</h2>
+<div id="ex-line-breaks" class="section level3" number="5.8.1">
+<h3><span class="header-section-number">5.8.1</span> Line breaks error</h3>
 <p>If you are using Windows and you try to run a text file created on Windows on Pronto, you will likely get the following error:</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb54-1"><a href="pronto.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch:</span> error: Batch script contains DOS line breaks <span class="er">(</span><span class="ex">\\r\\n</span><span class="kw">)</span></span>
-<span id="cb54-2"><a href="pronto.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch:</span> error: instead of expected UNIX line breaks <span class="er">(</span><span class="ex">\\n</span><span class="kw">)</span><span class="bu">.</span></span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb55-1"><a href="pronto.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch:</span> error: Batch script contains DOS line breaks <span class="er">(</span><span class="ex">\\r\\n</span><span class="kw">)</span></span>
+<span id="cb55-2"><a href="pronto.html#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch:</span> error: instead of expected UNIX line breaks <span class="er">(</span><span class="ex">\\n</span><span class="kw">)</span><span class="bu">.</span></span></code></pre></div>
 <p>One way to fix the problem is to
 - Open Rstudio
 - Go to Tools &gt; Terminal &gt; New Terminal

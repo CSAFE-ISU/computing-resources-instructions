@@ -6,10 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>CSAFE Computing Resources</title>
   <meta name="description" content="This book gives the reader step-by-step instuctions for accessing and using CSAFE computing resources." />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="CSAFE Computing Resources" />
   <meta property="og:type" content="book" />
+  
   
   <meta property="og:description" content="This book gives the reader step-by-step instuctions for accessing and using CSAFE computing resources." />
   <meta name="github-repo" content="CSAFE-ISU/computing-resources-instructions" />
@@ -23,7 +24,7 @@
 <meta name="author" content="Stephanie Reinders" />
 
 
-<meta name="date" content="2022-06-17" />
+<meta name="date" content="2022-06-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,6 +33,7 @@
   
 
 <link rel="next" href="getting-started.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -49,9 +51,8 @@
 
 
 
-<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
-<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -169,8 +170,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.1" data-path="pronto.html"><a href="pronto.html#connecting-to-pronto"><i class="fa fa-check"></i><b>5.1</b> Connecting to the Pronto job scheduler</a></li>
 <li class="chapter" data-level="5.2" data-path="pronto.html"><a href="pronto.html#prontodtn"><i class="fa fa-check"></i><b>5.2</b> Connecting to the Pronto data transfer node</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="pronto.html"><a href="pronto.html#transfering-data-from-prontodtn-to-lss"><i class="fa fa-check"></i><b>5.2.1</b> Transfering data from ProntoDTN to LSS</a></li>
-<li class="chapter" data-level="5.2.2" data-path="pronto.html"><a href="pronto.html#transfering-large-amounts-of-data-using-globus"><i class="fa fa-check"></i><b>5.2.2</b> Transfering large amounts of data using Globus</a></li>
+<li class="chapter" data-level="5.2.1" data-path="pronto.html"><a href="pronto.html#transfering-large-amounts-of-data-from-prontodtn-to-lss-using-ssh"><i class="fa fa-check"></i><b>5.2.1</b> Transfering large amounts of data from ProntoDTN to LSS using SSH</a></li>
+<li class="chapter" data-level="5.2.2" data-path="pronto.html"><a href="pronto.html#transfering-large-amounts-of-data-between-prontodtn-and-your-computer-using-globus"><i class="fa fa-check"></i><b>5.2.2</b> Transfering large amounts of data between ProntoDTN and your computer using Globus</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="pronto.html"><a href="pronto.html#running-an-r-script-on-pronto"><i class="fa fa-check"></i><b>5.3</b> Running an R script on Pronto</a></li>
 <li class="chapter" data-level="5.4" data-path="pronto.html"><a href="pronto.html#interactive-sessions"><i class="fa fa-check"></i><b>5.4</b> Interactive Sessions</a>
@@ -199,6 +200,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6.2" data-path="pronto.html"><a href="pronto.html#purge-all-loaded-modules"><i class="fa fa-check"></i><b>5.6.2</b> Purge all loaded modules</a></li>
 <li class="chapter" data-level="5.6.3" data-path="pronto.html"><a href="pronto.html#view-your-jobs-in-the-pronto-queue"><i class="fa fa-check"></i><b>5.6.3</b> View your job(s) in the Pronto queue</a></li>
 <li class="chapter" data-level="5.6.4" data-path="pronto.html"><a href="pronto.html#cancel-a-job"><i class="fa fa-check"></i><b>5.6.4</b> Cancel a job</a></li>
+<li class="chapter" data-level="5.6.5" data-path="pronto.html"><a href="pronto.html#view-information-about-a-job"><i class="fa fa-check"></i><b>5.6.5</b> View information about a job</a></li>
 </ul></li>
 <li class="chapter" data-level="5.7" data-path="pronto.html"><a href="pronto.html#install-the-handwriter-package"><i class="fa fa-check"></i><b>5.7</b> Install the handwriter package</a></li>
 <li class="chapter" data-level="5.8" data-path="pronto.html"><a href="pronto.html#trouble-shooting-1"><i class="fa fa-check"></i><b>5.8</b> Trouble-Shooting</a>
@@ -229,19 +231,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">CSAFE Computing Resources</h1>
 <p class="author"><em>Stephanie Reinders</em></p>
-<p class="date"><em>2022-06-17</em></p>
+<p class="date"><em>2022-06-20</em></p>
 </div>
-<div id="introduction" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introduction" class="section level1" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
 <p>This book gives the reader step-by-step instructions for accessing and using several CSAFE computing resources. CSAFE has access to</p>
 <ol style="list-style-type: decimal">
 <li>Large Scale Storage (LSS)</li>
 <li>CSAFE Rstudio Servers</li>
 <li>The Pronto Job Scheduler</li>
 </ol>
-<div id="large-scale-storage-lss" class="section level2 hasAnchor" number="1.1">
-<h2><span class="header-section-number">1.1</span> Large Scale Storage (LSS)<a href="index.html#large-scale-storage-lss" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>ResearchIT at Iowa State University provides Large Scale Storage (LSS) at low cost to research labs. CSAFE has purchased more than 30 terabytes of space on LSS. As of 2022-06-17 the following CSAFE project folders are on LSS:</p>
+<div id="large-scale-storage-lss" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Large Scale Storage (LSS)</h2>
+<p>ResearchIT at Iowa State University provides Large Scale Storage (LSS) at low cost to research labs. CSAFE has purchased more than 30 terabytes of space on LSS. As of 2022-06-20 the following CSAFE project folders are on LSS:</p>
 <ul>
 <li>csafe-admin-vid</li>
 <li>csafe-firearms</li>
@@ -256,18 +258,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Chapter <a href="lss.html#lss">3</a> explains how to connect to LSS.</p>
 </div>
-<div id="csafe-rstudio-servers" class="section level2 hasAnchor" number="1.2">
-<h2><span class="header-section-number">1.2</span> CSAFE RStudio Servers<a href="index.html#csafe-rstudio-servers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="csafe-rstudio-servers" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> CSAFE RStudio Servers</h2>
 <p>CSAFE has access to two RStudio Servers. To the user, the experience is almost exactly the same as using RStudio on a personal computer. The main benefit of running RStudio on the server is that the server has more RAM and more cores than most personal computers.</p>
 <p>Chapter <a href="rstudio-server.html#rstudio-server">4</a> explains how to use the Rstudio servers.</p>
 </div>
-<div id="the-pronto-job-scheduler" class="section level2 hasAnchor" number="1.3">
-<h2><span class="header-section-number">1.3</span> The Pronto Job Scheduler<a href="index.html#the-pronto-job-scheduler" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="the-pronto-job-scheduler" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> The Pronto Job Scheduler</h2>
 <p>ResearchIT at ISU manages a whole host of high performance servers to which CSAFE has purchased access. Instead of accessing one of these servers individually, users submit their jobs (scripts) to the Pronto Job Scheduler which assigns the jobs to the most appropriate servers.</p>
 <p>Chapter <a href="pronto.html#pronto">5</a> explains how to run R scripts on the Pronto Job Scheduler. Python, MATLAB, and other programming languages can be run on Pronto, but this book only covers R.</p>
 </div>
-<div id="do-i-use-the-csafe-rstudio-server-or-pronto" class="section level2 hasAnchor" number="1.4">
-<h2><span class="header-section-number">1.4</span> Do I use the CSAFE Rstudio Server or Pronto?<a href="index.html#do-i-use-the-csafe-rstudio-server-or-pronto" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="do-i-use-the-csafe-rstudio-server-or-pronto" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Do I use the CSAFE Rstudio Server or Pronto?</h2>
 <p>When deciding whether to use an RStudio server or Pronto, you might want to consider the following benefits and drawbacks of each.</p>
 <p><strong>RStudio Server</strong></p>
 <ul>
