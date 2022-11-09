@@ -45,5 +45,7 @@ view-your-jobs-in-the-pronto-queue
 cancel-a-job
 view-information-about-a-job
 install-the-handwriter-package
+install-handwriter-from-cran
+install-handwriter-from-github
 trouble-shooting-1
 ex-line-breaks

@@ -739,6 +739,8 @@ where jobid is the six-digit number for the job you want to cancel.
 
 
 ## Install the handwriter package
+
+### Install handwriter from CRAN
 CSAFE created an R package for statistical handwriting analysis called handwriter. The handwriter package requires a number of other R packages, some of which caused errors when I tried to install handwriter in an interactive session on Pronto following the instructions in \@ref(ex-interactive-install). ResearchIT helped me figure out how to install the problem packages and ultimately install handwriter. This section records the step-by-step details of how I was able to install handwriter. My hope is that you will also be able to sucessfully install handwriter if you follow these steps. If you run into problems, email researchit@iastate.edu.
 
 1. If you are off campus, connect to the ISU VPN (see \@ref(signin-vpn)) 
@@ -749,6 +751,8 @@ CSAFE created an R package for statistical handwriting analysis called handwrite
     $ module purge
     $ module load gcc/10.2.0-zuvaafu
     $ module load r/4.0.4-py3-4khjixy
+    $ export R_LIBS_USER=/work/LAS/csafe-lab/yournetid/Rlibs
+    $ mkdir -p $R_LIBS_USER
     $ R
     ```
 1. Try to install the handwriter package
@@ -771,6 +775,38 @@ configure.vars=c("INCLUDE_DIR='. -D_GLIBCXX_USE_CXX11_ABI=0 -fopenmp -DMAGICKCOR
 lib="/work/LAS/csafe-lab/your_netid/Rlibs",
 repos="https://mirror.las.iastate.edu/CRAN")
     ```
+
+### Install handwriter from GitHub
+1. If you are off campus, connect to the ISU VPN (see \@ref(signin-vpn)) 
+1. Sign-in to Pronto (see \@ref(pronto)).
+1. Some of the packages used by handwriter are only available on Pronto for R 4.0.4. Start the R 4.0.4 interpreter in an interactive session on Pronto.
+    ```{bash install from github, eval=FALSE}
+    $ srun --nodes 1 --tasks 4 --partition interactive --time 01:00:00 --pty bash
+    $ module purge
+    $ module load gcc/10.2.0-zuvaafu
+    $ module load r/4.0.4-py3-4khjixy
+    $ export R_LIBS_USER=/work/LAS/csafe-lab/yournetid/Rlibs
+    $ mkdir -p $R_LIBS_USER
+    $ R
+    ```
+1. Install devtools. Nick Booher at ResearchIT told me that Pronto's version of R is too old to run the latest version of devtools. He told be to run the following install instead:
+```{bash, eval=FALSE}
+install.packages("https://github.com/r-lib/devtools/archive/refs/tags/v2.4.3.tar.gz", repos=NULL, type="source", lib = "/work/LAS/csafe-lab/your_netid/Rlibs")
+```
+1. Returned error about trouble installing magick, random forest, and rjags.
+1. I installed randomforest by hand:
+```{bash, eval=FALSE}
+install.packages("https://cran.r-project.org/src/contrib/Archive/randomForest/randomForest_4.6-14.tar.gz", repos=NULL, type="source",lib="/work/LAS/csafe-lab/your_netid/Rlibs")
+```
+1. I installed magick by hand:
+```{bash, eval=FALSE}
+install.packages("magick", 
+configure.vars=c("INCLUDE_DIR='. -D_GLIBCXX_USE_CXX11_ABI=0 -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/opt/rit/spack-app/linux-rhel7-x86_64/gcc-4.8.5/image-magick-7.0.5-9-6xplmhr3zv6pu2frzsuyof2coe4tuguh/include/ImageMagick-7' LIB_DIR='. -D_GLIBCXX_USE_CXX11_ABI=0 -Wl,-rpath,/opt/rit/spack-app/linux-rhel7-x86_64/gcc-4.8.5/image-magick-7.0.5-9-6xplmhr3zv6pu2frzsuyof2coe4tuguh/lib -L/opt/rit/spack-app/linux-rhel7-x86_64/gcc-4.8.5/image-magick-7.0.5-9-6xplmhr3zv6pu2frzsuyof2coe4tuguh/lib -lMagick++-7.Q16HDRI -lMagickWand-7.Q16HDRI -lMagickCore-7.Q16HDRI #'"),
+lib="/work/LAS/csafe-lab/srein/Rlibs",
+repos="https://mirror.las.iastate.edu/CRAN")
+```
+
+
 
 
 ## Trouble-Shooting
