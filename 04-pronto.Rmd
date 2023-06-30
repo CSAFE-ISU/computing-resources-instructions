@@ -111,11 +111,12 @@ This starts an interactive session.
     $ module load gcc/10.2.0-zuvaafu
     $ module load r/4.0.4-py3-4khjixy
     ```
-1. Tell Pronto to install R packages in your csafe-lab work folder. (This is considered the best practice by ResearchIT https://researchit.las.iastate.edu/how-run-r-pronto?msclkid=865a487bc65e11ecbfd7e59a7ab1dc47.)
+1. Tell Pronto to install R packages in your csafe-lab work folder. (This is considered the best practice by ResearchIT https://researchit.las.iastate.edu/how-run-r-pronto?msclkid=865a487bc65e11ecbfd7e59a7ab1dc47.) 
     ```{bash install packages, eval=FALSE}
     $ export R_LIBS_USER=/work/LAS/your-lab/yournetid/Rlibs
     $ mkdir -p $R_LIBS_USER
     ```
+According to (here)[https://linuxize.com/post/how-to-create-directories-in-linux-with-the-mkdir-command/] The option "-p" after mkdir tells the computer to make any parent directories when creating the new directory. I.e. if the parent folder /work/LAS/your-lab/yournetid doesn't already exist, it will be created.
 1. Start the R interpreter
     ```{bash start r, eval=FALSE}
     $ R
@@ -807,6 +808,27 @@ repos="https://mirror.las.iastate.edu/CRAN")
 ```
 
 
+### RJAGS
+The above instructions don't work with RJAGS. Instead, install handwriter on speedy.
+
+```{bash eval=FALSE}
+srun --nodes 1 --tasks 4 --partition speedy --time 04:00:00 --pty bash
+
+module purge
+module use /opt/rit/neo7/20220915/lmod/linux-rhel7-x86_64/Core
+module load r/4.2.0-py39-sck5cau
+module load imagemagick/7.0.8-7-py39-3dgakbs
+module load jags/4.3.0-ute254c
+
+export R_LIBS_USER=/work/LAS/csafe-lab/srein/Rlibs-sck5cau
+mkdir -p $R_LIBS_USER
+
+R
+
+install.packages("devtools")
+devtools::install_github(“CSAFE-ISU/handwriter”)
+
+```
 
 
 ## Trouble-Shooting

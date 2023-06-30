@@ -1,11 +1,13 @@
 h1:pronto Pronto
-h2:pronto Connecting to the Pronto job scheduler
+h2:connecting-to-pronto Connecting to the Pronto job scheduler
 h2:prontodtn Connecting to the Pronto data transfer node
-h3:transfering-large-amounts-of-data-using-globus Transfering large amounts of data using Globus
+h3:transfering-large-amounts-of-data-from-prontodtn-to-lss-using-ssh Transfering large amounts of data from ProntoDTN to LSS using SSH
+h3:transfering-large-amounts-of-data-between-prontodtn-and-your-computer-using-globus Transfering large amounts of data between ProntoDTN and your computer using Globus
 h2:running-an-r-script-on-pronto Running an R script on Pronto
 h2:interactive-sessions Interactive Sessions
 h3:ex-start-interactive Example: Start an interactive session
-h3:ex-interactive-install Example: Install dplyr package
+h3:ex-interactive-install Example: Install a package from CRAN
+h3:ex-interactive-install-github Example: Install a package from Github
 h2:batch-jobs Batch Jobs
 h3:ex-basic Example: A basic R script
 h3:ex-save Example: Save a dataframe to a CSV file
@@ -14,20 +16,28 @@ h3:ex-batch-install Example: Install R packages
 h1:everything-below-this-line-is-optional everything below this line is optional
 h3:ex-parallel Example: Run code in parallel
 h1:everything-below-this-line-is-optional-1 everything below this line is optional
-h3:ex-seed Example: Set the seed for the random number generator
+h3:ex-check-parallel Example: Check whether code is running in parallel
 h1:everything-below-this-line-is-optional-2 everything below this line is optional
-h3:ex-packages-parallel Example: Use functions from dplyr and magrittr in parallel
+h3:ex-seed Example: Set the seed for the random number generator
 h1:everything-below-this-line-is-optional-3 everything below this line is optional
-h3:example-use-a-user-defined-function-to-save-results-inside-a-parallel-loop Example: Use a user-defined function to save results inside a parallel loop
+h3:ex-packages-parallel Example: Use functions from dplyr and magrittr in parallel
 h1:everything-below-this-line-is-optional-4 everything below this line is optional
-h3:ex-log Example: Create a log file
+h3:example-use-a-user-defined-function-to-save-results-inside-a-parallel-loop Example: Use a user-defined function to save results inside a parallel loop
 h1:everything-below-this-line-is-optional-5 everything below this line is optional
+h3:ex-log Example: Create a log file
+h1:everything-below-this-line-is-optional-6 everything below this line is optional
+h3:example-write-a-log-message-inside-a-parallel-loop Example: Write a log message inside a parallel loop
+h1:everything-below-this-line-is-optional-7 everything below this line is optional
 h2:pronto-commands Pronto Commands
 h3:list-loaded-modules List loaded modules
 h3:purge-all-loaded-modules Purge all loaded modules
 h3:view-your-jobs-in-the-pronto-queue View your job(s) in the Pronto queue
 h3:cancel-a-job Cancel a job
+h3:view-information-about-a-job View information about a job
 h2:install-the-handwriter-package Install the handwriter package
+h3:install-handwriter-from-cran Install handwriter from CRAN
+h3:install-handwriter-from-github Install handwriter from GitHub
+h3:rjags RJAGS
 h2:trouble-shooting Trouble-Shooting
 h3:ex-line-breaks Line breaks error
 

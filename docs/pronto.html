@@ -23,7 +23,7 @@
 <meta name="author" content="Stephanie Reinders" />
 
 
-<meta name="date" content="2022-11-09" />
+<meta name="date" content="2022-11-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -205,6 +205,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="5.7.1" data-path="pronto.html"><a href="pronto.html#install-handwriter-from-cran"><i class="fa fa-check"></i><b>5.7.1</b> Install handwriter from CRAN</a></li>
 <li class="chapter" data-level="5.7.2" data-path="pronto.html"><a href="pronto.html#install-handwriter-from-github"><i class="fa fa-check"></i><b>5.7.2</b> Install handwriter from GitHub</a></li>
+<li class="chapter" data-level="5.7.3" data-path="pronto.html"><a href="pronto.html#rjags"><i class="fa fa-check"></i><b>5.7.3</b> RJAGS</a></li>
 </ul></li>
 <li class="chapter" data-level="5.8" data-path="pronto.html"><a href="pronto.html#trouble-shooting-1"><i class="fa fa-check"></i><b>5.8</b> Trouble-Shooting</a>
 <ul>
@@ -349,7 +350,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-2"><a href="pronto.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> module load r/4.0.4-py3-4khjixy</span></code></pre></div></li>
 <li><p>Tell Pronto to install R packages in your csafe-lab work folder. (This is considered the best practice by ResearchIT <a href="https://researchit.las.iastate.edu/how-run-r-pronto?msclkid=865a487bc65e11ecbfd7e59a7ab1dc47" class="uri">https://researchit.las.iastate.edu/how-run-r-pronto?msclkid=865a487bc65e11ecbfd7e59a7ab1dc47</a>.)</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="pronto.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> export R_LIBS_USER=/work/LAS/your-lab/yournetid/Rlibs</span>
-<span id="cb4-2"><a href="pronto.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mkdir <span class="at">-p</span> <span class="va">$R_LIBS_USER</span></span></code></pre></div></li>
+<span id="cb4-2"><a href="pronto.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mkdir <span class="at">-p</span> <span class="va">$R_LIBS_USER</span></span></code></pre></div>
+<p>According to (here)[<a href="https://linuxize.com/post/how-to-create-directories-in-linux-with-the-mkdir-command/" class="uri">https://linuxize.com/post/how-to-create-directories-in-linux-with-the-mkdir-command/</a>] The option “-p” after mkdir tells the computer to make any parent directories when creating the new directory. I.e. if the parent folder /work/LAS/your-lab/yournetid doesn’t already exist, it will be created.</p></li>
 <li><p>Start the R interpreter</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="pronto.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> R</span></code></pre></div></li>
 </ol>
@@ -985,14 +987,19 @@ functions from packages that we install, we need to pass the package names to th
 <span id="cb58-3"><a href="pronto.html#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="va">lib</span><span class="op">=</span><span class="st">&quot;/work/LAS/csafe-lab/srein/Rlibs&quot;</span>,</span>
 <span id="cb58-4"><a href="pronto.html#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="va">repos</span><span class="op">=</span><span class="st">&quot;https://mirror.las.iastate.edu/CRAN&quot;</span><span class="kw">)</span></span></code></pre></div>
 </div>
+<div id="rjags" class="section level3 hasAnchor" number="5.7.3">
+<h3><span class="header-section-number">5.7.3</span> RJAGS<a href="pronto.html#rjags" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The above instructions don’t work with RJAGS.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb59-1"><a href="pronto.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">--nodes</span> 1 <span class="at">--tasks</span> 4 <span class="at">--partition</span> speedy <span class="at">--time</span> 04:00:00 <span class="at">--pty</span> bash</span></code></pre></div>
+</div>
 </div>
 <div id="trouble-shooting-1" class="section level2 hasAnchor" number="5.8">
 <h2><span class="header-section-number">5.8</span> Trouble-Shooting<a href="pronto.html#trouble-shooting-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="ex-line-breaks" class="section level3 hasAnchor" number="5.8.1">
 <h3><span class="header-section-number">5.8.1</span> Line breaks error<a href="pronto.html#ex-line-breaks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If you are using Windows and you try to run a text file created on Windows on Pronto, you will likely get the following error:</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb59-1"><a href="pronto.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch:</span> error: Batch script contains DOS line breaks <span class="er">(</span><span class="ex">\\r\\n</span><span class="kw">)</span></span>
-<span id="cb59-2"><a href="pronto.html#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch:</span> error: instead of expected UNIX line breaks <span class="er">(</span><span class="ex">\\n</span><span class="kw">)</span><span class="bu">.</span></span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb60-1"><a href="pronto.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch:</span> error: Batch script contains DOS line breaks <span class="er">(</span><span class="ex">\\r\\n</span><span class="kw">)</span></span>
+<span id="cb60-2"><a href="pronto.html#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch:</span> error: instead of expected UNIX line breaks <span class="er">(</span><span class="ex">\\n</span><span class="kw">)</span><span class="bu">.</span></span></code></pre></div>
 <p>One way to fix the problem is to
 - Open Rstudio
 - Go to Tools &gt; Terminal &gt; New Terminal
