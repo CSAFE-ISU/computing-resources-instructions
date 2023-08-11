@@ -2,15 +2,16 @@
 title: "CSAFE Computing Resources"
 author: "Stephanie Reinders"
 date: "`r Sys.Date()`"
-site: bookdown::bookdown_site
+output: pdf_document
 documentclass: book
-bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
-# cover-image: path to the social sharing image like images/cover.jpg
-description: |
-  This book gives the reader step-by-step instuctions for accessing and using CSAFE computing resources.
+bibliography:
+- book.bib
+- packages.bib
+description: "This book gives the reader step-by-step instuctions for accessing and
+  using CSAFE computing resources.\n"
 link-citations: yes
-github-repo: CSAFE-ISU/computing-resources-instructions
+github-repo: "CSAFE-ISU/computing-resources-instructions"
+site: bookdown::bookdown_site
 ---
 
 # Introduction

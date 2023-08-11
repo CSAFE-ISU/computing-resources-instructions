@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Pronto | CSAFE Computing Resources</title>
   <meta name="description" content="This book gives the reader step-by-step instuctions for accessing and using CSAFE computing resources." />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Pronto | CSAFE Computing Resources" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Stephanie Reinders" />
 
 
-<meta name="date" content="2022-11-14" />
+<meta name="date" content="2023-07-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -92,7 +92,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -105,7 +105,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -119,6 +119,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -256,7 +260,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div></li>
 <li><p>Type your net-id password</p></li>
 <li><p>You should now see</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="pronto.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">[your_netid@pronto</span> ~]$</span></code></pre></div></li>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="pronto.html#cb1-1" tabindex="-1"></a><span class="ex">[your_netid@pronto</span> ~]$</span></code></pre></div></li>
 </ol>
 <p><strong>Mac</strong></p>
 <ol style="list-style-type: decimal">
@@ -343,24 +347,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>If you are off campus, connect to the ISU VPN (see <a href="#signin-vpn"><strong>??</strong></a>)</p></li>
 <li><p>Sign-in to Pronto (see <a href="pronto.html#pronto">5</a>).</p></li>
 <li><p>In the Pronto terminal, type</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="pronto.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> srun <span class="at">--nodes</span> 1 <span class="at">--tasks</span> 4 <span class="at">--partition</span> interactive <span class="at">--time</span> 01:00:00 <span class="at">--pty</span> bash</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="pronto.html#cb2-1" tabindex="-1"></a><span class="ex">$</span> srun <span class="at">--nodes</span> 1 <span class="at">--tasks</span> 4 <span class="at">--partition</span> interactive <span class="at">--time</span> 01:00:00 <span class="at">--pty</span> bash</span></code></pre></div>
 <p>This starts an interactive session.</p></li>
 <li><p>Load the module for R version 4.0.4. This version of R requires that a specific version of gcc be loaded first.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="pronto.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> module load gcc/10.2.0-zuvaafu</span>
-<span id="cb3-2"><a href="pronto.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> module load r/4.0.4-py3-4khjixy</span></code></pre></div></li>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="pronto.html#cb3-1" tabindex="-1"></a><span class="ex">$</span> module load gcc/10.2.0-zuvaafu</span>
+<span id="cb3-2"><a href="pronto.html#cb3-2" tabindex="-1"></a><span class="ex">$</span> module load r/4.0.4-py3-4khjixy</span></code></pre></div></li>
 <li><p>Tell Pronto to install R packages in your csafe-lab work folder. (This is considered the best practice by ResearchIT <a href="https://researchit.las.iastate.edu/how-run-r-pronto?msclkid=865a487bc65e11ecbfd7e59a7ab1dc47" class="uri">https://researchit.las.iastate.edu/how-run-r-pronto?msclkid=865a487bc65e11ecbfd7e59a7ab1dc47</a>.)</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="pronto.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> export R_LIBS_USER=/work/LAS/your-lab/yournetid/Rlibs</span>
-<span id="cb4-2"><a href="pronto.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mkdir <span class="at">-p</span> <span class="va">$R_LIBS_USER</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="pronto.html#cb4-1" tabindex="-1"></a><span class="ex">$</span> export R_LIBS_USER=/work/LAS/your-lab/yournetid/Rlibs</span>
+<span id="cb4-2"><a href="pronto.html#cb4-2" tabindex="-1"></a><span class="ex">$</span> mkdir <span class="at">-p</span> <span class="va">$R_LIBS_USER</span></span></code></pre></div>
 <p>According to (here)[<a href="https://linuxize.com/post/how-to-create-directories-in-linux-with-the-mkdir-command/" class="uri">https://linuxize.com/post/how-to-create-directories-in-linux-with-the-mkdir-command/</a>] The option “-p” after mkdir tells the computer to make any parent directories when creating the new directory. I.e. if the parent folder /work/LAS/your-lab/yournetid doesn’t already exist, it will be created.</p></li>
 <li><p>Start the R interpreter</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="pronto.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> R</span></code></pre></div></li>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="pronto.html#cb5-1" tabindex="-1"></a><span class="ex">$</span> R</span></code></pre></div></li>
 </ol>
 </div>
 <div id="ex-interactive-install" class="section level3 hasAnchor" number="5.4.2">
 <h3><span class="header-section-number">5.4.2</span> Example: Install a package from CRAN<a href="pronto.html#ex-interactive-install" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li>Start an interactive R session (see <a href="pronto.html#ex-start-interactive">5.4.1</a>)</li>
-<li><div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="pronto.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> install.packages<span class="kw">(</span><span class="st">&quot;dplyr&quot;</span><span class="ex">,lib=</span><span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span><span class="ex">,</span> repos=<span class="st">&quot;https://mirror.las.iastate.edu/CRAN&quot;</span><span class="kw">)</span></span></code></pre></div></li>
+<li><div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="pronto.html#cb6-1" tabindex="-1"></a><span class="op">&gt;</span> install.packages<span class="kw">(</span><span class="st">&quot;dplyr&quot;</span><span class="ex">,lib=</span><span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span><span class="ex">,</span> repos=<span class="st">&quot;https://mirror.las.iastate.edu/CRAN&quot;</span><span class="kw">)</span></span></code></pre></div></li>
 </ol>
 </div>
 <div id="ex-interactive-install-github" class="section level3 hasAnchor" number="5.4.3">
@@ -369,9 +373,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol style="list-style-type: decimal">
 <li><p>Start an interactive R session (see <a href="pronto.html#ex-start-interactive">5.4.1</a>)</p></li>
 <li><p>If you haven’t already, you need to install the devtools package</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="pronto.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> install.packages<span class="kw">(</span><span class="st">&quot;devtools&quot;</span><span class="ex">,lib=</span><span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span><span class="ex">,</span> repos=<span class="st">&quot;https://mirror.las.iastate.edu/CRAN&quot;</span><span class="kw">)</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="pronto.html#cb7-1" tabindex="-1"></a><span class="op">&gt;</span> install.packages<span class="kw">(</span><span class="st">&quot;devtools&quot;</span><span class="ex">,lib=</span><span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span><span class="ex">,</span> repos=<span class="st">&quot;https://mirror.las.iastate.edu/CRAN&quot;</span><span class="kw">)</span></span></code></pre></div></li>
 <li><p>Every GitHub repository url has the format <a href="https://github.com/GithubUsernam/GithubRepo" class="uri">https://github.com/GithubUsernam/GithubRepo</a>. Use the GithubUsername/GithubRepo in the install_github function.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="pronto.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> devtools::install_github<span class="kw">(</span><span class="st">&quot;GithubUsername/GithubRepo&quot;</span><span class="kw">)</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="pronto.html#cb8-1" tabindex="-1"></a><span class="op">&gt;</span> devtools::install_github<span class="kw">(</span><span class="st">&quot;GithubUsername/GithubRepo&quot;</span><span class="kw">)</span></span></code></pre></div></li>
 </ol>
 </div>
 </div>
@@ -384,35 +388,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Sign-in to Pronto (see <a href="pronto.html#pronto">5</a>).</p></li>
 <li><p>Open your csafe-lab work folder <code>prontodtn.las.iastate.edu &gt; work &gt; LAS &gt; csafe-lab &gt; your_netid</code> (see <a href="pronto.html#prontodtn">5.2</a>)</p></li>
 <li><p>Create a new R script with the following lines of code:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="pronto.html#cb9-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="dv">5</span></span>
-<span id="cb9-2"><a href="pronto.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(a)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="pronto.html#cb9-1" tabindex="-1"></a>a <span class="ot">=</span> <span class="dv">5</span></span>
+<span id="cb9-2"><a href="pronto.html#cb9-2" tabindex="-1"></a><span class="fu">print</span>(a)</span></code></pre></div>
 <p>Save the script as <code>basic.R</code>. Copy the script to your csafe-lab work folder.</p></li>
 <li><p>Create a text file for Slurm with the following text:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="pronto.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb10-2"><a href="pronto.html#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="pronto.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --nodes=1 # request one node</span></span>
-<span id="cb10-4"><a href="pronto.html#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=1  # ask for 1 cpu</span></span>
-<span id="cb10-5"><a href="pronto.html#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem=1G #  asks for 1 GB of RAM</span></span>
-<span id="cb10-6"><a href="pronto.html#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=00:30:02 # ask that the job be allowed to run for 30 minutes and 2 seconds.</span></span>
-<span id="cb10-7"><a href="pronto.html#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-8"><a href="pronto.html#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># everything below this line is optional</span></span>
-<span id="cb10-9"><a href="pronto.html#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=/work/LAS/csafe-lab/your_netid/job_%J_out.txt # store console output</span></span>
-<span id="cb10-10"><a href="pronto.html#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --error=/work/LAS/csafe-lab/your_netid/job_%J_err.txt # store error messages</span></span>
-<span id="cb10-11"><a href="pronto.html#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-12"><a href="pronto.html#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load r</span>
-<span id="cb10-13"><a href="pronto.html#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /work/LAS/csafe-lab/your_netid</span>
-<span id="cb10-14"><a href="pronto.html#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">--save</span> <span class="op">&lt;</span> basic.R</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="pronto.html#cb10-1" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb10-2"><a href="pronto.html#cb10-2" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="pronto.html#cb10-3" tabindex="-1"></a><span class="co">#SBATCH --nodes=1 # request one node</span></span>
+<span id="cb10-4"><a href="pronto.html#cb10-4" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=1  # ask for 1 cpu</span></span>
+<span id="cb10-5"><a href="pronto.html#cb10-5" tabindex="-1"></a><span class="co">#SBATCH --mem=1G #  asks for 1 GB of RAM</span></span>
+<span id="cb10-6"><a href="pronto.html#cb10-6" tabindex="-1"></a><span class="co">#SBATCH --time=00:30:02 # ask that the job be allowed to run for 30 minutes and 2 seconds.</span></span>
+<span id="cb10-7"><a href="pronto.html#cb10-7" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="pronto.html#cb10-8" tabindex="-1"></a><span class="co"># everything below this line is optional</span></span>
+<span id="cb10-9"><a href="pronto.html#cb10-9" tabindex="-1"></a><span class="co">#SBATCH --output=/work/LAS/csafe-lab/your_netid/job_%J_out.txt # store console output</span></span>
+<span id="cb10-10"><a href="pronto.html#cb10-10" tabindex="-1"></a><span class="co">#SBATCH --error=/work/LAS/csafe-lab/your_netid/job_%J_err.txt # store error messages</span></span>
+<span id="cb10-11"><a href="pronto.html#cb10-11" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="pronto.html#cb10-12" tabindex="-1"></a><span class="ex">module</span> load r</span>
+<span id="cb10-13"><a href="pronto.html#cb10-13" tabindex="-1"></a><span class="bu">cd</span> /work/LAS/csafe-lab/your_netid</span>
+<span id="cb10-14"><a href="pronto.html#cb10-14" tabindex="-1"></a><span class="ex">R</span> <span class="at">--save</span> <span class="op">&lt;</span> basic.R</span></code></pre></div>
 <p>Save the file as <code>basic.txt</code>.</p></li>
 <li><p>(Windows Only) If you are using Windows, your text file will likely have DOS line breaks instead of UNIX line breaks which will cause an error when the file is run on Pronto. Open Terminal in RStudio, use <code>cd folder/containing/text_file</code> to change directories to the folder containing your text file, and type <code>dos2unix basic.txt</code> to change the line breaks to UNIX format.</p></li>
 <li><p>Copy the text file to your csafe-lab work folder.</p></li>
 <li><p>In the command line prompt where you are connected to Pronto, type</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="pronto.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sbatch /work/LAS/csafe-lab/your_netid/basic.txt</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="pronto.html#cb11-1" tabindex="-1"></a><span class="ex">$</span> sbatch /work/LAS/csafe-lab/your_netid/basic.txt</span></code></pre></div>
 <p>This will add your job to the queue. The script is so short, your job will probably run immediately.</p></li>
 <li><p>Two new files – <code>job_&lt;job#&gt;_err.txt</code> and <code>job_&lt;job#&gt;_out.txt</code> – should appear in your csafe-lab work folder. If <code>basic.R</code> ran successfully, the <code>job_&lt;job#&gt;_out</code> file should contain</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="pronto.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> a <span class="ex">=</span> 5</span>
-<span id="cb12-2"><a href="pronto.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> print<span class="kw">(</span><span class="ex">a</span><span class="kw">)</span></span>
-<span id="cb12-3"><a href="pronto.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ex">[1]</span> 5</span>
-<span id="cb12-4"><a href="pronto.html#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> </span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="pronto.html#cb12-1" tabindex="-1"></a><span class="op">&gt;</span> a <span class="ex">=</span> 5</span>
+<span id="cb12-2"><a href="pronto.html#cb12-2" tabindex="-1"></a><span class="op">&gt;</span> print<span class="kw">(</span><span class="ex">a</span><span class="kw">)</span></span>
+<span id="cb12-3"><a href="pronto.html#cb12-3" tabindex="-1"></a><span class="ex">[1]</span> 5</span>
+<span id="cb12-4"><a href="pronto.html#cb12-4" tabindex="-1"></a><span class="op">&gt;</span> </span></code></pre></div>
 <p>and <code>job_&lt;job#&gt;_err.txt</code> should be blank. If the error file isn’t blank, troubleshoot the error(s). If you get stuck, email <a href="mailto:researchit@iastate.edu" class="email">researchit@iastate.edu</a>.</p></li>
 </ol>
 </div>
@@ -424,35 +428,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Sign-in to Pronto (see <a href="pronto.html#pronto">5</a>).</p></li>
 <li><p>Open your csafe-lab work folder <code>prontodtn.las.iastate.edu &gt; work &gt; LAS &gt; csafe-lab &gt; your_netid</code> (see <a href="pronto.html#prontodtn">5.2</a>)</p></li>
 <li><p>Create a new R script with the following lines of code:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="pronto.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># draw 10 samples from normal distribution</span></span>
-<span id="cb13-2"><a href="pronto.html#cb13-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">10</span>)</span>
-<span id="cb13-3"><a href="pronto.html#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="pronto.html#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># put in a dataframe</span></span>
-<span id="cb13-5"><a href="pronto.html#cb13-5" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">x=</span>data)</span>
-<span id="cb13-6"><a href="pronto.html#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-7"><a href="pronto.html#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># save dataframe</span></span>
-<span id="cb13-8"><a href="pronto.html#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="st">&quot;data.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="pronto.html#cb13-1" tabindex="-1"></a><span class="co"># draw 10 samples from normal distribution</span></span>
+<span id="cb13-2"><a href="pronto.html#cb13-2" tabindex="-1"></a>data <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">10</span>)</span>
+<span id="cb13-3"><a href="pronto.html#cb13-3" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="pronto.html#cb13-4" tabindex="-1"></a><span class="co"># put in a dataframe</span></span>
+<span id="cb13-5"><a href="pronto.html#cb13-5" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">x=</span>data)</span>
+<span id="cb13-6"><a href="pronto.html#cb13-6" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="pronto.html#cb13-7" tabindex="-1"></a><span class="co"># save dataframe</span></span>
+<span id="cb13-8"><a href="pronto.html#cb13-8" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="st">&quot;data.csv&quot;</span>)</span></code></pre></div>
 <p>Save the script as <code>dataframe.R</code>. Copy the script to your csafe-lab work folder.</p></li>
 <li><p>Create a text file for Slurm with the following text:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="pronto.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb14-2"><a href="pronto.html#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="pronto.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --nodes=1 # request one node</span></span>
-<span id="cb14-4"><a href="pronto.html#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=1  # ask for 1 cpu</span></span>
-<span id="cb14-5"><a href="pronto.html#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem=1G #  asks for 1 GB of RAM</span></span>
-<span id="cb14-6"><a href="pronto.html#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=00:30:02 # ask that the job be allowed to run for 30 minutes and 2 seconds.</span></span>
-<span id="cb14-7"><a href="pronto.html#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-8"><a href="pronto.html#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># everything below this line is optional</span></span>
-<span id="cb14-9"><a href="pronto.html#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=/work/LAS/csafe-lab/your_netid/job_%J_out.txt # store console output</span></span>
-<span id="cb14-10"><a href="pronto.html#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --error=/work/LAS/csafe-lab/your_netid/job_%J_err.txt # store error messages</span></span>
-<span id="cb14-11"><a href="pronto.html#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-12"><a href="pronto.html#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load r</span>
-<span id="cb14-13"><a href="pronto.html#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /work/LAS/csafe-lab/your_netid</span>
-<span id="cb14-14"><a href="pronto.html#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">--save</span> <span class="op">&lt;</span> dataframe.R</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="pronto.html#cb14-1" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb14-2"><a href="pronto.html#cb14-2" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="pronto.html#cb14-3" tabindex="-1"></a><span class="co">#SBATCH --nodes=1 # request one node</span></span>
+<span id="cb14-4"><a href="pronto.html#cb14-4" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=1  # ask for 1 cpu</span></span>
+<span id="cb14-5"><a href="pronto.html#cb14-5" tabindex="-1"></a><span class="co">#SBATCH --mem=1G #  asks for 1 GB of RAM</span></span>
+<span id="cb14-6"><a href="pronto.html#cb14-6" tabindex="-1"></a><span class="co">#SBATCH --time=00:30:02 # ask that the job be allowed to run for 30 minutes and 2 seconds.</span></span>
+<span id="cb14-7"><a href="pronto.html#cb14-7" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="pronto.html#cb14-8" tabindex="-1"></a><span class="co"># everything below this line is optional</span></span>
+<span id="cb14-9"><a href="pronto.html#cb14-9" tabindex="-1"></a><span class="co">#SBATCH --output=/work/LAS/csafe-lab/your_netid/job_%J_out.txt # store console output</span></span>
+<span id="cb14-10"><a href="pronto.html#cb14-10" tabindex="-1"></a><span class="co">#SBATCH --error=/work/LAS/csafe-lab/your_netid/job_%J_err.txt # store error messages</span></span>
+<span id="cb14-11"><a href="pronto.html#cb14-11" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="pronto.html#cb14-12" tabindex="-1"></a><span class="ex">module</span> load r</span>
+<span id="cb14-13"><a href="pronto.html#cb14-13" tabindex="-1"></a><span class="bu">cd</span> /work/LAS/csafe-lab/your_netid</span>
+<span id="cb14-14"><a href="pronto.html#cb14-14" tabindex="-1"></a><span class="ex">R</span> <span class="at">--save</span> <span class="op">&lt;</span> dataframe.R</span></code></pre></div>
 <p>Save the file as <code>dataframe.txt</code>.</p></li>
 <li><p>(Windows Only) If you are using Windows, your text file will likely have DOS line breaks instead of UNIX line breaks which will cause an error when the file is run on Pronto. Open Terminal in RStudio, use <code>cd folder/containing/text_file</code> to change directories to the folder containing your text file, and type <code>dos2unix dataframe.txt</code> to change the line breaks to UNIX format.</p></li>
 <li><p>Copy the text file to your csafe-lab work folder.</p></li>
 <li><p>In the command line prompt where you are connected to Pronto, type</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="pronto.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sbatch /work/LAS/csafe-lab/your_netid/dataframe.txt</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="pronto.html#cb15-1" tabindex="-1"></a><span class="ex">$</span> sbatch /work/LAS/csafe-lab/your_netid/dataframe.txt</span></code></pre></div>
 <p>This will add your job to the queue. The script is so short, your job will probably run immediately.</p></li>
 <li><p>The dataframe should be saved in a file <code>data.csv</code> in your csafe-lab work folder. There should be two other new files – <code>data.csv</code>, <code>job_&lt;job#&gt;_err.txt</code> and <code>job_&lt;job#&gt;_out.txt</code> – in your csafe-lab work folder as well. If the error file isn’t blank, troubleshoot the error(s). If you get stuck, email <a href="mailto:researchit@iastate.edu" class="email">researchit@iastate.edu</a>.</p></li>
 </ol>
@@ -466,29 +470,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Open your csafe-lab work folder <code>prontodtn.las.iastate.edu &gt; work &gt; LAS &gt; csafe-lab &gt; your_netid</code> (see <a href="pronto.html#prontodtn">5.2</a>)</p></li>
 <li><p>Double-check that the file <code>data.csv</code> is still in your csafe-lab work folder. If you deleted it, follow the steps in example <a href="pronto.html#ex-save">5.5.2</a> to recreate it.</p></li>
 <li><p>Create a new R script with the following lines of code:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="pronto.html#cb16-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&quot;data.csv&quot;</span>)</span>
-<span id="cb16-2"><a href="pronto.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="pronto.html#cb16-1" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&quot;data.csv&quot;</span>)</span>
+<span id="cb16-2"><a href="pronto.html#cb16-2" tabindex="-1"></a><span class="fu">head</span>(df)</span></code></pre></div>
 <p>Save the script as <code>load.R</code> and copy it to you csafe-lab work folder.</p></li>
 <li><p>Create a text file for Slurm with the following text:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="pronto.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb17-2"><a href="pronto.html#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="pronto.html#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --nodes=1 # request one node</span></span>
-<span id="cb17-4"><a href="pronto.html#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=1  # ask for 1 cpu</span></span>
-<span id="cb17-5"><a href="pronto.html#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem=1G #  asks for 1 GB of RAM</span></span>
-<span id="cb17-6"><a href="pronto.html#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=00:30:02 # ask that the job be allowed to run for 30 minutes and 2 seconds.</span></span>
-<span id="cb17-7"><a href="pronto.html#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-8"><a href="pronto.html#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co"># everything below this line is optional</span></span>
-<span id="cb17-9"><a href="pronto.html#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=/work/LAS/csafe-lab/your_netid/job_%J_out.txt # store console output</span></span>
-<span id="cb17-10"><a href="pronto.html#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --error=/work/LAS/csafe-lab/your_netid/job_%J_err.txt # store error messages</span></span>
-<span id="cb17-11"><a href="pronto.html#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-12"><a href="pronto.html#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load r</span>
-<span id="cb17-13"><a href="pronto.html#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /work/LAS/csafe-lab/your_netid</span>
-<span id="cb17-14"><a href="pronto.html#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">--save</span> <span class="op">&lt;</span> load.R</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="pronto.html#cb17-1" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb17-2"><a href="pronto.html#cb17-2" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="pronto.html#cb17-3" tabindex="-1"></a><span class="co">#SBATCH --nodes=1 # request one node</span></span>
+<span id="cb17-4"><a href="pronto.html#cb17-4" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=1  # ask for 1 cpu</span></span>
+<span id="cb17-5"><a href="pronto.html#cb17-5" tabindex="-1"></a><span class="co">#SBATCH --mem=1G #  asks for 1 GB of RAM</span></span>
+<span id="cb17-6"><a href="pronto.html#cb17-6" tabindex="-1"></a><span class="co">#SBATCH --time=00:30:02 # ask that the job be allowed to run for 30 minutes and 2 seconds.</span></span>
+<span id="cb17-7"><a href="pronto.html#cb17-7" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="pronto.html#cb17-8" tabindex="-1"></a><span class="co"># everything below this line is optional</span></span>
+<span id="cb17-9"><a href="pronto.html#cb17-9" tabindex="-1"></a><span class="co">#SBATCH --output=/work/LAS/csafe-lab/your_netid/job_%J_out.txt # store console output</span></span>
+<span id="cb17-10"><a href="pronto.html#cb17-10" tabindex="-1"></a><span class="co">#SBATCH --error=/work/LAS/csafe-lab/your_netid/job_%J_err.txt # store error messages</span></span>
+<span id="cb17-11"><a href="pronto.html#cb17-11" tabindex="-1"></a></span>
+<span id="cb17-12"><a href="pronto.html#cb17-12" tabindex="-1"></a><span class="ex">module</span> load r</span>
+<span id="cb17-13"><a href="pronto.html#cb17-13" tabindex="-1"></a><span class="bu">cd</span> /work/LAS/csafe-lab/your_netid</span>
+<span id="cb17-14"><a href="pronto.html#cb17-14" tabindex="-1"></a><span class="ex">R</span> <span class="at">--save</span> <span class="op">&lt;</span> load.R</span></code></pre></div>
 <p>Save the file as <code>load.txt</code>.</p></li>
 <li><p>(Windows Only) If you are using Windows, your text file will likely have DOS line breaks instead of UNIX line breaks which will cause an error when the file is run on Pronto. Open Terminal in RStudio, use <code>cd folder/containing/text_file</code> to change directories to the folder containing your text file, and type <code>dos2unix load.txt</code> to change the line breaks to UNIX format.</p></li>
 <li><p>Copy the text file to your csafe-lab work folder.</p></li>
 <li><p>In the command line prompt where you are connected to Pronto, type</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="pronto.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sbatch /work/LAS/csafe-lab/your_netid/load.txt</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="pronto.html#cb18-1" tabindex="-1"></a><span class="ex">$</span> sbatch /work/LAS/csafe-lab/your_netid/load.txt</span></code></pre></div>
 <p>This will add your job to the queue. The script is so short, your job will probably run immediately.</p></li>
 <li><p>Open the file <code>job_&lt;job#&gt;_out.txt</code> in your csafe-lab work folder and make sure that the first six lines of the dataframe were printed.</p></li>
 </ol>
@@ -501,36 +505,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Sign-in to Pronto (see <a href="pronto.html#pronto">5</a>).</p></li>
 <li><p>Open your csafe-lab work folder <code>prontodtn.las.iastate.edu &gt; work &gt; LAS &gt; csafe-lab &gt; your_netid</code> (see <a href="pronto.html#prontodtn">5.2</a>)</p></li>
 <li><p>Create a new R script with the following lines of code:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="pronto.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">&quot;futile.logger&quot;</span>, </span>
-<span id="cb19-2"><a href="pronto.html#cb19-2" aria-hidden="true" tabindex="-1"></a>                   <span class="st">&quot;doParallel&quot;</span>, </span>
-<span id="cb19-3"><a href="pronto.html#cb19-3" aria-hidden="true" tabindex="-1"></a>                   <span class="st">&quot;doRNG&quot;</span>,</span>
-<span id="cb19-4"><a href="pronto.html#cb19-4" aria-hidden="true" tabindex="-1"></a>                   <span class="st">&quot;tidyverse&quot;</span>), </span>
-<span id="cb19-5"><a href="pronto.html#cb19-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">lib=</span><span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span>, </span>
-<span id="cb19-6"><a href="pronto.html#cb19-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">repos=</span><span class="st">&quot;https://mirror.las.iastate.edu/CRAN&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="pronto.html#cb19-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">&quot;futile.logger&quot;</span>, </span>
+<span id="cb19-2"><a href="pronto.html#cb19-2" tabindex="-1"></a>                   <span class="st">&quot;doParallel&quot;</span>, </span>
+<span id="cb19-3"><a href="pronto.html#cb19-3" tabindex="-1"></a>                   <span class="st">&quot;doRNG&quot;</span>,</span>
+<span id="cb19-4"><a href="pronto.html#cb19-4" tabindex="-1"></a>                   <span class="st">&quot;tidyverse&quot;</span>), </span>
+<span id="cb19-5"><a href="pronto.html#cb19-5" tabindex="-1"></a>                   <span class="at">lib=</span><span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span>, </span>
+<span id="cb19-6"><a href="pronto.html#cb19-6" tabindex="-1"></a>                   <span class="at">repos=</span><span class="st">&quot;https://mirror.las.iastate.edu/CRAN&quot;</span>)</span></code></pre></div>
 <p>The line starting with <code>lib=</code> tells Pronto to install the R packages in your csafe-lab work folder. The line starting with <code>repos=</code> tells Pronto which CRAN mirror to use. ResearchIT says that these two lines should always be used [<a href="https://researchit.las.iastate.edu/how-run-r-pronto" class="uri">https://researchit.las.iastate.edu/how-run-r-pronto</a>]. Save the script as <code>install_packages.R</code>. Copy the script to your csafe-lab work folder.</p></li>
 <li><p>Create a text file for Slurm with the following text:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="pronto.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb20-2"><a href="pronto.html#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="pronto.html#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --nodes=1 # request one node</span></span>
-<span id="cb20-4"><a href="pronto.html#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=1  # ask for 1 cpu</span></span>
-<span id="cb20-5"><a href="pronto.html#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem=1G #  asks for 1 GB of RAM</span></span>
-<span id="cb20-6"><a href="pronto.html#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=00:30:02 # ask that the job be allowed to run for 30 minutes and 2 seconds.</span></span>
-<span id="cb20-7"><a href="pronto.html#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-8"><a href="pronto.html#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co"># everything below this line is optional</span></span>
-<span id="cb20-9"><a href="pronto.html#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=/work/LAS/csafe-lab/your_netid/job_%J_out.txt # store console output</span></span>
-<span id="cb20-10"><a href="pronto.html#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --error=/work/LAS/csafe-lab/your_netid/job_%J_err.txt # store error messages</span></span>
-<span id="cb20-11"><a href="pronto.html#cb20-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-12"><a href="pronto.html#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">R_LIBS_USER</span><span class="op">=</span>/work/LAS/csafe-lab/your_netid/Rlibs</span>
-<span id="cb20-13"><a href="pronto.html#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">$R_LIBS_USER</span></span>
-<span id="cb20-14"><a href="pronto.html#cb20-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-15"><a href="pronto.html#cb20-15" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load r</span>
-<span id="cb20-16"><a href="pronto.html#cb20-16" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /work/LAS/csafe-lab/your_netid</span>
-<span id="cb20-17"><a href="pronto.html#cb20-17" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">--save</span> <span class="op">&lt;</span> install_packages.R</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="pronto.html#cb20-1" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb20-2"><a href="pronto.html#cb20-2" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="pronto.html#cb20-3" tabindex="-1"></a><span class="co">#SBATCH --nodes=1 # request one node</span></span>
+<span id="cb20-4"><a href="pronto.html#cb20-4" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=1  # ask for 1 cpu</span></span>
+<span id="cb20-5"><a href="pronto.html#cb20-5" tabindex="-1"></a><span class="co">#SBATCH --mem=1G #  asks for 1 GB of RAM</span></span>
+<span id="cb20-6"><a href="pronto.html#cb20-6" tabindex="-1"></a><span class="co">#SBATCH --time=00:30:02 # ask that the job be allowed to run for 30 minutes and 2 seconds.</span></span>
+<span id="cb20-7"><a href="pronto.html#cb20-7" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="pronto.html#cb20-8" tabindex="-1"></a><span class="co"># everything below this line is optional</span></span>
+<span id="cb20-9"><a href="pronto.html#cb20-9" tabindex="-1"></a><span class="co">#SBATCH --output=/work/LAS/csafe-lab/your_netid/job_%J_out.txt # store console output</span></span>
+<span id="cb20-10"><a href="pronto.html#cb20-10" tabindex="-1"></a><span class="co">#SBATCH --error=/work/LAS/csafe-lab/your_netid/job_%J_err.txt # store error messages</span></span>
+<span id="cb20-11"><a href="pronto.html#cb20-11" tabindex="-1"></a></span>
+<span id="cb20-12"><a href="pronto.html#cb20-12" tabindex="-1"></a><span class="bu">export</span> <span class="va">R_LIBS_USER</span><span class="op">=</span>/work/LAS/csafe-lab/your_netid/Rlibs</span>
+<span id="cb20-13"><a href="pronto.html#cb20-13" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">$R_LIBS_USER</span></span>
+<span id="cb20-14"><a href="pronto.html#cb20-14" tabindex="-1"></a></span>
+<span id="cb20-15"><a href="pronto.html#cb20-15" tabindex="-1"></a><span class="ex">module</span> load r</span>
+<span id="cb20-16"><a href="pronto.html#cb20-16" tabindex="-1"></a><span class="bu">cd</span> /work/LAS/csafe-lab/your_netid</span>
+<span id="cb20-17"><a href="pronto.html#cb20-17" tabindex="-1"></a><span class="ex">R</span> <span class="at">--save</span> <span class="op">&lt;</span> install_packages.R</span></code></pre></div>
 <p>Save the file as <code>install_packages.txt</code>.</p></li>
 <li><p>(Windows Only) If you are using Windows, your text file will likely have DOS line breaks instead of UNIX line breaks which will cause an error when the file is run on Pronto. Open Terminal in RStudio, use <code>cd folder/containing/text_file</code> to change directories to the folder containing your text file, and type <code>dos2unix install_packages.txt</code> to change the line breaks to UNIX format.</p></li>
 <li><p>Copy the text file to your csafe-lab work folder.</p></li>
 <li><p>In the command line prompt where you are connected to Pronto, type</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="pronto.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sbatch /work/LAS/csafe-lab/your_netid/install_packages.txt</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="pronto.html#cb21-1" tabindex="-1"></a><span class="ex">$</span> sbatch /work/LAS/csafe-lab/your_netid/install_packages.txt</span></code></pre></div>
 <p>This will add your job to the queue. Just like on your local machine, it might take several minutes to install the packages.</p></li>
 <li><p>There should be two other new files – <code>data.csv</code>, <code>job_&lt;job#&gt;_err.txt</code> and <code>job_&lt;job#&gt;_out.txt</code> – in your csafe-lab work folder.</p></li>
 </ol>
@@ -544,38 +548,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Sign-in to Pronto (see <a href="pronto.html#pronto">5</a>).</p></li>
 <li><p>Open your csafe-lab work folder <code>prontodtn.las.iastate.edu &gt; work &gt; LAS &gt; csafe-lab &gt; your_netid</code> (see <a href="pronto.html#prontodtn">5.2</a>)</p></li>
 <li><p>Create a new R script with the following lines of code:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="pronto.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(doParallel)</span>
-<span id="cb22-2"><a href="pronto.html#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-3"><a href="pronto.html#cb22-3" aria-hidden="true" tabindex="-1"></a>nCores <span class="ot">=</span> <span class="fu">as.integer</span>(<span class="fu">Sys.getenv</span>(<span class="st">&quot;SLURM_CPUS_PER_TASK&quot;</span>))</span>
-<span id="cb22-4"><a href="pronto.html#cb22-4" aria-hidden="true" tabindex="-1"></a>myCluster <span class="ot">=</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(nCores)</span>
-<span id="cb22-5"><a href="pronto.html#cb22-5" aria-hidden="true" tabindex="-1"></a>doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(myCluster)</span>
-<span id="cb22-6"><a href="pronto.html#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-7"><a href="pronto.html#cb22-7" aria-hidden="true" tabindex="-1"></a>results <span class="ot">=</span> <span class="fu">foreach</span>(<span class="at">i=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">%dopar%</span> {</span>
-<span id="cb22-8"><a href="pronto.html#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">1000</span>)}</span>
-<span id="cb22-9"><a href="pronto.html#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(results, <span class="st">&quot;parallel_results.rds&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="pronto.html#cb22-1" tabindex="-1"></a><span class="fu">library</span>(doParallel)</span>
+<span id="cb22-2"><a href="pronto.html#cb22-2" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="pronto.html#cb22-3" tabindex="-1"></a>nCores <span class="ot">=</span> <span class="fu">as.integer</span>(<span class="fu">Sys.getenv</span>(<span class="st">&quot;SLURM_CPUS_PER_TASK&quot;</span>))</span>
+<span id="cb22-4"><a href="pronto.html#cb22-4" tabindex="-1"></a>myCluster <span class="ot">=</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(nCores)</span>
+<span id="cb22-5"><a href="pronto.html#cb22-5" tabindex="-1"></a>doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(myCluster)</span>
+<span id="cb22-6"><a href="pronto.html#cb22-6" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="pronto.html#cb22-7" tabindex="-1"></a>results <span class="ot">=</span> <span class="fu">foreach</span>(<span class="at">i=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">%dopar%</span> {</span>
+<span id="cb22-8"><a href="pronto.html#cb22-8" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">1000</span>)}</span>
+<span id="cb22-9"><a href="pronto.html#cb22-9" tabindex="-1"></a><span class="fu">saveRDS</span>(results, <span class="st">&quot;parallel_results.rds&quot;</span>)</span></code></pre></div>
 <p>Save the script as <code>parallel.R</code>. Copy the script to your csafe-lab work folder.</p></li>
 <li><p>Create a text file for Slurm with the following text:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="pronto.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb23-2"><a href="pronto.html#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="pronto.html#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --nodes=1 # request one node</span></span>
-<span id="cb23-4"><a href="pronto.html#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=10  # ask for 10 cpu</span></span>
-<span id="cb23-5"><a href="pronto.html#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem=1G #  asks for 1 GB of RAM</span></span>
-<span id="cb23-6"><a href="pronto.html#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=00:30:02 # ask that the job be allowed to run for 30 minutes and 2 seconds.</span></span>
-<span id="cb23-7"><a href="pronto.html#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-8"><a href="pronto.html#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="co"># everything below this line is optional</span></span>
-<span id="cb23-9"><a href="pronto.html#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=/work/LAS/csafe-lab/your_netid/job_%J_out.txt # store console output</span></span>
-<span id="cb23-10"><a href="pronto.html#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --error=/work/LAS/csafe-lab/your_netid/job_%J_err.txt # store error messages</span></span>
-<span id="cb23-11"><a href="pronto.html#cb23-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-12"><a href="pronto.html#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">R_LIBS_USER</span><span class="op">=</span>/work/LAS/csafe-lab/your_netid/Rlibs</span>
-<span id="cb23-13"><a href="pronto.html#cb23-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-14"><a href="pronto.html#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load r</span>
-<span id="cb23-15"><a href="pronto.html#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /work/LAS/csafe-lab/your_netid</span>
-<span id="cb23-16"><a href="pronto.html#cb23-16" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">--save</span> <span class="op">&lt;</span> parallel.R</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="pronto.html#cb23-1" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb23-2"><a href="pronto.html#cb23-2" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="pronto.html#cb23-3" tabindex="-1"></a><span class="co">#SBATCH --nodes=1 # request one node</span></span>
+<span id="cb23-4"><a href="pronto.html#cb23-4" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=10  # ask for 10 cpu</span></span>
+<span id="cb23-5"><a href="pronto.html#cb23-5" tabindex="-1"></a><span class="co">#SBATCH --mem=1G #  asks for 1 GB of RAM</span></span>
+<span id="cb23-6"><a href="pronto.html#cb23-6" tabindex="-1"></a><span class="co">#SBATCH --time=00:30:02 # ask that the job be allowed to run for 30 minutes and 2 seconds.</span></span>
+<span id="cb23-7"><a href="pronto.html#cb23-7" tabindex="-1"></a></span>
+<span id="cb23-8"><a href="pronto.html#cb23-8" tabindex="-1"></a><span class="co"># everything below this line is optional</span></span>
+<span id="cb23-9"><a href="pronto.html#cb23-9" tabindex="-1"></a><span class="co">#SBATCH --output=/work/LAS/csafe-lab/your_netid/job_%J_out.txt # store console output</span></span>
+<span id="cb23-10"><a href="pronto.html#cb23-10" tabindex="-1"></a><span class="co">#SBATCH --error=/work/LAS/csafe-lab/your_netid/job_%J_err.txt # store error messages</span></span>
+<span id="cb23-11"><a href="pronto.html#cb23-11" tabindex="-1"></a></span>
+<span id="cb23-12"><a href="pronto.html#cb23-12" tabindex="-1"></a><span class="bu">export</span> <span class="va">R_LIBS_USER</span><span class="op">=</span>/work/LAS/csafe-lab/your_netid/Rlibs</span>
+<span id="cb23-13"><a href="pronto.html#cb23-13" tabindex="-1"></a></span>
+<span id="cb23-14"><a href="pronto.html#cb23-14" tabindex="-1"></a><span class="ex">module</span> load r</span>
+<span id="cb23-15"><a href="pronto.html#cb23-15" tabindex="-1"></a><span class="bu">cd</span> /work/LAS/csafe-lab/your_netid</span>
+<span id="cb23-16"><a href="pronto.html#cb23-16" tabindex="-1"></a><span class="ex">R</span> <span class="at">--save</span> <span class="op">&lt;</span> parallel.R</span></code></pre></div>
 <p>Save the file as <code>parallel.txt</code>.</p></li>
 <li><p>(Windows Only) If you are using Windows, your text file will likely have DOS line breaks instead of UNIX line breaks which will cause an error when the file is run on Pronto. Open Terminal in RStudio, use <code>cd folder/containing/text_file</code> to change directories to the folder containing your text file, and type <code>dos2unix parallel.txt</code> to change the line breaks to UNIX format.</p></li>
 <li><p>Copy the text file to your csafe-lab work folder.</p></li>
 <li><p>In the command line prompt where you are connected to Pronto, type</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="pronto.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sbatch /work/LAS/csafe-lab/your_netid/parallel.txt</span></code></pre></div></li>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="pronto.html#cb24-1" tabindex="-1"></a><span class="ex">$</span> sbatch /work/LAS/csafe-lab/your_netid/parallel.txt</span></code></pre></div></li>
 <li><p>The results of the parallel loop should be saved in <code>parallel.txt</code> in your csafe-lab work folder.</p></li>
 </ol>
 </div>
@@ -586,42 +590,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Sign-in to Pronto (see <a href="pronto.html#pronto">5</a>).</p></li>
 <li><p>Open your csafe-lab work folder <code>prontodtn.las.iastate.edu &gt; work &gt; LAS &gt; csafe-lab &gt; your_netid</code> (see <a href="pronto.html#prontodtn">5.2</a>)</p></li>
 <li><p>Create a new R script with the following lines of code:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="pronto.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(doParallel)</span>
-<span id="cb25-2"><a href="pronto.html#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(doRNG)</span>
-<span id="cb25-3"><a href="pronto.html#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="pronto.html#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-5"><a href="pronto.html#cb25-5" aria-hidden="true" tabindex="-1"></a>nCores <span class="ot">=</span> <span class="fu">as.integer</span>(<span class="fu">Sys.getenv</span>(<span class="st">&quot;SLURM_CPUS_PER_TASK&quot;</span>))</span>
-<span id="cb25-6"><a href="pronto.html#cb25-6" aria-hidden="true" tabindex="-1"></a>myCluster <span class="ot">=</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(nCores)</span>
-<span id="cb25-7"><a href="pronto.html#cb25-7" aria-hidden="true" tabindex="-1"></a>doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(myCluster)</span>
-<span id="cb25-8"><a href="pronto.html#cb25-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-9"><a href="pronto.html#cb25-9" aria-hidden="true" tabindex="-1"></a>r1 <span class="ot">=</span> <span class="fu">foreach</span>(<span class="at">i=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">%dorng%</span> {</span>
-<span id="cb25-10"><a href="pronto.html#cb25-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (i<span class="sc">==</span><span class="dv">1</span>){<span class="fu">Sys.sleep</span>(<span class="dv">30</span>)}</span>
-<span id="cb25-11"><a href="pronto.html#cb25-11" aria-hidden="true" tabindex="-1"></a>  time <span class="ot">=</span> <span class="fu">Sys.time</span>()</span>
-<span id="cb25-12"><a href="pronto.html#cb25-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">saveRDS</span>(<span class="at">object=</span>time, <span class="at">file=</span><span class="fu">paste0</span>(<span class="st">&quot;time_&quot;</span>, i,<span class="st">&quot;.rds&quot;</span>))</span>
-<span id="cb25-13"><a href="pronto.html#cb25-13" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="pronto.html#cb25-1" tabindex="-1"></a><span class="fu">library</span>(doParallel)</span>
+<span id="cb25-2"><a href="pronto.html#cb25-2" tabindex="-1"></a><span class="fu">library</span>(doRNG)</span>
+<span id="cb25-3"><a href="pronto.html#cb25-3" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="pronto.html#cb25-4" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="pronto.html#cb25-5" tabindex="-1"></a>nCores <span class="ot">=</span> <span class="fu">as.integer</span>(<span class="fu">Sys.getenv</span>(<span class="st">&quot;SLURM_CPUS_PER_TASK&quot;</span>))</span>
+<span id="cb25-6"><a href="pronto.html#cb25-6" tabindex="-1"></a>myCluster <span class="ot">=</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(nCores)</span>
+<span id="cb25-7"><a href="pronto.html#cb25-7" tabindex="-1"></a>doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(myCluster)</span>
+<span id="cb25-8"><a href="pronto.html#cb25-8" tabindex="-1"></a></span>
+<span id="cb25-9"><a href="pronto.html#cb25-9" tabindex="-1"></a>r1 <span class="ot">=</span> <span class="fu">foreach</span>(<span class="at">i=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">%dorng%</span> {</span>
+<span id="cb25-10"><a href="pronto.html#cb25-10" tabindex="-1"></a>  <span class="cf">if</span> (i<span class="sc">==</span><span class="dv">1</span>){<span class="fu">Sys.sleep</span>(<span class="dv">30</span>)}</span>
+<span id="cb25-11"><a href="pronto.html#cb25-11" tabindex="-1"></a>  time <span class="ot">=</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb25-12"><a href="pronto.html#cb25-12" tabindex="-1"></a>  <span class="fu">saveRDS</span>(<span class="at">object=</span>time, <span class="at">file=</span><span class="fu">paste0</span>(<span class="st">&quot;time_&quot;</span>, i,<span class="st">&quot;.rds&quot;</span>))</span>
+<span id="cb25-13"><a href="pronto.html#cb25-13" tabindex="-1"></a>}</span></code></pre></div>
 <p>Save the script as <code>check_parallel.R</code>. Copy the script to your csafe-lab work folder.</p></li>
 <li><p>Create a text file for Slurm with the following text:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="pronto.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb26-2"><a href="pronto.html#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-3"><a href="pronto.html#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --nodes=1 # request one node</span></span>
-<span id="cb26-4"><a href="pronto.html#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=10  # ask for 10 cpu</span></span>
-<span id="cb26-5"><a href="pronto.html#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem=1G #  asks for 1 GB of RAM</span></span>
-<span id="cb26-6"><a href="pronto.html#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=00:30:02 # ask that the job be allowed to run for 30 minutes and 2 seconds.</span></span>
-<span id="cb26-7"><a href="pronto.html#cb26-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-8"><a href="pronto.html#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="co"># everything below this line is optional</span></span>
-<span id="cb26-9"><a href="pronto.html#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=/work/LAS/csafe-lab/your_netid/job_%J_out.txt # store console output</span></span>
-<span id="cb26-10"><a href="pronto.html#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --error=/work/LAS/csafe-lab/your_netid/job_%J_err.txt # store error messages</span></span>
-<span id="cb26-11"><a href="pronto.html#cb26-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-12"><a href="pronto.html#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">R_LIBS_USER</span><span class="op">=</span>/work/LAS/csafe-lab/your_netid/Rlibs</span>
-<span id="cb26-13"><a href="pronto.html#cb26-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-14"><a href="pronto.html#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load r</span>
-<span id="cb26-15"><a href="pronto.html#cb26-15" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /work/LAS/csafe-lab/your_netid</span>
-<span id="cb26-16"><a href="pronto.html#cb26-16" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">--save</span> <span class="op">&lt;</span> check_parallel.R</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="pronto.html#cb26-1" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb26-2"><a href="pronto.html#cb26-2" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="pronto.html#cb26-3" tabindex="-1"></a><span class="co">#SBATCH --nodes=1 # request one node</span></span>
+<span id="cb26-4"><a href="pronto.html#cb26-4" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=10  # ask for 10 cpu</span></span>
+<span id="cb26-5"><a href="pronto.html#cb26-5" tabindex="-1"></a><span class="co">#SBATCH --mem=1G #  asks for 1 GB of RAM</span></span>
+<span id="cb26-6"><a href="pronto.html#cb26-6" tabindex="-1"></a><span class="co">#SBATCH --time=00:30:02 # ask that the job be allowed to run for 30 minutes and 2 seconds.</span></span>
+<span id="cb26-7"><a href="pronto.html#cb26-7" tabindex="-1"></a></span>
+<span id="cb26-8"><a href="pronto.html#cb26-8" tabindex="-1"></a><span class="co"># everything below this line is optional</span></span>
+<span id="cb26-9"><a href="pronto.html#cb26-9" tabindex="-1"></a><span class="co">#SBATCH --output=/work/LAS/csafe-lab/your_netid/job_%J_out.txt # store console output</span></span>
+<span id="cb26-10"><a href="pronto.html#cb26-10" tabindex="-1"></a><span class="co">#SBATCH --error=/work/LAS/csafe-lab/your_netid/job_%J_err.txt # store error messages</span></span>
+<span id="cb26-11"><a href="pronto.html#cb26-11" tabindex="-1"></a></span>
+<span id="cb26-12"><a href="pronto.html#cb26-12" tabindex="-1"></a><span class="bu">export</span> <span class="va">R_LIBS_USER</span><span class="op">=</span>/work/LAS/csafe-lab/your_netid/Rlibs</span>
+<span id="cb26-13"><a href="pronto.html#cb26-13" tabindex="-1"></a></span>
+<span id="cb26-14"><a href="pronto.html#cb26-14" tabindex="-1"></a><span class="ex">module</span> load r</span>
+<span id="cb26-15"><a href="pronto.html#cb26-15" tabindex="-1"></a><span class="bu">cd</span> /work/LAS/csafe-lab/your_netid</span>
+<span id="cb26-16"><a href="pronto.html#cb26-16" tabindex="-1"></a><span class="ex">R</span> <span class="at">--save</span> <span class="op">&lt;</span> check_parallel.R</span></code></pre></div>
 <p>Save the file as <code>check_parallel.txt</code>.</p></li>
 <li><p>(Windows Only) If you are using Windows, your text file will likely have DOS line breaks instead of UNIX line breaks which will cause an error when the file is run on Pronto. Open Terminal in RStudio, use <code>cd folder/containing/text_file</code> to change directories to the folder containing your text file, and type <code>dos2unix check_parallel.txt</code> to change the line breaks to UNIX format.</p></li>
 <li><p>Copy the text file to your csafe-lab work folder.</p></li>
 <li><p>In the command line prompt where you are connected to Pronto, type</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="pronto.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sbatch /work/LAS/csafe-lab/your_netid/check_parallel.txt</span></code></pre></div></li>
+<div class="sourceCode" id="cb27"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="pronto.html#cb27-1" tabindex="-1"></a><span class="ex">$</span> sbatch /work/LAS/csafe-lab/your_netid/check_parallel.txt</span></code></pre></div></li>
 <li><p>The script should have created 10 RDS files in your csafe-lab work folder. Check the times recorded in each file. The first file should contain a time after the other files.</p></li>
 </ol>
 </div>
@@ -634,44 +638,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Sign-in to Pronto (see <a href="pronto.html#pronto">5</a>).</p></li>
 <li><p>Open your csafe-lab work folder <code>prontodtn.las.iastate.edu &gt; work &gt; LAS &gt; csafe-lab &gt; your_netid</code> (see <a href="pronto.html#prontodtn">5.2</a>)</p></li>
 <li><p>Create a new R script with the following lines of code:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="pronto.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(doParallel)</span>
-<span id="cb28-2"><a href="pronto.html#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(doRNG)</span>
-<span id="cb28-3"><a href="pronto.html#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-4"><a href="pronto.html#cb28-4" aria-hidden="true" tabindex="-1"></a>nCores <span class="ot">=</span> <span class="fu">as.integer</span>(<span class="fu">Sys.getenv</span>(<span class="st">&quot;SLURM_CPUS_PER_TASK&quot;</span>))</span>
-<span id="cb28-5"><a href="pronto.html#cb28-5" aria-hidden="true" tabindex="-1"></a>myCluster <span class="ot">=</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(nCores)</span>
-<span id="cb28-6"><a href="pronto.html#cb28-6" aria-hidden="true" tabindex="-1"></a>doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(myCluster)</span>
-<span id="cb28-7"><a href="pronto.html#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-8"><a href="pronto.html#cb28-8" aria-hidden="true" tabindex="-1"></a>starting_seed <span class="ot">=</span> <span class="dv">300</span></span>
-<span id="cb28-9"><a href="pronto.html#cb28-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-10"><a href="pronto.html#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(starting_seed)</span>
-<span id="cb28-11"><a href="pronto.html#cb28-11" aria-hidden="true" tabindex="-1"></a>r1 <span class="ot">=</span> <span class="fu">foreach</span>(<span class="at">i=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">%dorng%</span>{ <span class="fu">runif</span>(<span class="dv">1</span>) }</span>
-<span id="cb28-12"><a href="pronto.html#cb28-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-13"><a href="pronto.html#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(starting_seed)</span>
-<span id="cb28-14"><a href="pronto.html#cb28-14" aria-hidden="true" tabindex="-1"></a>r2 <span class="ot">=</span> <span class="fu">foreach</span>(<span class="at">i=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">%dorng%</span>{ <span class="fu">runif</span>(<span class="dv">1</span>) }</span>
-<span id="cb28-15"><a href="pronto.html#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="fu">identical</span>(r1, r2)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="pronto.html#cb28-1" tabindex="-1"></a><span class="fu">library</span>(doParallel)</span>
+<span id="cb28-2"><a href="pronto.html#cb28-2" tabindex="-1"></a><span class="fu">library</span>(doRNG)</span>
+<span id="cb28-3"><a href="pronto.html#cb28-3" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="pronto.html#cb28-4" tabindex="-1"></a>nCores <span class="ot">=</span> <span class="fu">as.integer</span>(<span class="fu">Sys.getenv</span>(<span class="st">&quot;SLURM_CPUS_PER_TASK&quot;</span>))</span>
+<span id="cb28-5"><a href="pronto.html#cb28-5" tabindex="-1"></a>myCluster <span class="ot">=</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(nCores)</span>
+<span id="cb28-6"><a href="pronto.html#cb28-6" tabindex="-1"></a>doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(myCluster)</span>
+<span id="cb28-7"><a href="pronto.html#cb28-7" tabindex="-1"></a></span>
+<span id="cb28-8"><a href="pronto.html#cb28-8" tabindex="-1"></a>starting_seed <span class="ot">=</span> <span class="dv">300</span></span>
+<span id="cb28-9"><a href="pronto.html#cb28-9" tabindex="-1"></a></span>
+<span id="cb28-10"><a href="pronto.html#cb28-10" tabindex="-1"></a><span class="fu">set.seed</span>(starting_seed)</span>
+<span id="cb28-11"><a href="pronto.html#cb28-11" tabindex="-1"></a>r1 <span class="ot">=</span> <span class="fu">foreach</span>(<span class="at">i=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">%dorng%</span>{ <span class="fu">runif</span>(<span class="dv">1</span>) }</span>
+<span id="cb28-12"><a href="pronto.html#cb28-12" tabindex="-1"></a></span>
+<span id="cb28-13"><a href="pronto.html#cb28-13" tabindex="-1"></a><span class="fu">set.seed</span>(starting_seed)</span>
+<span id="cb28-14"><a href="pronto.html#cb28-14" tabindex="-1"></a>r2 <span class="ot">=</span> <span class="fu">foreach</span>(<span class="at">i=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">%dorng%</span>{ <span class="fu">runif</span>(<span class="dv">1</span>) }</span>
+<span id="cb28-15"><a href="pronto.html#cb28-15" tabindex="-1"></a><span class="fu">identical</span>(r1, r2)</span></code></pre></div>
 <p>Save the script as <code>seed.R</code>. Copy the script to your csafe-lab work folder.</p></li>
 <li><p>Create a text file for Slurm with the following text:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb29-1"><a href="pronto.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb29-2"><a href="pronto.html#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-3"><a href="pronto.html#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --nodes=1 # request one node</span></span>
-<span id="cb29-4"><a href="pronto.html#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=10  # ask for 10 cpu</span></span>
-<span id="cb29-5"><a href="pronto.html#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem=1G #  asks for 1 GB of RAM</span></span>
-<span id="cb29-6"><a href="pronto.html#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=00:30:02 # ask that the job be allowed to run for 30 minutes and 2 seconds.</span></span>
-<span id="cb29-7"><a href="pronto.html#cb29-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-8"><a href="pronto.html#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="co"># everything below this line is optional</span></span>
-<span id="cb29-9"><a href="pronto.html#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=/work/LAS/csafe-lab/your_netid/job_%J_out.txt # store console output</span></span>
-<span id="cb29-10"><a href="pronto.html#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --error=/work/LAS/csafe-lab/your_netid/job_%J_err.txt # store error messages</span></span>
-<span id="cb29-11"><a href="pronto.html#cb29-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-12"><a href="pronto.html#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">R_LIBS_USER</span><span class="op">=</span>/work/LAS/csafe-lab/your_netid/Rlibs</span>
-<span id="cb29-13"><a href="pronto.html#cb29-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-14"><a href="pronto.html#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load r</span>
-<span id="cb29-15"><a href="pronto.html#cb29-15" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /work/LAS/csafe-lab/your_netid</span>
-<span id="cb29-16"><a href="pronto.html#cb29-16" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">--save</span> <span class="op">&lt;</span> seed.R</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb29-1"><a href="pronto.html#cb29-1" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb29-2"><a href="pronto.html#cb29-2" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="pronto.html#cb29-3" tabindex="-1"></a><span class="co">#SBATCH --nodes=1 # request one node</span></span>
+<span id="cb29-4"><a href="pronto.html#cb29-4" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=10  # ask for 10 cpu</span></span>
+<span id="cb29-5"><a href="pronto.html#cb29-5" tabindex="-1"></a><span class="co">#SBATCH --mem=1G #  asks for 1 GB of RAM</span></span>
+<span id="cb29-6"><a href="pronto.html#cb29-6" tabindex="-1"></a><span class="co">#SBATCH --time=00:30:02 # ask that the job be allowed to run for 30 minutes and 2 seconds.</span></span>
+<span id="cb29-7"><a href="pronto.html#cb29-7" tabindex="-1"></a></span>
+<span id="cb29-8"><a href="pronto.html#cb29-8" tabindex="-1"></a><span class="co"># everything below this line is optional</span></span>
+<span id="cb29-9"><a href="pronto.html#cb29-9" tabindex="-1"></a><span class="co">#SBATCH --output=/work/LAS/csafe-lab/your_netid/job_%J_out.txt # store console output</span></span>
+<span id="cb29-10"><a href="pronto.html#cb29-10" tabindex="-1"></a><span class="co">#SBATCH --error=/work/LAS/csafe-lab/your_netid/job_%J_err.txt # store error messages</span></span>
+<span id="cb29-11"><a href="pronto.html#cb29-11" tabindex="-1"></a></span>
+<span id="cb29-12"><a href="pronto.html#cb29-12" tabindex="-1"></a><span class="bu">export</span> <span class="va">R_LIBS_USER</span><span class="op">=</span>/work/LAS/csafe-lab/your_netid/Rlibs</span>
+<span id="cb29-13"><a href="pronto.html#cb29-13" tabindex="-1"></a></span>
+<span id="cb29-14"><a href="pronto.html#cb29-14" tabindex="-1"></a><span class="ex">module</span> load r</span>
+<span id="cb29-15"><a href="pronto.html#cb29-15" tabindex="-1"></a><span class="bu">cd</span> /work/LAS/csafe-lab/your_netid</span>
+<span id="cb29-16"><a href="pronto.html#cb29-16" tabindex="-1"></a><span class="ex">R</span> <span class="at">--save</span> <span class="op">&lt;</span> seed.R</span></code></pre></div>
 <p>Save the file as <code>seed.txt</code>.</p></li>
 <li><p>(Windows Only) If you are using Windows, your text file will likely have DOS line breaks instead of UNIX line breaks which will cause an error when the file is run on Pronto. Open Terminal in RStudio, use <code>cd folder/containing/text_file</code> to change directories to the folder containing your text file, and type <code>dos2unix seed.txt</code> to change the line breaks to UNIX format.</p></li>
 <li><p>Copy the text file to your csafe-lab work folder.</p></li>
 <li><p>In the command line prompt where you are connected to Pronto, type</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb30-1"><a href="pronto.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sbatch /work/LAS/csafe-lab/your_netid/seed.txt</span></code></pre></div></li>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb30-1"><a href="pronto.html#cb30-1" tabindex="-1"></a><span class="ex">$</span> sbatch /work/LAS/csafe-lab/your_netid/seed.txt</span></code></pre></div></li>
 <li><p>Open the <code>job_&lt;job#&gt;_out.txt</code> file to make sure that the result of <code>identical(r1, r2)</code> is <code>TRUE</code>.</p></li>
 </ol>
 </div>
@@ -685,55 +689,55 @@ functions from packages that we install, we need to pass the package names to th
 <li><p>Sign-in to Pronto (see <a href="pronto.html#pronto">5</a>).</p></li>
 <li><p>Open your csafe-lab work folder <code>prontodtn.las.iastate.edu &gt; work &gt; LAS &gt; csafe-lab &gt; your_netid</code> (see <a href="pronto.html#prontodtn">5.2</a>)</p></li>
 <li><p>Create a new R script with the following lines of code:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="pronto.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(doParallel)</span>
-<span id="cb31-2"><a href="pronto.html#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(doRNG)</span>
-<span id="cb31-3"><a href="pronto.html#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
-<span id="cb31-4"><a href="pronto.html#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-5"><a href="pronto.html#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-6"><a href="pronto.html#cb31-6" aria-hidden="true" tabindex="-1"></a>nCores <span class="ot">=</span> <span class="fu">as.integer</span>(<span class="fu">Sys.getenv</span>(<span class="st">&quot;SLURM_CPUS_PER_TASK&quot;</span>))</span>
-<span id="cb31-7"><a href="pronto.html#cb31-7" aria-hidden="true" tabindex="-1"></a>myCluster <span class="ot">=</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(nCores)</span>
-<span id="cb31-8"><a href="pronto.html#cb31-8" aria-hidden="true" tabindex="-1"></a>doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(myCluster)</span>
-<span id="cb31-9"><a href="pronto.html#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-10"><a href="pronto.html#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">100</span>)</span>
-<span id="cb31-11"><a href="pronto.html#cb31-11" aria-hidden="true" tabindex="-1"></a>r1 <span class="ot">=</span> <span class="fu">foreach</span>(<span class="at">i=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">.packages=</span><span class="fu">c</span>(<span class="st">&quot;dplyr&quot;</span>, <span class="st">&quot;magrittr&quot;</span>)) <span class="sc">%dorng%</span>{ </span>
-<span id="cb31-12"><a href="pronto.html#cb31-12" aria-hidden="true" tabindex="-1"></a>  cluster_centers <span class="ot">=</span> df <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n=</span><span class="dv">40</span>)</span>
-<span id="cb31-13"><a href="pronto.html#cb31-13" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb31-14"><a href="pronto.html#cb31-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-15"><a href="pronto.html#cb31-15" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">100</span>)</span>
-<span id="cb31-16"><a href="pronto.html#cb31-16" aria-hidden="true" tabindex="-1"></a>r2 <span class="ot">=</span> <span class="fu">foreach</span>(<span class="at">i=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">.packages=</span><span class="fu">c</span>(<span class="st">&quot;dplyr&quot;</span>, <span class="st">&quot;magrittr&quot;</span>)) <span class="sc">%dorng%</span>{ </span>
-<span id="cb31-17"><a href="pronto.html#cb31-17" aria-hidden="true" tabindex="-1"></a>  cluster_centers <span class="ot">=</span> df <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n=</span><span class="dv">40</span>)</span>
-<span id="cb31-18"><a href="pronto.html#cb31-18" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb31-19"><a href="pronto.html#cb31-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-20"><a href="pronto.html#cb31-20" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">200</span>)</span>
-<span id="cb31-21"><a href="pronto.html#cb31-21" aria-hidden="true" tabindex="-1"></a>r3 <span class="ot">=</span> <span class="fu">foreach</span>(<span class="at">i=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">.packages=</span><span class="fu">c</span>(<span class="st">&quot;dplyr&quot;</span>, <span class="st">&quot;magrittr&quot;</span>)) <span class="sc">%dorng%</span>{ </span>
-<span id="cb31-22"><a href="pronto.html#cb31-22" aria-hidden="true" tabindex="-1"></a>  cluster_centers <span class="ot">=</span> df <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n=</span><span class="dv">40</span>)</span>
-<span id="cb31-23"><a href="pronto.html#cb31-23" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb31-24"><a href="pronto.html#cb31-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-25"><a href="pronto.html#cb31-25" aria-hidden="true" tabindex="-1"></a><span class="fu">identical</span>(r1, r2)</span>
-<span id="cb31-26"><a href="pronto.html#cb31-26" aria-hidden="true" tabindex="-1"></a><span class="fu">identical</span>(r1, r3)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="pronto.html#cb31-1" tabindex="-1"></a><span class="fu">library</span>(doParallel)</span>
+<span id="cb31-2"><a href="pronto.html#cb31-2" tabindex="-1"></a><span class="fu">library</span>(doRNG)</span>
+<span id="cb31-3"><a href="pronto.html#cb31-3" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
+<span id="cb31-4"><a href="pronto.html#cb31-4" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb31-5"><a href="pronto.html#cb31-5" tabindex="-1"></a></span>
+<span id="cb31-6"><a href="pronto.html#cb31-6" tabindex="-1"></a>nCores <span class="ot">=</span> <span class="fu">as.integer</span>(<span class="fu">Sys.getenv</span>(<span class="st">&quot;SLURM_CPUS_PER_TASK&quot;</span>))</span>
+<span id="cb31-7"><a href="pronto.html#cb31-7" tabindex="-1"></a>myCluster <span class="ot">=</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(nCores)</span>
+<span id="cb31-8"><a href="pronto.html#cb31-8" tabindex="-1"></a>doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(myCluster)</span>
+<span id="cb31-9"><a href="pronto.html#cb31-9" tabindex="-1"></a></span>
+<span id="cb31-10"><a href="pronto.html#cb31-10" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">100</span>)</span>
+<span id="cb31-11"><a href="pronto.html#cb31-11" tabindex="-1"></a>r1 <span class="ot">=</span> <span class="fu">foreach</span>(<span class="at">i=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">.packages=</span><span class="fu">c</span>(<span class="st">&quot;dplyr&quot;</span>, <span class="st">&quot;magrittr&quot;</span>)) <span class="sc">%dorng%</span>{ </span>
+<span id="cb31-12"><a href="pronto.html#cb31-12" tabindex="-1"></a>  cluster_centers <span class="ot">=</span> df <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n=</span><span class="dv">40</span>)</span>
+<span id="cb31-13"><a href="pronto.html#cb31-13" tabindex="-1"></a>}</span>
+<span id="cb31-14"><a href="pronto.html#cb31-14" tabindex="-1"></a></span>
+<span id="cb31-15"><a href="pronto.html#cb31-15" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">100</span>)</span>
+<span id="cb31-16"><a href="pronto.html#cb31-16" tabindex="-1"></a>r2 <span class="ot">=</span> <span class="fu">foreach</span>(<span class="at">i=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">.packages=</span><span class="fu">c</span>(<span class="st">&quot;dplyr&quot;</span>, <span class="st">&quot;magrittr&quot;</span>)) <span class="sc">%dorng%</span>{ </span>
+<span id="cb31-17"><a href="pronto.html#cb31-17" tabindex="-1"></a>  cluster_centers <span class="ot">=</span> df <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n=</span><span class="dv">40</span>)</span>
+<span id="cb31-18"><a href="pronto.html#cb31-18" tabindex="-1"></a>}</span>
+<span id="cb31-19"><a href="pronto.html#cb31-19" tabindex="-1"></a></span>
+<span id="cb31-20"><a href="pronto.html#cb31-20" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">200</span>)</span>
+<span id="cb31-21"><a href="pronto.html#cb31-21" tabindex="-1"></a>r3 <span class="ot">=</span> <span class="fu">foreach</span>(<span class="at">i=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">.packages=</span><span class="fu">c</span>(<span class="st">&quot;dplyr&quot;</span>, <span class="st">&quot;magrittr&quot;</span>)) <span class="sc">%dorng%</span>{ </span>
+<span id="cb31-22"><a href="pronto.html#cb31-22" tabindex="-1"></a>  cluster_centers <span class="ot">=</span> df <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n=</span><span class="dv">40</span>)</span>
+<span id="cb31-23"><a href="pronto.html#cb31-23" tabindex="-1"></a>}</span>
+<span id="cb31-24"><a href="pronto.html#cb31-24" tabindex="-1"></a></span>
+<span id="cb31-25"><a href="pronto.html#cb31-25" tabindex="-1"></a><span class="fu">identical</span>(r1, r2)</span>
+<span id="cb31-26"><a href="pronto.html#cb31-26" tabindex="-1"></a><span class="fu">identical</span>(r1, r3)</span></code></pre></div>
 <p>Save the script as <code>magrittr.R</code>. Copy the script to your csafe-lab work folder.</p></li>
 <li><p>Create a text file for Slurm with the following text:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb32-1"><a href="pronto.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb32-2"><a href="pronto.html#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-3"><a href="pronto.html#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --nodes=1 # request one node</span></span>
-<span id="cb32-4"><a href="pronto.html#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=10  # ask for 10 cpu</span></span>
-<span id="cb32-5"><a href="pronto.html#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem=1G #  asks for 1 GB of RAM</span></span>
-<span id="cb32-6"><a href="pronto.html#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=00:30:02 # ask that the job be allowed to run for 30 minutes and 2 seconds.</span></span>
-<span id="cb32-7"><a href="pronto.html#cb32-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-8"><a href="pronto.html#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="co"># everything below this line is optional</span></span>
-<span id="cb32-9"><a href="pronto.html#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=/work/LAS/csafe-lab/your_netid/job_%J_out.txt # store console output</span></span>
-<span id="cb32-10"><a href="pronto.html#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --error=/work/LAS/csafe-lab/your_netid/job_%J_err.txt # store error messages</span></span>
-<span id="cb32-11"><a href="pronto.html#cb32-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-12"><a href="pronto.html#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">R_LIBS_USER</span><span class="op">=</span>/work/LAS/csafe-lab/your_netid/Rlibs</span>
-<span id="cb32-13"><a href="pronto.html#cb32-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-14"><a href="pronto.html#cb32-14" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load r</span>
-<span id="cb32-15"><a href="pronto.html#cb32-15" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /work/LAS/csafe-lab/your_netid</span>
-<span id="cb32-16"><a href="pronto.html#cb32-16" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">--save</span> <span class="op">&lt;</span> magrittr.R</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb32-1"><a href="pronto.html#cb32-1" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb32-2"><a href="pronto.html#cb32-2" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="pronto.html#cb32-3" tabindex="-1"></a><span class="co">#SBATCH --nodes=1 # request one node</span></span>
+<span id="cb32-4"><a href="pronto.html#cb32-4" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=10  # ask for 10 cpu</span></span>
+<span id="cb32-5"><a href="pronto.html#cb32-5" tabindex="-1"></a><span class="co">#SBATCH --mem=1G #  asks for 1 GB of RAM</span></span>
+<span id="cb32-6"><a href="pronto.html#cb32-6" tabindex="-1"></a><span class="co">#SBATCH --time=00:30:02 # ask that the job be allowed to run for 30 minutes and 2 seconds.</span></span>
+<span id="cb32-7"><a href="pronto.html#cb32-7" tabindex="-1"></a></span>
+<span id="cb32-8"><a href="pronto.html#cb32-8" tabindex="-1"></a><span class="co"># everything below this line is optional</span></span>
+<span id="cb32-9"><a href="pronto.html#cb32-9" tabindex="-1"></a><span class="co">#SBATCH --output=/work/LAS/csafe-lab/your_netid/job_%J_out.txt # store console output</span></span>
+<span id="cb32-10"><a href="pronto.html#cb32-10" tabindex="-1"></a><span class="co">#SBATCH --error=/work/LAS/csafe-lab/your_netid/job_%J_err.txt # store error messages</span></span>
+<span id="cb32-11"><a href="pronto.html#cb32-11" tabindex="-1"></a></span>
+<span id="cb32-12"><a href="pronto.html#cb32-12" tabindex="-1"></a><span class="bu">export</span> <span class="va">R_LIBS_USER</span><span class="op">=</span>/work/LAS/csafe-lab/your_netid/Rlibs</span>
+<span id="cb32-13"><a href="pronto.html#cb32-13" tabindex="-1"></a></span>
+<span id="cb32-14"><a href="pronto.html#cb32-14" tabindex="-1"></a><span class="ex">module</span> load r</span>
+<span id="cb32-15"><a href="pronto.html#cb32-15" tabindex="-1"></a><span class="bu">cd</span> /work/LAS/csafe-lab/your_netid</span>
+<span id="cb32-16"><a href="pronto.html#cb32-16" tabindex="-1"></a><span class="ex">R</span> <span class="at">--save</span> <span class="op">&lt;</span> magrittr.R</span></code></pre></div>
 <p>Save the file as <code>magrittr.txt</code>.</p></li>
 <li><p>(Windows Only) If you are using Windows, your text file will likely have DOS line breaks instead of UNIX line breaks which will cause an error when the file is run on Pronto. Open Terminal in RStudio, use <code>cd folder/containing/text_file</code> to change directories to the folder containing your text file, and type <code>dos2unix magrittr.txt</code> to change the line breaks to UNIX format.</p></li>
 <li><p>Copy the text file to your csafe-lab work folder.</p></li>
 <li><p>In the command line prompt where you are connected to Pronto, type</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb33-1"><a href="pronto.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sbatch /work/LAS/csafe-lab/your_netid/magrittr.txt</span></code></pre></div></li>
+<div class="sourceCode" id="cb33"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb33-1"><a href="pronto.html#cb33-1" tabindex="-1"></a><span class="ex">$</span> sbatch /work/LAS/csafe-lab/your_netid/magrittr.txt</span></code></pre></div></li>
 <li><p>Open the <code>job_&lt;job#&gt;_out.txt</code> file to make sure that the result of <code>identical(r1, r2)</code> is <code>TRUE</code> and <code>identical(r1, r3)</code> is <code>FALSE</code>.</p></li>
 </ol>
 </div>
@@ -744,43 +748,43 @@ functions from packages that we install, we need to pass the package names to th
 <li><p>Sign-in to Pronto (see <a href="pronto.html#pronto">5</a>).</p></li>
 <li><p>Open your csafe-lab work folder <code>prontodtn.las.iastate.edu &gt; work &gt; LAS &gt; csafe-lab &gt; your_netid</code> (see <a href="pronto.html#prontodtn">5.2</a>)</p></li>
 <li><p>Create a new R script with the following lines of code:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="pronto.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(doParallel)</span>
-<span id="cb34-2"><a href="pronto.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(doRNG)</span>
-<span id="cb34-3"><a href="pronto.html#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;parallel_save.R&quot;</span>)</span>
-<span id="cb34-4"><a href="pronto.html#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-5"><a href="pronto.html#cb34-5" aria-hidden="true" tabindex="-1"></a>nCores <span class="ot">=</span> <span class="fu">as.integer</span>(<span class="fu">Sys.getenv</span>(<span class="st">&quot;SLURM_CPUS_PER_TASK&quot;</span>))</span>
-<span id="cb34-6"><a href="pronto.html#cb34-6" aria-hidden="true" tabindex="-1"></a>myCluster <span class="ot">=</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(nCores)</span>
-<span id="cb34-7"><a href="pronto.html#cb34-7" aria-hidden="true" tabindex="-1"></a>doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(myCluster)</span>
-<span id="cb34-8"><a href="pronto.html#cb34-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-9"><a href="pronto.html#cb34-9" aria-hidden="true" tabindex="-1"></a>starting_seed <span class="ot">=</span> <span class="dv">300</span></span>
-<span id="cb34-10"><a href="pronto.html#cb34-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-11"><a href="pronto.html#cb34-11" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(starting_seed)</span>
-<span id="cb34-12"><a href="pronto.html#cb34-12" aria-hidden="true" tabindex="-1"></a>r1 <span class="ot">=</span> <span class="fu">foreach</span>(<span class="at">i=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">%dorng%</span> {</span>
-<span id="cb34-13"><a href="pronto.html#cb34-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">save_sample</span>(<span class="at">n=</span><span class="dv">10000</span>, <span class="at">filename=</span><span class="fu">paste0</span>(<span class="st">&quot;sample_&quot;</span>,i,<span class="st">&quot;.rds&quot;</span>)) </span>
-<span id="cb34-14"><a href="pronto.html#cb34-14" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="pronto.html#cb34-1" tabindex="-1"></a><span class="fu">library</span>(doParallel)</span>
+<span id="cb34-2"><a href="pronto.html#cb34-2" tabindex="-1"></a><span class="fu">library</span>(doRNG)</span>
+<span id="cb34-3"><a href="pronto.html#cb34-3" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;parallel_save.R&quot;</span>)</span>
+<span id="cb34-4"><a href="pronto.html#cb34-4" tabindex="-1"></a></span>
+<span id="cb34-5"><a href="pronto.html#cb34-5" tabindex="-1"></a>nCores <span class="ot">=</span> <span class="fu">as.integer</span>(<span class="fu">Sys.getenv</span>(<span class="st">&quot;SLURM_CPUS_PER_TASK&quot;</span>))</span>
+<span id="cb34-6"><a href="pronto.html#cb34-6" tabindex="-1"></a>myCluster <span class="ot">=</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(nCores)</span>
+<span id="cb34-7"><a href="pronto.html#cb34-7" tabindex="-1"></a>doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(myCluster)</span>
+<span id="cb34-8"><a href="pronto.html#cb34-8" tabindex="-1"></a></span>
+<span id="cb34-9"><a href="pronto.html#cb34-9" tabindex="-1"></a>starting_seed <span class="ot">=</span> <span class="dv">300</span></span>
+<span id="cb34-10"><a href="pronto.html#cb34-10" tabindex="-1"></a></span>
+<span id="cb34-11"><a href="pronto.html#cb34-11" tabindex="-1"></a><span class="fu">set.seed</span>(starting_seed)</span>
+<span id="cb34-12"><a href="pronto.html#cb34-12" tabindex="-1"></a>r1 <span class="ot">=</span> <span class="fu">foreach</span>(<span class="at">i=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">%dorng%</span> {</span>
+<span id="cb34-13"><a href="pronto.html#cb34-13" tabindex="-1"></a>  <span class="fu">save_sample</span>(<span class="at">n=</span><span class="dv">10000</span>, <span class="at">filename=</span><span class="fu">paste0</span>(<span class="st">&quot;sample_&quot;</span>,i,<span class="st">&quot;.rds&quot;</span>)) </span>
+<span id="cb34-14"><a href="pronto.html#cb34-14" tabindex="-1"></a>}</span></code></pre></div>
 <p>Save the script as <code>run_parallel_save.R</code>. Copy the script to your csafe-lab work folder.</p></li>
 <li><p>Create a text file for Slurm with the following text:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="pronto.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb35-2"><a href="pronto.html#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-3"><a href="pronto.html#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --nodes=1 # request one node</span></span>
-<span id="cb35-4"><a href="pronto.html#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=10</span></span>
-<span id="cb35-5"><a href="pronto.html#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem=2G </span></span>
-<span id="cb35-6"><a href="pronto.html#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=00:15:00</span></span>
-<span id="cb35-7"><a href="pronto.html#cb35-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-8"><a href="pronto.html#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="co"># everything below this line is optional</span></span>
-<span id="cb35-9"><a href="pronto.html#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=/work/LAS/csafe-lab/your_netid/job_%J_out.txt # store console output</span></span>
-<span id="cb35-10"><a href="pronto.html#cb35-10" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --error=/work/LAS/csafe-lab/your_netid/job_%J_err.txt # store error messages</span></span>
-<span id="cb35-11"><a href="pronto.html#cb35-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-12"><a href="pronto.html#cb35-12" aria-hidden="true" tabindex="-1"></a>export R_LIBS_USER<span class="ot">=</span><span class="er">/</span>work<span class="sc">/</span>LAS<span class="sc">/</span>csafe<span class="sc">-</span>lab<span class="sc">/</span>your_netid<span class="sc">/</span>Rlibs</span>
-<span id="cb35-13"><a href="pronto.html#cb35-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-14"><a href="pronto.html#cb35-14" aria-hidden="true" tabindex="-1"></a>module load r</span>
-<span id="cb35-15"><a href="pronto.html#cb35-15" aria-hidden="true" tabindex="-1"></a>cd <span class="sc">/</span>work<span class="sc">/</span>LAS<span class="sc">/</span>csafe<span class="sc">-</span>lab<span class="sc">/</span>your_netid</span>
-<span id="cb35-16"><a href="pronto.html#cb35-16" aria-hidden="true" tabindex="-1"></a>R <span class="sc">--</span>save <span class="sc">&lt;</span> run_parallel_save.R</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="pronto.html#cb35-1" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb35-2"><a href="pronto.html#cb35-2" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="pronto.html#cb35-3" tabindex="-1"></a><span class="co">#SBATCH --nodes=1 # request one node</span></span>
+<span id="cb35-4"><a href="pronto.html#cb35-4" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=10</span></span>
+<span id="cb35-5"><a href="pronto.html#cb35-5" tabindex="-1"></a><span class="co">#SBATCH --mem=2G </span></span>
+<span id="cb35-6"><a href="pronto.html#cb35-6" tabindex="-1"></a><span class="co">#SBATCH --time=00:15:00</span></span>
+<span id="cb35-7"><a href="pronto.html#cb35-7" tabindex="-1"></a></span>
+<span id="cb35-8"><a href="pronto.html#cb35-8" tabindex="-1"></a><span class="co"># everything below this line is optional</span></span>
+<span id="cb35-9"><a href="pronto.html#cb35-9" tabindex="-1"></a><span class="co">#SBATCH --output=/work/LAS/csafe-lab/your_netid/job_%J_out.txt # store console output</span></span>
+<span id="cb35-10"><a href="pronto.html#cb35-10" tabindex="-1"></a><span class="co">#SBATCH --error=/work/LAS/csafe-lab/your_netid/job_%J_err.txt # store error messages</span></span>
+<span id="cb35-11"><a href="pronto.html#cb35-11" tabindex="-1"></a></span>
+<span id="cb35-12"><a href="pronto.html#cb35-12" tabindex="-1"></a>export R_LIBS_USER<span class="ot">=</span><span class="er">/</span>work<span class="sc">/</span>LAS<span class="sc">/</span>csafe<span class="sc">-</span>lab<span class="sc">/</span>your_netid<span class="sc">/</span>Rlibs</span>
+<span id="cb35-13"><a href="pronto.html#cb35-13" tabindex="-1"></a></span>
+<span id="cb35-14"><a href="pronto.html#cb35-14" tabindex="-1"></a>module load r</span>
+<span id="cb35-15"><a href="pronto.html#cb35-15" tabindex="-1"></a>cd <span class="sc">/</span>work<span class="sc">/</span>LAS<span class="sc">/</span>csafe<span class="sc">-</span>lab<span class="sc">/</span>your_netid</span>
+<span id="cb35-16"><a href="pronto.html#cb35-16" tabindex="-1"></a>R <span class="sc">--</span>save <span class="sc">&lt;</span> run_parallel_save.R</span></code></pre></div>
 <p>Save the file as <code>parallel_save.txt</code>.</p></li>
 <li><p>(Windows Only) If you are using Windows, your text file will likely have DOS line breaks instead of UNIX line breaks which will cause an error when the file is run on Pronto. Open Terminal in RStudio, use <code>cd folder/containing/text_file</code> to change directories to the folder containing your text file, and type <code>dos2unix parallel_save.txt</code> to change the line breaks to UNIX format.</p></li>
 <li><p>Copy the text file to your csafe-lab work folder.</p></li>
 <li><p>In the command line prompt where you are connected to Pronto, type</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb36-1"><a href="pronto.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sbatch /work/LAS/csafe-lab/your_netid/parallel_save.txt</span></code></pre></div></li>
+<div class="sourceCode" id="cb36"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb36-1"><a href="pronto.html#cb36-1" tabindex="-1"></a><span class="ex">$</span> sbatch /work/LAS/csafe-lab/your_netid/parallel_save.txt</span></code></pre></div></li>
 <li><p>There should be ten rds files names sample_1.rds, sample_2.rds, etc. in your csafe-lab folder.</p></li>
 </ol>
 </div>
@@ -792,39 +796,39 @@ functions from packages that we install, we need to pass the package names to th
 <li><p>Sign-in to Pronto (see <a href="pronto.html#pronto">5</a>).</p></li>
 <li><p>Open your csafe-lab work folder <code>prontodtn.las.iastate.edu &gt; work &gt; LAS &gt; csafe-lab &gt; your_netid</code> (see <a href="pronto.html#prontodtn">5.2</a>)</p></li>
 <li><p>Create a new R script with the following lines of code:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="pronto.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(futile.logger)</span>
-<span id="cb37-2"><a href="pronto.html#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-3"><a href="pronto.html#cb37-3" aria-hidden="true" tabindex="-1"></a>futile.logger<span class="sc">::</span><span class="fu">flog.appender</span>(<span class="fu">appender.file</span>(<span class="st">&quot;log_file.txt&quot;</span>), <span class="at">name=</span><span class="st">&#39;log&#39;</span>)</span>
-<span id="cb37-4"><a href="pronto.html#cb37-4" aria-hidden="true" tabindex="-1"></a>futile.logger<span class="sc">::</span><span class="fu">flog.info</span>(<span class="st">&quot;start script...&quot;</span>, <span class="at">name=</span><span class="st">&#39;log&#39;</span>)</span>
-<span id="cb37-5"><a href="pronto.html#cb37-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-6"><a href="pronto.html#cb37-6" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="dv">5</span></span>
-<span id="cb37-7"><a href="pronto.html#cb37-7" aria-hidden="true" tabindex="-1"></a>futile.logger<span class="sc">::</span><span class="fu">flog.info</span>(<span class="st">&quot;variable a = %d&quot;</span>, a, <span class="at">name=</span><span class="st">&#39;log&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="pronto.html#cb37-1" tabindex="-1"></a><span class="fu">library</span>(futile.logger)</span>
+<span id="cb37-2"><a href="pronto.html#cb37-2" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="pronto.html#cb37-3" tabindex="-1"></a>futile.logger<span class="sc">::</span><span class="fu">flog.appender</span>(<span class="fu">appender.file</span>(<span class="st">&quot;log_file.txt&quot;</span>), <span class="at">name=</span><span class="st">&#39;log&#39;</span>)</span>
+<span id="cb37-4"><a href="pronto.html#cb37-4" tabindex="-1"></a>futile.logger<span class="sc">::</span><span class="fu">flog.info</span>(<span class="st">&quot;start script...&quot;</span>, <span class="at">name=</span><span class="st">&#39;log&#39;</span>)</span>
+<span id="cb37-5"><a href="pronto.html#cb37-5" tabindex="-1"></a></span>
+<span id="cb37-6"><a href="pronto.html#cb37-6" tabindex="-1"></a>a <span class="ot">=</span> <span class="dv">5</span></span>
+<span id="cb37-7"><a href="pronto.html#cb37-7" tabindex="-1"></a>futile.logger<span class="sc">::</span><span class="fu">flog.info</span>(<span class="st">&quot;variable a = %d&quot;</span>, a, <span class="at">name=</span><span class="st">&#39;log&#39;</span>)</span></code></pre></div>
 <p>Save the script as <code>log.R</code>. Copy the script to your csafe-lab work folder.</p></li>
 <li><p>Create a text file for Slurm with the following text:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb38-1"><a href="pronto.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb38-2"><a href="pronto.html#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-3"><a href="pronto.html#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --nodes=1 # request one node</span></span>
-<span id="cb38-4"><a href="pronto.html#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=10  # ask for 10 cpu</span></span>
-<span id="cb38-5"><a href="pronto.html#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem=1G #  asks for 1 GB of RAM</span></span>
-<span id="cb38-6"><a href="pronto.html#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=00:30:02 # ask that the job be allowed to run for 30 minutes and 2 seconds.</span></span>
-<span id="cb38-7"><a href="pronto.html#cb38-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-8"><a href="pronto.html#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="co"># everything below this line is optional</span></span>
-<span id="cb38-9"><a href="pronto.html#cb38-9" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=/work/LAS/csafe-lab/your_netid/job_%J_out.txt # store console output</span></span>
-<span id="cb38-10"><a href="pronto.html#cb38-10" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --error=/work/LAS/csafe-lab/your_netid/job_%J_err.txt # store error messages</span></span>
-<span id="cb38-11"><a href="pronto.html#cb38-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-12"><a href="pronto.html#cb38-12" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">R_LIBS_USER</span><span class="op">=</span>/work/LAS/csafe-lab/your_netid/Rlibs</span>
-<span id="cb38-13"><a href="pronto.html#cb38-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-14"><a href="pronto.html#cb38-14" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load r</span>
-<span id="cb38-15"><a href="pronto.html#cb38-15" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /work/LAS/csafe-lab/your_netid</span>
-<span id="cb38-16"><a href="pronto.html#cb38-16" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">--save</span> <span class="op">&lt;</span> log.R</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb38-1"><a href="pronto.html#cb38-1" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb38-2"><a href="pronto.html#cb38-2" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="pronto.html#cb38-3" tabindex="-1"></a><span class="co">#SBATCH --nodes=1 # request one node</span></span>
+<span id="cb38-4"><a href="pronto.html#cb38-4" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=10  # ask for 10 cpu</span></span>
+<span id="cb38-5"><a href="pronto.html#cb38-5" tabindex="-1"></a><span class="co">#SBATCH --mem=1G #  asks for 1 GB of RAM</span></span>
+<span id="cb38-6"><a href="pronto.html#cb38-6" tabindex="-1"></a><span class="co">#SBATCH --time=00:30:02 # ask that the job be allowed to run for 30 minutes and 2 seconds.</span></span>
+<span id="cb38-7"><a href="pronto.html#cb38-7" tabindex="-1"></a></span>
+<span id="cb38-8"><a href="pronto.html#cb38-8" tabindex="-1"></a><span class="co"># everything below this line is optional</span></span>
+<span id="cb38-9"><a href="pronto.html#cb38-9" tabindex="-1"></a><span class="co">#SBATCH --output=/work/LAS/csafe-lab/your_netid/job_%J_out.txt # store console output</span></span>
+<span id="cb38-10"><a href="pronto.html#cb38-10" tabindex="-1"></a><span class="co">#SBATCH --error=/work/LAS/csafe-lab/your_netid/job_%J_err.txt # store error messages</span></span>
+<span id="cb38-11"><a href="pronto.html#cb38-11" tabindex="-1"></a></span>
+<span id="cb38-12"><a href="pronto.html#cb38-12" tabindex="-1"></a><span class="bu">export</span> <span class="va">R_LIBS_USER</span><span class="op">=</span>/work/LAS/csafe-lab/your_netid/Rlibs</span>
+<span id="cb38-13"><a href="pronto.html#cb38-13" tabindex="-1"></a></span>
+<span id="cb38-14"><a href="pronto.html#cb38-14" tabindex="-1"></a><span class="ex">module</span> load r</span>
+<span id="cb38-15"><a href="pronto.html#cb38-15" tabindex="-1"></a><span class="bu">cd</span> /work/LAS/csafe-lab/your_netid</span>
+<span id="cb38-16"><a href="pronto.html#cb38-16" tabindex="-1"></a><span class="ex">R</span> <span class="at">--save</span> <span class="op">&lt;</span> log.R</span></code></pre></div>
 <p>Save the file as <code>log.txt</code>.</p></li>
 <li><p>(Windows Only) If you are using Windows, your text file will likely have DOS line breaks instead of UNIX line breaks which will cause an error when the file is run on Pronto. Open Terminal in RStudio, use <code>cd folder/containing/text_file</code> to change directories to the folder containing your text file, and type <code>dos2unix log.txt</code> to change the line breaks to UNIX format.</p></li>
 <li><p>Copy the text file to your csafe-lab work folder.</p></li>
 <li><p>In the command line prompt where you are connected to Pronto, type</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb39-1"><a href="pronto.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sbatch /work/LAS/csafe-lab/your_netid/log.txt</span></code></pre></div></li>
+<div class="sourceCode" id="cb39"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb39-1"><a href="pronto.html#cb39-1" tabindex="-1"></a><span class="ex">$</span> sbatch /work/LAS/csafe-lab/your_netid/log.txt</span></code></pre></div></li>
 <li><p>A log file called <code>log_file.txt</code> should appear in your csafe-lab work folder. The contents of the log should look like</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb40-1"><a href="pronto.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="ex">INFO</span> [2022-05-04 10:42:37] start script...</span>
-<span id="cb40-2"><a href="pronto.html#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="ex">INFO</span> [2022-05-04 10:42:37] variable a = 5</span></code></pre></div></li>
+<div class="sourceCode" id="cb40"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb40-1"><a href="pronto.html#cb40-1" tabindex="-1"></a><span class="ex">INFO</span> [2022-05-04 10:42:37] start script...</span>
+<span id="cb40-2"><a href="pronto.html#cb40-2" tabindex="-1"></a><span class="ex">INFO</span> [2022-05-04 10:42:37] variable a = 5</span></code></pre></div></li>
 </ol>
 </div>
 <div id="example-write-a-log-message-inside-a-parallel-loop" class="section level3 hasAnchor" number="5.5.11">
@@ -834,58 +838,58 @@ functions from packages that we install, we need to pass the package names to th
 <li><p>Sign-in to Pronto (see <a href="pronto.html#pronto">5</a>).</p></li>
 <li><p>Open your csafe-lab work folder <code>prontodtn.las.iastate.edu &gt; work &gt; LAS &gt; csafe-lab &gt; your_netid</code> (see <a href="pronto.html#prontodtn">5.2</a>)</p></li>
 <li><p>Create a new R script with the following lines of code:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="pronto.html#cb41-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(doParallel)</span>
-<span id="cb41-2"><a href="pronto.html#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(futile.logger)</span>
-<span id="cb41-3"><a href="pronto.html#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-4"><a href="pronto.html#cb41-4" aria-hidden="true" tabindex="-1"></a>  nCores <span class="ot">=</span> <span class="fu">as.integer</span>(<span class="fu">Sys.getenv</span>(<span class="st">&quot;SLURM_CPUS_PER_TASK&quot;</span>))</span>
-<span id="cb41-5"><a href="pronto.html#cb41-5" aria-hidden="true" tabindex="-1"></a>  myCluster <span class="ot">=</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(nCores, <span class="at">outfile=</span><span class="st">&quot;log_parallel_loop.txt&quot;</span>)</span>
-<span id="cb41-6"><a href="pronto.html#cb41-6" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(myCluster)</span>
-<span id="cb41-7"><a href="pronto.html#cb41-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-8"><a href="pronto.html#cb41-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Parallel loop</span></span>
-<span id="cb41-9"><a href="pronto.html#cb41-9" aria-hidden="true" tabindex="-1"></a>  r1 <span class="ot">=</span> <span class="fu">foreach</span>(<span class="at">i=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">.packages=</span><span class="fu">c</span>(<span class="st">&quot;futile.logger&quot;</span>)) <span class="sc">%dorng%</span>{ </span>
-<span id="cb41-10"><a href="pronto.html#cb41-10" aria-hidden="true" tabindex="-1"></a><span class="fu">runif</span>(<span class="dv">1</span>) </span>
-<span id="cb41-11"><a href="pronto.html#cb41-11" aria-hidden="true" tabindex="-1"></a>futile.logger<span class="sc">::</span><span class="fu">flog.info</span>(<span class="st">&quot;Finished iteration %d&quot;</span>, i)</span>
-<span id="cb41-12"><a href="pronto.html#cb41-12" aria-hidden="true" tabindex="-1"></a>  }</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="pronto.html#cb41-1" tabindex="-1"></a>  <span class="fu">library</span>(doParallel)</span>
+<span id="cb41-2"><a href="pronto.html#cb41-2" tabindex="-1"></a>  <span class="fu">library</span>(futile.logger)</span>
+<span id="cb41-3"><a href="pronto.html#cb41-3" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="pronto.html#cb41-4" tabindex="-1"></a>  nCores <span class="ot">=</span> <span class="fu">as.integer</span>(<span class="fu">Sys.getenv</span>(<span class="st">&quot;SLURM_CPUS_PER_TASK&quot;</span>))</span>
+<span id="cb41-5"><a href="pronto.html#cb41-5" tabindex="-1"></a>  myCluster <span class="ot">=</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(nCores, <span class="at">outfile=</span><span class="st">&quot;log_parallel_loop.txt&quot;</span>)</span>
+<span id="cb41-6"><a href="pronto.html#cb41-6" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(myCluster)</span>
+<span id="cb41-7"><a href="pronto.html#cb41-7" tabindex="-1"></a></span>
+<span id="cb41-8"><a href="pronto.html#cb41-8" tabindex="-1"></a>  <span class="co"># Parallel loop</span></span>
+<span id="cb41-9"><a href="pronto.html#cb41-9" tabindex="-1"></a>  r1 <span class="ot">=</span> <span class="fu">foreach</span>(<span class="at">i=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">.packages=</span><span class="fu">c</span>(<span class="st">&quot;futile.logger&quot;</span>)) <span class="sc">%dorng%</span>{ </span>
+<span id="cb41-10"><a href="pronto.html#cb41-10" tabindex="-1"></a><span class="fu">runif</span>(<span class="dv">1</span>) </span>
+<span id="cb41-11"><a href="pronto.html#cb41-11" tabindex="-1"></a>futile.logger<span class="sc">::</span><span class="fu">flog.info</span>(<span class="st">&quot;Finished iteration %d&quot;</span>, i)</span>
+<span id="cb41-12"><a href="pronto.html#cb41-12" tabindex="-1"></a>  }</span></code></pre></div>
 <p>Save the script as <code>parallel_log.R</code>. Copy the script to your csafe-lab work folder.</p></li>
 <li><p>Create a text file for Slurm with the following text:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb42-1"><a href="pronto.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb42-2"><a href="pronto.html#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-3"><a href="pronto.html#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --nodes=1 # request one node</span></span>
-<span id="cb42-4"><a href="pronto.html#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=4  # ask for 4 cpu</span></span>
-<span id="cb42-5"><a href="pronto.html#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem=1G #  asks for 1 GB of RAM</span></span>
-<span id="cb42-6"><a href="pronto.html#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time=00:30:00 # ask that the job be allowed to run for 30 minutes and 0 seconds.</span></span>
-<span id="cb42-7"><a href="pronto.html#cb42-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-8"><a href="pronto.html#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="co"># everything below this line is optional</span></span>
-<span id="cb42-9"><a href="pronto.html#cb42-9" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output=/work/LAS/csafe-lab/your_netid/job_%J_out.txt # store console output</span></span>
-<span id="cb42-10"><a href="pronto.html#cb42-10" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --error=/work/LAS/csafe-lab/your_netid/job_%J_err.txt # store error messages</span></span>
-<span id="cb42-11"><a href="pronto.html#cb42-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-12"><a href="pronto.html#cb42-12" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">R_LIBS_USER</span><span class="op">=</span>/work/LAS/csafe-lab/your_netid/Rlibs</span>
-<span id="cb42-13"><a href="pronto.html#cb42-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-14"><a href="pronto.html#cb42-14" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load r</span>
-<span id="cb42-15"><a href="pronto.html#cb42-15" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /work/LAS/csafe-lab/your_netid</span>
-<span id="cb42-16"><a href="pronto.html#cb42-16" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">--save</span> <span class="op">&lt;</span> parallel_log.R</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb42-1"><a href="pronto.html#cb42-1" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb42-2"><a href="pronto.html#cb42-2" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="pronto.html#cb42-3" tabindex="-1"></a><span class="co">#SBATCH --nodes=1 # request one node</span></span>
+<span id="cb42-4"><a href="pronto.html#cb42-4" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task=4  # ask for 4 cpu</span></span>
+<span id="cb42-5"><a href="pronto.html#cb42-5" tabindex="-1"></a><span class="co">#SBATCH --mem=1G #  asks for 1 GB of RAM</span></span>
+<span id="cb42-6"><a href="pronto.html#cb42-6" tabindex="-1"></a><span class="co">#SBATCH --time=00:30:00 # ask that the job be allowed to run for 30 minutes and 0 seconds.</span></span>
+<span id="cb42-7"><a href="pronto.html#cb42-7" tabindex="-1"></a></span>
+<span id="cb42-8"><a href="pronto.html#cb42-8" tabindex="-1"></a><span class="co"># everything below this line is optional</span></span>
+<span id="cb42-9"><a href="pronto.html#cb42-9" tabindex="-1"></a><span class="co">#SBATCH --output=/work/LAS/csafe-lab/your_netid/job_%J_out.txt # store console output</span></span>
+<span id="cb42-10"><a href="pronto.html#cb42-10" tabindex="-1"></a><span class="co">#SBATCH --error=/work/LAS/csafe-lab/your_netid/job_%J_err.txt # store error messages</span></span>
+<span id="cb42-11"><a href="pronto.html#cb42-11" tabindex="-1"></a></span>
+<span id="cb42-12"><a href="pronto.html#cb42-12" tabindex="-1"></a><span class="bu">export</span> <span class="va">R_LIBS_USER</span><span class="op">=</span>/work/LAS/csafe-lab/your_netid/Rlibs</span>
+<span id="cb42-13"><a href="pronto.html#cb42-13" tabindex="-1"></a></span>
+<span id="cb42-14"><a href="pronto.html#cb42-14" tabindex="-1"></a><span class="ex">module</span> load r</span>
+<span id="cb42-15"><a href="pronto.html#cb42-15" tabindex="-1"></a><span class="bu">cd</span> /work/LAS/csafe-lab/your_netid</span>
+<span id="cb42-16"><a href="pronto.html#cb42-16" tabindex="-1"></a><span class="ex">R</span> <span class="at">--save</span> <span class="op">&lt;</span> parallel_log.R</span></code></pre></div>
 <p>Save the file as <code>parallel_log.txt</code>.</p></li>
 <li><p>(Windows Only) If you are using Windows, your text file will likely have DOS line breaks instead of UNIX line breaks which will cause an error when the file is run on Pronto. Open Terminal in RStudio, use <code>cd folder/containing/text_file</code> to change directories to the folder containing your text file, and type <code>dos2unix parallel_log.txt</code> to change the line breaks to UNIX format.</p></li>
 <li><p>Copy the text file to your csafe-lab work folder.</p></li>
 <li><p>In the command line prompt where you are connected to Pronto, type</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb43-1"><a href="pronto.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sbatch /work/LAS/csafe-lab/your_netid/parallel_log.txt</span></code></pre></div></li>
+<div class="sourceCode" id="cb43"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb43-1"><a href="pronto.html#cb43-1" tabindex="-1"></a><span class="ex">$</span> sbatch /work/LAS/csafe-lab/your_netid/parallel_log.txt</span></code></pre></div></li>
 <li><p>A log file called <code>log_parallel_loop.txt</code> should appear in your csafe-lab work folder. The contents of the log should look like</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb44-1"><a href="pronto.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="ex">starting</span> worker pid=149912 on localhost:11324 at 15:05:55.201</span>
-<span id="cb44-2"><a href="pronto.html#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="ex">starting</span> worker pid=149924 on localhost:11324 at 15:05:55.452</span>
-<span id="cb44-3"><a href="pronto.html#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="ex">starting</span> worker pid=149936 on localhost:11324 at 15:05:55.706</span>
-<span id="cb44-4"><a href="pronto.html#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="ex">starting</span> worker pid=149948 on localhost:11324 at 15:05:55.963</span>
-<span id="cb44-5"><a href="pronto.html#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Loading</span> required package: foreach</span>
-<span id="cb44-6"><a href="pronto.html#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Loading</span> required package: rngtools</span>
-<span id="cb44-7"><a href="pronto.html#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="ex">Loading</span> required package: foreach</span>
-<span id="cb44-8"><a href="pronto.html#cb44-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Loading</span> required package: rngtools</span>
-<span id="cb44-9"><a href="pronto.html#cb44-9" aria-hidden="true" tabindex="-1"></a><span class="ex">Loading</span> required package: foreach</span>
-<span id="cb44-10"><a href="pronto.html#cb44-10" aria-hidden="true" tabindex="-1"></a><span class="ex">Loading</span> required package: foreach</span>
-<span id="cb44-11"><a href="pronto.html#cb44-11" aria-hidden="true" tabindex="-1"></a><span class="ex">Loading</span> required package: rngtools</span>
-<span id="cb44-12"><a href="pronto.html#cb44-12" aria-hidden="true" tabindex="-1"></a><span class="ex">Loading</span> required package: rngtools</span>
-<span id="cb44-13"><a href="pronto.html#cb44-13" aria-hidden="true" tabindex="-1"></a><span class="ex">INFO</span> [2022-06-17 15:05:56] Finished iteration 3</span>
-<span id="cb44-14"><a href="pronto.html#cb44-14" aria-hidden="true" tabindex="-1"></a><span class="ex">INFO</span> [2022-06-17 15:05:56] Finished iteration 1</span>
-<span id="cb44-15"><a href="pronto.html#cb44-15" aria-hidden="true" tabindex="-1"></a><span class="ex">INFO</span> [2022-06-17 15:05:56] Finished iteration 2</span>
-<span id="cb44-16"><a href="pronto.html#cb44-16" aria-hidden="true" tabindex="-1"></a><span class="ex">INFO</span> [2022-06-17 15:05:56] Finished iteration 4</span></code></pre></div></li>
+<div class="sourceCode" id="cb44"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb44-1"><a href="pronto.html#cb44-1" tabindex="-1"></a><span class="ex">starting</span> worker pid=149912 on localhost:11324 at 15:05:55.201</span>
+<span id="cb44-2"><a href="pronto.html#cb44-2" tabindex="-1"></a><span class="ex">starting</span> worker pid=149924 on localhost:11324 at 15:05:55.452</span>
+<span id="cb44-3"><a href="pronto.html#cb44-3" tabindex="-1"></a><span class="ex">starting</span> worker pid=149936 on localhost:11324 at 15:05:55.706</span>
+<span id="cb44-4"><a href="pronto.html#cb44-4" tabindex="-1"></a><span class="ex">starting</span> worker pid=149948 on localhost:11324 at 15:05:55.963</span>
+<span id="cb44-5"><a href="pronto.html#cb44-5" tabindex="-1"></a><span class="ex">Loading</span> required package: foreach</span>
+<span id="cb44-6"><a href="pronto.html#cb44-6" tabindex="-1"></a><span class="ex">Loading</span> required package: rngtools</span>
+<span id="cb44-7"><a href="pronto.html#cb44-7" tabindex="-1"></a><span class="ex">Loading</span> required package: foreach</span>
+<span id="cb44-8"><a href="pronto.html#cb44-8" tabindex="-1"></a><span class="ex">Loading</span> required package: rngtools</span>
+<span id="cb44-9"><a href="pronto.html#cb44-9" tabindex="-1"></a><span class="ex">Loading</span> required package: foreach</span>
+<span id="cb44-10"><a href="pronto.html#cb44-10" tabindex="-1"></a><span class="ex">Loading</span> required package: foreach</span>
+<span id="cb44-11"><a href="pronto.html#cb44-11" tabindex="-1"></a><span class="ex">Loading</span> required package: rngtools</span>
+<span id="cb44-12"><a href="pronto.html#cb44-12" tabindex="-1"></a><span class="ex">Loading</span> required package: rngtools</span>
+<span id="cb44-13"><a href="pronto.html#cb44-13" tabindex="-1"></a><span class="ex">INFO</span> [2022-06-17 15:05:56] Finished iteration 3</span>
+<span id="cb44-14"><a href="pronto.html#cb44-14" tabindex="-1"></a><span class="ex">INFO</span> [2022-06-17 15:05:56] Finished iteration 1</span>
+<span id="cb44-15"><a href="pronto.html#cb44-15" tabindex="-1"></a><span class="ex">INFO</span> [2022-06-17 15:05:56] Finished iteration 2</span>
+<span id="cb44-16"><a href="pronto.html#cb44-16" tabindex="-1"></a><span class="ex">INFO</span> [2022-06-17 15:05:56] Finished iteration 4</span></code></pre></div></li>
 </ol>
 </div>
 </div>
@@ -895,28 +899,28 @@ functions from packages that we install, we need to pass the package names to th
 <h3><span class="header-section-number">5.6.1</span> List loaded modules<a href="pronto.html#list-loaded-modules" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li><p>In an interactive session, type</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb45-1"><a href="pronto.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> module list</span></code></pre></div></li>
+<div class="sourceCode" id="cb45"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb45-1"><a href="pronto.html#cb45-1" tabindex="-1"></a><span class="ex">$</span> module list</span></code></pre></div></li>
 </ol>
 </div>
 <div id="purge-all-loaded-modules" class="section level3 hasAnchor" number="5.6.2">
 <h3><span class="header-section-number">5.6.2</span> Purge all loaded modules<a href="pronto.html#purge-all-loaded-modules" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li><p>In an interactive session, type</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb46-1"><a href="pronto.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> module purge</span></code></pre></div></li>
+<div class="sourceCode" id="cb46"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb46-1"><a href="pronto.html#cb46-1" tabindex="-1"></a><span class="ex">$</span> module purge</span></code></pre></div></li>
 </ol>
 </div>
 <div id="view-your-jobs-in-the-pronto-queue" class="section level3 hasAnchor" number="5.6.3">
 <h3><span class="header-section-number">5.6.3</span> View your job(s) in the Pronto queue<a href="pronto.html#view-your-jobs-in-the-pronto-queue" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li><p>In pronto terminal (not in an interactive session), type</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb47-1"><a href="pronto.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> squeue <span class="at">-u</span> your-netid</span></code></pre></div></li>
+<div class="sourceCode" id="cb47"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb47-1"><a href="pronto.html#cb47-1" tabindex="-1"></a><span class="ex">$</span> squeue <span class="at">-u</span> your-netid</span></code></pre></div></li>
 </ol>
 </div>
 <div id="cancel-a-job" class="section level3 hasAnchor" number="5.6.4">
 <h3><span class="header-section-number">5.6.4</span> Cancel a job<a href="pronto.html#cancel-a-job" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li><p>In pronto terminal (not in an interactive session), type</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb48-1"><a href="pronto.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> scancel jobid</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb48-1"><a href="pronto.html#cb48-1" tabindex="-1"></a><span class="ex">$</span> scancel jobid</span></code></pre></div>
 <p>where jobid is the six-digit number for the job you want to cancel.</p></li>
 </ol>
 </div>
@@ -924,7 +928,7 @@ functions from packages that we install, we need to pass the package names to th
 <h3><span class="header-section-number">5.6.5</span> View information about a job<a href="pronto.html#view-information-about-a-job" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li><p>In the pronto terminal (not in an interactive session), type</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb49-1"><a href="pronto.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> scontrol show job jobid</span></code></pre></div></li>
+<div class="sourceCode" id="cb49"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb49-1"><a href="pronto.html#cb49-1" tabindex="-1"></a><span class="ex">$</span> scontrol show job jobid</span></code></pre></div></li>
 </ol>
 </div>
 </div>
@@ -937,25 +941,25 @@ functions from packages that we install, we need to pass the package names to th
 <li><p>If you are off campus, connect to the ISU VPN (see <a href="#signin-vpn"><strong>??</strong></a>)</p></li>
 <li><p>Sign-in to Pronto (see <a href="pronto.html#pronto">5</a>).</p></li>
 <li><p>Some of the packages used by handwriter are only available on Pronto for R 4.0.4. Start the R 4.0.4 interpreter in an interactive session on Pronto.</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb50-1"><a href="pronto.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> srun <span class="at">--nodes</span> 1 <span class="at">--tasks</span> 4 <span class="at">--partition</span> interactive <span class="at">--time</span> 01:00:00 <span class="at">--pty</span> bash</span>
-<span id="cb50-2"><a href="pronto.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> module purge</span>
-<span id="cb50-3"><a href="pronto.html#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> module load gcc/10.2.0-zuvaafu</span>
-<span id="cb50-4"><a href="pronto.html#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> module load r/4.0.4-py3-4khjixy</span>
-<span id="cb50-5"><a href="pronto.html#cb50-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> export R_LIBS_USER=/work/LAS/csafe-lab/yournetid/Rlibs</span>
-<span id="cb50-6"><a href="pronto.html#cb50-6" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mkdir <span class="at">-p</span> <span class="va">$R_LIBS_USER</span></span>
-<span id="cb50-7"><a href="pronto.html#cb50-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> R</span></code></pre></div></li>
+<div class="sourceCode" id="cb50"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb50-1"><a href="pronto.html#cb50-1" tabindex="-1"></a><span class="ex">$</span> srun <span class="at">--nodes</span> 1 <span class="at">--tasks</span> 4 <span class="at">--partition</span> interactive <span class="at">--time</span> 01:00:00 <span class="at">--pty</span> bash</span>
+<span id="cb50-2"><a href="pronto.html#cb50-2" tabindex="-1"></a><span class="ex">$</span> module purge</span>
+<span id="cb50-3"><a href="pronto.html#cb50-3" tabindex="-1"></a><span class="ex">$</span> module load gcc/10.2.0-zuvaafu</span>
+<span id="cb50-4"><a href="pronto.html#cb50-4" tabindex="-1"></a><span class="ex">$</span> module load r/4.0.4-py3-4khjixy</span>
+<span id="cb50-5"><a href="pronto.html#cb50-5" tabindex="-1"></a><span class="ex">$</span> export R_LIBS_USER=/work/LAS/csafe-lab/yournetid/Rlibs</span>
+<span id="cb50-6"><a href="pronto.html#cb50-6" tabindex="-1"></a><span class="ex">$</span> mkdir <span class="at">-p</span> <span class="va">$R_LIBS_USER</span></span>
+<span id="cb50-7"><a href="pronto.html#cb50-7" tabindex="-1"></a><span class="ex">$</span> R</span></code></pre></div></li>
 <li><p>Try to install the handwriter package</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb51-1"><a href="pronto.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> install.packages<span class="kw">(</span><span class="st">&quot;handwriter&quot;</span><span class="ex">,lib=</span><span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span><span class="ex">,</span> repos=<span class="st">&quot;https://mirror.las.iastate.edu/CRAN&quot;</span><span class="kw">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb51-1"><a href="pronto.html#cb51-1" tabindex="-1"></a><span class="op">&gt;</span> install.packages<span class="kw">(</span><span class="st">&quot;handwriter&quot;</span><span class="ex">,lib=</span><span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span><span class="ex">,</span> repos=<span class="st">&quot;https://mirror.las.iastate.edu/CRAN&quot;</span><span class="kw">)</span></span></code></pre></div>
 <p>I received error messages stating that the packages igraph, randomForest, and magick could not be installed. I had to install these packages separately.</p></li>
 <li><p>Install igraph</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb52-1"><a href="pronto.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> install.packages<span class="kw">(</span><span class="st">&quot;igraph&quot;</span><span class="ex">,lib=</span><span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span><span class="ex">,</span> repos=<span class="st">&quot;https://mirror.las.iastate.edu/CRAN&quot;</span><span class="kw">)</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb52"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb52-1"><a href="pronto.html#cb52-1" tabindex="-1"></a><span class="op">&gt;</span> install.packages<span class="kw">(</span><span class="st">&quot;igraph&quot;</span><span class="ex">,lib=</span><span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span><span class="ex">,</span> repos=<span class="st">&quot;https://mirror.las.iastate.edu/CRAN&quot;</span><span class="kw">)</span></span></code></pre></div></li>
 <li><p>Then randomForest</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb53-1"><a href="pronto.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> install.packages<span class="kw">(</span><span class="st">&quot;https://cran.r-project.org/src/contrib/Archive/randomForest/randomForest_4.6-14.tar.gz&quot;</span><span class="ex">,</span> repos=NULL, type=<span class="st">&quot;source&quot;</span>,lib=<span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span><span class="kw">)</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb53"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb53-1"><a href="pronto.html#cb53-1" tabindex="-1"></a><span class="op">&gt;</span> install.packages<span class="kw">(</span><span class="st">&quot;https://cran.r-project.org/src/contrib/Archive/randomForest/randomForest_4.6-14.tar.gz&quot;</span><span class="ex">,</span> repos=NULL, type=<span class="st">&quot;source&quot;</span>,lib=<span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span><span class="kw">)</span></span></code></pre></div></li>
 <li><p>Install magick</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb54-1"><a href="pronto.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> install.packages<span class="kw">(</span><span class="st">&quot;magick&quot;</span><span class="ex">,</span> </span>
-<span id="cb54-2"><a href="pronto.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="ex">configure.vars=c</span><span class="er">(</span><span class="st">&quot;INCLUDE_DIR=&#39;. -D_GLIBCXX_USE_CXX11_ABI=0 -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/opt/rit/spack-app/linux-rhel7-x86_64/gcc-4.8.5/image-magick-7.0.5-9-6xplmhr3zv6pu2frzsuyof2coe4tuguh/include/ImageMagick-7&#39; LIB_DIR=&#39;. -D_GLIBCXX_USE_CXX11_ABI=0 -Wl,-rpath,/opt/rit/spack-app/linux-rhel7-x86_64/gcc-4.8.5/image-magick-7.0.5-9-6xplmhr3zv6pu2frzsuyof2coe4tuguh/lib -L/opt/rit/spack-app/linux-rhel7-x86_64/gcc-4.8.5/image-magick-7.0.5-9-6xplmhr3zv6pu2frzsuyof2coe4tuguh/lib -lMagick++-7.Q16HDRI -lMagickWand-7.Q16HDRI -lMagickCore-7.Q16HDRI #&#39;&quot;</span><span class="kw">)</span><span class="ex">,</span></span>
-<span id="cb54-3"><a href="pronto.html#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="va">lib</span><span class="op">=</span><span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span>,</span>
-<span id="cb54-4"><a href="pronto.html#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="va">repos</span><span class="op">=</span><span class="st">&quot;https://mirror.las.iastate.edu/CRAN&quot;</span><span class="kw">)</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb54"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb54-1"><a href="pronto.html#cb54-1" tabindex="-1"></a><span class="op">&gt;</span> install.packages<span class="kw">(</span><span class="st">&quot;magick&quot;</span><span class="ex">,</span> </span>
+<span id="cb54-2"><a href="pronto.html#cb54-2" tabindex="-1"></a><span class="ex">configure.vars=c</span><span class="er">(</span><span class="st">&quot;INCLUDE_DIR=&#39;. -D_GLIBCXX_USE_CXX11_ABI=0 -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/opt/rit/spack-app/linux-rhel7-x86_64/gcc-4.8.5/image-magick-7.0.5-9-6xplmhr3zv6pu2frzsuyof2coe4tuguh/include/ImageMagick-7&#39; LIB_DIR=&#39;. -D_GLIBCXX_USE_CXX11_ABI=0 -Wl,-rpath,/opt/rit/spack-app/linux-rhel7-x86_64/gcc-4.8.5/image-magick-7.0.5-9-6xplmhr3zv6pu2frzsuyof2coe4tuguh/lib -L/opt/rit/spack-app/linux-rhel7-x86_64/gcc-4.8.5/image-magick-7.0.5-9-6xplmhr3zv6pu2frzsuyof2coe4tuguh/lib -lMagick++-7.Q16HDRI -lMagickWand-7.Q16HDRI -lMagickCore-7.Q16HDRI #&#39;&quot;</span><span class="kw">)</span><span class="ex">,</span></span>
+<span id="cb54-3"><a href="pronto.html#cb54-3" tabindex="-1"></a><span class="va">lib</span><span class="op">=</span><span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span>,</span>
+<span id="cb54-4"><a href="pronto.html#cb54-4" tabindex="-1"></a><span class="va">repos</span><span class="op">=</span><span class="st">&quot;https://mirror.las.iastate.edu/CRAN&quot;</span><span class="kw">)</span></span></code></pre></div></li>
 </ol>
 </div>
 <div id="install-handwriter-from-github" class="section level3 hasAnchor" number="5.7.2">
@@ -964,33 +968,47 @@ functions from packages that we install, we need to pass the package names to th
 <li><p>If you are off campus, connect to the ISU VPN (see <a href="#signin-vpn"><strong>??</strong></a>)</p></li>
 <li><p>Sign-in to Pronto (see <a href="pronto.html#pronto">5</a>).</p></li>
 <li><p>Some of the packages used by handwriter are only available on Pronto for R 4.0.4. Start the R 4.0.4 interpreter in an interactive session on Pronto.</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb55-1"><a href="pronto.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> srun <span class="at">--nodes</span> 1 <span class="at">--tasks</span> 4 <span class="at">--partition</span> interactive <span class="at">--time</span> 01:00:00 <span class="at">--pty</span> bash</span>
-<span id="cb55-2"><a href="pronto.html#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> module purge</span>
-<span id="cb55-3"><a href="pronto.html#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> module load gcc/10.2.0-zuvaafu</span>
-<span id="cb55-4"><a href="pronto.html#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> module load r/4.0.4-py3-4khjixy</span>
-<span id="cb55-5"><a href="pronto.html#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> export R_LIBS_USER=/work/LAS/csafe-lab/yournetid/Rlibs</span>
-<span id="cb55-6"><a href="pronto.html#cb55-6" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mkdir <span class="at">-p</span> <span class="va">$R_LIBS_USER</span></span>
-<span id="cb55-7"><a href="pronto.html#cb55-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> R</span></code></pre></div></li>
+<div class="sourceCode" id="cb55"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb55-1"><a href="pronto.html#cb55-1" tabindex="-1"></a><span class="ex">$</span> srun <span class="at">--nodes</span> 1 <span class="at">--tasks</span> 4 <span class="at">--partition</span> interactive <span class="at">--time</span> 01:00:00 <span class="at">--pty</span> bash</span>
+<span id="cb55-2"><a href="pronto.html#cb55-2" tabindex="-1"></a><span class="ex">$</span> module purge</span>
+<span id="cb55-3"><a href="pronto.html#cb55-3" tabindex="-1"></a><span class="ex">$</span> module load gcc/10.2.0-zuvaafu</span>
+<span id="cb55-4"><a href="pronto.html#cb55-4" tabindex="-1"></a><span class="ex">$</span> module load r/4.0.4-py3-4khjixy</span>
+<span id="cb55-5"><a href="pronto.html#cb55-5" tabindex="-1"></a><span class="ex">$</span> export R_LIBS_USER=/work/LAS/csafe-lab/yournetid/Rlibs</span>
+<span id="cb55-6"><a href="pronto.html#cb55-6" tabindex="-1"></a><span class="ex">$</span> mkdir <span class="at">-p</span> <span class="va">$R_LIBS_USER</span></span>
+<span id="cb55-7"><a href="pronto.html#cb55-7" tabindex="-1"></a><span class="ex">$</span> R</span></code></pre></div></li>
 <li><p>Install devtools. Nick Booher at ResearchIT told me that Pronto’s version of R is too old to run the latest version of devtools. He told be to run the following install instead:</p></li>
 </ol>
-<div class="sourceCode" id="cb56"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb56-1"><a href="pronto.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="ex">install.packages</span><span class="er">(</span><span class="st">&quot;https://github.com/r-lib/devtools/archive/refs/tags/v2.4.3.tar.gz&quot;</span><span class="ex">,</span> repos=NULL, type=<span class="st">&quot;source&quot;</span>, lib = <span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span><span class="kw">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb56-1"><a href="pronto.html#cb56-1" tabindex="-1"></a><span class="ex">install.packages</span><span class="er">(</span><span class="st">&quot;https://github.com/r-lib/devtools/archive/refs/tags/v2.4.3.tar.gz&quot;</span><span class="ex">,</span> repos=NULL, type=<span class="st">&quot;source&quot;</span>, lib = <span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span><span class="kw">)</span></span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li>Returned error about trouble installing magick, random forest, and rjags.</li>
 <li>I installed randomforest by hand:</li>
 </ol>
-<div class="sourceCode" id="cb57"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb57-1"><a href="pronto.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="ex">install.packages</span><span class="er">(</span><span class="st">&quot;https://cran.r-project.org/src/contrib/Archive/randomForest/randomForest_4.6-14.tar.gz&quot;</span><span class="ex">,</span> repos=NULL, type=<span class="st">&quot;source&quot;</span>,lib=<span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span><span class="kw">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb57-1"><a href="pronto.html#cb57-1" tabindex="-1"></a><span class="ex">install.packages</span><span class="er">(</span><span class="st">&quot;https://cran.r-project.org/src/contrib/Archive/randomForest/randomForest_4.6-14.tar.gz&quot;</span><span class="ex">,</span> repos=NULL, type=<span class="st">&quot;source&quot;</span>,lib=<span class="st">&quot;/work/LAS/csafe-lab/your_netid/Rlibs&quot;</span><span class="kw">)</span></span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li>I installed magick by hand:</li>
 </ol>
-<div class="sourceCode" id="cb58"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb58-1"><a href="pronto.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="ex">install.packages</span><span class="er">(</span><span class="st">&quot;magick&quot;</span><span class="ex">,</span> </span>
-<span id="cb58-2"><a href="pronto.html#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="ex">configure.vars=c</span><span class="er">(</span><span class="st">&quot;INCLUDE_DIR=&#39;. -D_GLIBCXX_USE_CXX11_ABI=0 -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/opt/rit/spack-app/linux-rhel7-x86_64/gcc-4.8.5/image-magick-7.0.5-9-6xplmhr3zv6pu2frzsuyof2coe4tuguh/include/ImageMagick-7&#39; LIB_DIR=&#39;. -D_GLIBCXX_USE_CXX11_ABI=0 -Wl,-rpath,/opt/rit/spack-app/linux-rhel7-x86_64/gcc-4.8.5/image-magick-7.0.5-9-6xplmhr3zv6pu2frzsuyof2coe4tuguh/lib -L/opt/rit/spack-app/linux-rhel7-x86_64/gcc-4.8.5/image-magick-7.0.5-9-6xplmhr3zv6pu2frzsuyof2coe4tuguh/lib -lMagick++-7.Q16HDRI -lMagickWand-7.Q16HDRI -lMagickCore-7.Q16HDRI #&#39;&quot;</span><span class="kw">)</span><span class="ex">,</span></span>
-<span id="cb58-3"><a href="pronto.html#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="va">lib</span><span class="op">=</span><span class="st">&quot;/work/LAS/csafe-lab/srein/Rlibs&quot;</span>,</span>
-<span id="cb58-4"><a href="pronto.html#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="va">repos</span><span class="op">=</span><span class="st">&quot;https://mirror.las.iastate.edu/CRAN&quot;</span><span class="kw">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb58-1"><a href="pronto.html#cb58-1" tabindex="-1"></a><span class="ex">install.packages</span><span class="er">(</span><span class="st">&quot;magick&quot;</span><span class="ex">,</span> </span>
+<span id="cb58-2"><a href="pronto.html#cb58-2" tabindex="-1"></a><span class="ex">configure.vars=c</span><span class="er">(</span><span class="st">&quot;INCLUDE_DIR=&#39;. -D_GLIBCXX_USE_CXX11_ABI=0 -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/opt/rit/spack-app/linux-rhel7-x86_64/gcc-4.8.5/image-magick-7.0.5-9-6xplmhr3zv6pu2frzsuyof2coe4tuguh/include/ImageMagick-7&#39; LIB_DIR=&#39;. -D_GLIBCXX_USE_CXX11_ABI=0 -Wl,-rpath,/opt/rit/spack-app/linux-rhel7-x86_64/gcc-4.8.5/image-magick-7.0.5-9-6xplmhr3zv6pu2frzsuyof2coe4tuguh/lib -L/opt/rit/spack-app/linux-rhel7-x86_64/gcc-4.8.5/image-magick-7.0.5-9-6xplmhr3zv6pu2frzsuyof2coe4tuguh/lib -lMagick++-7.Q16HDRI -lMagickWand-7.Q16HDRI -lMagickCore-7.Q16HDRI #&#39;&quot;</span><span class="kw">)</span><span class="ex">,</span></span>
+<span id="cb58-3"><a href="pronto.html#cb58-3" tabindex="-1"></a><span class="va">lib</span><span class="op">=</span><span class="st">&quot;/work/LAS/csafe-lab/srein/Rlibs&quot;</span>,</span>
+<span id="cb58-4"><a href="pronto.html#cb58-4" tabindex="-1"></a><span class="va">repos</span><span class="op">=</span><span class="st">&quot;https://mirror.las.iastate.edu/CRAN&quot;</span><span class="kw">)</span></span></code></pre></div>
 </div>
 <div id="rjags" class="section level3 hasAnchor" number="5.7.3">
 <h3><span class="header-section-number">5.7.3</span> RJAGS<a href="pronto.html#rjags" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The above instructions don’t work with RJAGS.</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb59-1"><a href="pronto.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">--nodes</span> 1 <span class="at">--tasks</span> 4 <span class="at">--partition</span> speedy <span class="at">--time</span> 04:00:00 <span class="at">--pty</span> bash</span></code></pre></div>
+<p>The above instructions don’t work with RJAGS. Instead, install handwriter on speedy.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb59-1"><a href="pronto.html#cb59-1" tabindex="-1"></a><span class="ex">srun</span> <span class="at">--nodes</span> 1 <span class="at">--tasks</span> 4 <span class="at">--partition</span> speedy <span class="at">--time</span> 04:00:00 <span class="at">--pty</span> bash</span>
+<span id="cb59-2"><a href="pronto.html#cb59-2" tabindex="-1"></a></span>
+<span id="cb59-3"><a href="pronto.html#cb59-3" tabindex="-1"></a><span class="ex">module</span> purge</span>
+<span id="cb59-4"><a href="pronto.html#cb59-4" tabindex="-1"></a><span class="ex">module</span> use /opt/rit/neo7/20220915/lmod/linux-rhel7-x86_64/Core</span>
+<span id="cb59-5"><a href="pronto.html#cb59-5" tabindex="-1"></a><span class="ex">module</span> load r/4.2.0-py39-sck5cau</span>
+<span id="cb59-6"><a href="pronto.html#cb59-6" tabindex="-1"></a><span class="ex">module</span> load imagemagick/7.0.8-7-py39-3dgakbs</span>
+<span id="cb59-7"><a href="pronto.html#cb59-7" tabindex="-1"></a><span class="ex">module</span> load jags/4.3.0-ute254c</span>
+<span id="cb59-8"><a href="pronto.html#cb59-8" tabindex="-1"></a></span>
+<span id="cb59-9"><a href="pronto.html#cb59-9" tabindex="-1"></a><span class="bu">export</span> <span class="va">R_LIBS_USER</span><span class="op">=</span>/work/LAS/csafe-lab/srein/Rlibs-sck5cau</span>
+<span id="cb59-10"><a href="pronto.html#cb59-10" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">$R_LIBS_USER</span></span>
+<span id="cb59-11"><a href="pronto.html#cb59-11" tabindex="-1"></a></span>
+<span id="cb59-12"><a href="pronto.html#cb59-12" tabindex="-1"></a><span class="ex">R</span></span>
+<span id="cb59-13"><a href="pronto.html#cb59-13" tabindex="-1"></a></span>
+<span id="cb59-14"><a href="pronto.html#cb59-14" tabindex="-1"></a><span class="ex">install.packages</span><span class="er">(</span><span class="st">&quot;devtools&quot;</span><span class="kw">)</span></span>
+<span id="cb59-15"><a href="pronto.html#cb59-15" tabindex="-1"></a><span class="ex">devtools::install_github</span><span class="er">(</span><span class="ex">“CSAFE-ISU/handwriter”</span><span class="kw">)</span></span></code></pre></div>
 </div>
 </div>
 <div id="trouble-shooting-1" class="section level2 hasAnchor" number="5.8">
@@ -998,8 +1016,8 @@ functions from packages that we install, we need to pass the package names to th
 <div id="ex-line-breaks" class="section level3 hasAnchor" number="5.8.1">
 <h3><span class="header-section-number">5.8.1</span> Line breaks error<a href="pronto.html#ex-line-breaks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If you are using Windows and you try to run a text file created on Windows on Pronto, you will likely get the following error:</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb60-1"><a href="pronto.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch:</span> error: Batch script contains DOS line breaks <span class="er">(</span><span class="ex">\\r\\n</span><span class="kw">)</span></span>
-<span id="cb60-2"><a href="pronto.html#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch:</span> error: instead of expected UNIX line breaks <span class="er">(</span><span class="ex">\\n</span><span class="kw">)</span><span class="bu">.</span></span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb60-1"><a href="pronto.html#cb60-1" tabindex="-1"></a><span class="ex">sbatch:</span> error: Batch script contains DOS line breaks <span class="er">(</span><span class="ex">\\r\\n</span><span class="kw">)</span></span>
+<span id="cb60-2"><a href="pronto.html#cb60-2" tabindex="-1"></a><span class="ex">sbatch:</span> error: instead of expected UNIX line breaks <span class="er">(</span><span class="ex">\\n</span><span class="kw">)</span><span class="bu">.</span></span></code></pre></div>
 <p>One way to fix the problem is to
 - Open Rstudio
 - Go to Tools &gt; Terminal &gt; New Terminal
